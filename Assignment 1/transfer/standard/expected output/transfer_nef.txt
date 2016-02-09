@@ -1,0 +1,1 @@
+Error, there are not enough funds in the account to complete this transfer, please enter another value:

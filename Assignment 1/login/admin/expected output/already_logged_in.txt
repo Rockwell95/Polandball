@@ -1,0 +1,1 @@
+Invalid command, you are already logged in as administrator.

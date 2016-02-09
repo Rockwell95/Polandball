@@ -1,0 +1,1 @@
+Error, not enough funds in account to complete transaction, please enter another value:

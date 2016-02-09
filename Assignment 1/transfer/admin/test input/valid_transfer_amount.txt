@@ -1,0 +1,7 @@
+login
+admin
+transfer
+scott
+12345
+12344
+400.00

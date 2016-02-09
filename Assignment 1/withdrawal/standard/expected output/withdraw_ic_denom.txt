@@ -1,0 +1,1 @@
+Error, this machine can only distribute bills with values of $100, $50, $20, $10, and $5. The value you entered cannot be distributed, please enter another value:

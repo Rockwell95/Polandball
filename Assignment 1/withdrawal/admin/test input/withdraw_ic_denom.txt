@@ -1,7 +1,6 @@
 login
 admin
-transfer
+withdrawal
 scott
 12345
-12344
-800.75
+32.00

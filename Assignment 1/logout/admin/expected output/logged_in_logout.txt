@@ -1,0 +1,1 @@
+Thank you for using the banking system, session ended, you have been successfully logged out.

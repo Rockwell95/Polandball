@@ -1,0 +1,4 @@
+Welcome, dominick.
+
+Acct# Name                S Balance
+12344 dominick            A 350.00  

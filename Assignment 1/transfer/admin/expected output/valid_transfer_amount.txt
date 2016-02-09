@@ -1,0 +1,3 @@
+Transferring $400.00 from 12345 to 12344.
+
+Transfer complete, ending transaction...
