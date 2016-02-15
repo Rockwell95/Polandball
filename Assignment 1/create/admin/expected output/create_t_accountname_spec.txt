@@ -1,0 +1,1 @@
+New account name cannot contain special characters and must only be 20 characters in length.
