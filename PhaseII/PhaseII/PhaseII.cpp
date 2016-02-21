@@ -40,11 +40,11 @@ int main(void) {
 
         if (stdAccount.sNumber.empty()) {
           cout << "Name not found, terminating...\n";
+          sElevation = acctName;
           goto invalid;
         }
         cout << "Welcome, " + stdAccount.sHolderName + ".\n>";
         menu(stdAccount);
-		//break;
 	  }
 //.........................................................................................................................................................
       else if (sElevation.compare("admin") == 0) {
@@ -57,9 +57,17 @@ int main(void) {
 		goto invalid;
 	  }
     }
+    else if (sInput.compare("logout") == 0) {
+      cout << "You must be logged in to log out.\n";
+    }
+    else if (sInput.compare("quit") == 0) {
+      cout << "Quitting...\n";
+      goto terminate;
+    }
     else {
+      sElevation = sInput;
       invalid:
-	  cout << "Invalid command. \"" + sElevation + "\" is not a known command, please try again." << endl;
+	  cout << "Invalid command. \"" + sElevation + "\" is not known, please try again." << endl;
     }
 
     cout << "System resetting in 3 seconds";
@@ -68,6 +76,7 @@ int main(void) {
     cout << "Welcome to the automated banking system! Please login\n>";
   }
   
+  terminate:
   system("pause");
   return 0;
 

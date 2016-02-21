@@ -40,7 +40,7 @@ void menu(account acct)
       }
     }
     else {
-      cout << "Invalid command. \"" + sCommand + "\" is not a known command, terminating session.\n";
+      cout << "Invalid entry, terminating session.\n";
       return;
     }
     cout << "\n>";
