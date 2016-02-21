@@ -30,7 +30,6 @@ int main(void) {
 	  
       
       if (sElevation.compare("standard") == 0) {
-		
 		cout << "Please enter your name:\n>";
         string sFirstName, sLastName;
         cin >> sFirstName;
@@ -44,11 +43,11 @@ int main(void) {
         }
         cout << "Welcome, " + stdAccount.sHolderName + ".\n>";
         menu(stdAccount);
-		break;
+		//break;
 	  }
 //.........................................................................................................................................................
       else if (sElevation.compare("admin") == 0) {
-		cout << "Welcome, administrator\n>";
+        cout << "Welcome, administrator\n>";
         account adminAcct;
         adminAcct.nLevel = 1;
         menu(adminAcct);

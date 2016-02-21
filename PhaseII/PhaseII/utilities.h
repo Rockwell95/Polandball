@@ -4,5 +4,6 @@
 #include <string>
 
 account getAccountInfo(std::string ssHolderName);
+account getAccountByNumber(std::string ssNumber);
 
 #endif // UTILITIES_H_
