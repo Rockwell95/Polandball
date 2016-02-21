@@ -5,5 +5,6 @@
 
 account getAccountInfo(std::string ssHolderName);
 account getAccountByNumber(std::string ssNumber);
+bool contains(std::string arrayOfValues[], std::string value);
 
 #endif // UTILITIES_H_

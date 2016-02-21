@@ -55,3 +55,15 @@ account getAccountByNumber(string ssNumber) {
   }
   return acct;
 }
+
+bool contains(string arrayOfValues[], string value) {
+  bool found = false;
+  for (int i = 0; i < sizeof(arrayOfValues); i++) {
+    if (arrayOfValues[i].compare(value) == 0)
+    {
+      found = true;
+      break;
+    }
+    return found;
+  }
+}

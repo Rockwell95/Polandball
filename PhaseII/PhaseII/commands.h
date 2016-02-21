@@ -19,6 +19,6 @@ void create(account acct);
 void delte(account acct);	//delete is a key word in C++
 void disable(account acct);
 void changeplan(account acct);
-void logout();
+void logout(bool bLoggedIn);
 
 #endif // COMMANDS_H_

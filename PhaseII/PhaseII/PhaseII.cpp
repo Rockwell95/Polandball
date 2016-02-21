@@ -6,6 +6,7 @@
 #include <string>
 #include <stdlib.h>
 #include <stdio.h>
+#include <Windows.h>
 #include "utilities.h"
 
 using namespace std;
@@ -61,7 +62,10 @@ int main(void) {
 	  cout << "Invalid command. \"" + sElevation + "\" is not a known command, please try again." << endl;
     }
 
-	cout << ">";
+    cout << "System resetting in 3 seconds";
+    Sleep(3000);
+    system("cls");
+    cout << "Welcome to the automated banking system! Please login\n>";
   }
   
   system("pause");
