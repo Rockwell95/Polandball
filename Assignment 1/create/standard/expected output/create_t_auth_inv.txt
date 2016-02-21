@@ -1,0 +1,1 @@
+Command is not authorized at this permission level.

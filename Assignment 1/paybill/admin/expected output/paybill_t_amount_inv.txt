@@ -1,0 +1,1 @@
+Please enter a valid dollar amount for this bill payment. Example: $500.00.
