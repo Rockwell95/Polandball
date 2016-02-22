@@ -14,60 +14,60 @@ using namespace std;
 int main(void) {
   cout << "Welcome to the automated banking system! Please login\n>";
 	
-  string sInput;
-  string sElevation;
-  string acctName;
-  account stdAccount;
+  string s_input;
+  string s_elevation;
+  string s_acctname;
+  account act_stdaccount;
   
 
 
   // Loop through user commands indefinitely
-  while (cin >> sInput) {
+  while (cin >> s_input) {
 		
-	if (sInput.compare("login") == 0) {
+	if (s_input.compare("login") == 0) {
      
 	  cout << "Logging in, are you logging in as standard or admin?\n>";
-	  cin >> sElevation;
+	  cin >> s_elevation;
 	  
       
-      if (sElevation.compare("standard") == 0) {
+      if (s_elevation.compare("standard") == 0) {
 		cout << "Please enter your name:\n>";
-        string sFirstName, sLastName;
-        cin >> sFirstName;
-        cin >> sLastName;
-        acctName = sFirstName + " " + sLastName;
-        stdAccount = getAccountInfo(acctName);
+        string s_firstname, s_lastname;
+        cin >> s_firstname;
+        cin >> s_lastname;
+        s_acctname = s_firstname + " " + s_lastname;
+        act_stdaccount = getAccountInfo(s_acctname);
 
-        if (stdAccount.sNumber.empty()) {
+        if (act_stdaccount.s_number.empty()) {
           cout << "Name not found, terminating...\n";
-          sElevation = acctName;
+          s_elevation = s_acctname;
           goto invalid;
         }
-        cout << "Welcome, " + stdAccount.sHolderName + ".\n>";
-        menu(stdAccount);
+        cout << "Welcome, " + act_stdaccount.s_holdername + ".\n>";
+        menu(act_stdaccount);
 	  }
 //.........................................................................................................................................................
-      else if (sElevation.compare("admin") == 0) {
+      else if (s_elevation.compare("admin") == 0) {
         cout << "Welcome, administrator\n>";
-        account adminAcct;
-        adminAcct.nLevel = ADMIN_ACCOUNT;
-        menu(adminAcct);
+        account act_adminacct;
+        act_adminacct.nLevel = ADMIN_ACCOUNT;
+        menu(act_adminacct);
 	  }
 	  else {
 		goto invalid;
 	  }
     }
-    else if (sInput.compare("logout") == 0) {
+    else if (s_input.compare("logout") == 0) {
       cout << "You must be logged in to log out.\n";
     }
-    else if (sInput.compare("quit") == 0) {
+    else if (s_input.compare("quit") == 0) {
       cout << "Quitting...\n";
       goto terminate;
     }
     else {
-      sElevation = sInput;
+      s_elevation = s_input;
       invalid:
-	  cout << "Invalid command. \"" + sElevation + "\" is not known, please try again." << endl;
+	  cout << "Invalid command. \"" + s_elevation + "\" is not known, please try again." << endl;
     }
 
     cout << "System resetting in 3 seconds";

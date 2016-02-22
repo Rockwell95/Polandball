@@ -4,10 +4,10 @@
 //...
 typedef struct {
   int nLevel;	// 0 for standard, 1 for admin
-  std::string sNumber;
-  std::string sHolderName;
-  char cStatus;
-  double dBalance;
+  std::string s_number;
+  std::string s_holdername;
+  char c_status;
+  double d_balance;
 }account;
 
 void menu(account acct); 
@@ -16,9 +16,9 @@ void transfer(account acct);
 void paybill(account acct);
 void deposit(account acct);
 void create(account acct);
-void delte(account acct);	//delete is a key word in C++
+void ac_delete(account acct);	//delete is a key word in C++
 void disable(account acct);
 void changeplan(account acct);
-void logout(bool bLoggedIn);
+void logout(bool b_loggedin);
 
 #endif // COMMANDS_H_
