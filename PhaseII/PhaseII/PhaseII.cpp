@@ -50,7 +50,7 @@ int main(void) {
       else if (sElevation.compare("admin") == 0) {
         cout << "Welcome, administrator\n>";
         account adminAcct;
-        adminAcct.nLevel = 1;
+        adminAcct.nLevel = ADMIN_ACCOUNT;
         menu(adminAcct);
 	  }
 	  else {

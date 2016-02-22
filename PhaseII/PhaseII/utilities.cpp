@@ -18,7 +18,7 @@ account getAccountInfo(string ssHolderName) {
       (ssHolderName.length()))) == 0) {
       acct.sHolderName = ssHolderName;
       // cout << acct.sHolderName << endl;
-      acct.nLevel = 0;
+      acct.nLevel = STANDARD_ACCOUNT;
       // cout << acct.nLevel << endl;
       acct.sNumber = sAccountLine.substr(0, 5);
       // cout << acct.sNumber << endl;
@@ -43,7 +43,7 @@ account getAccountByNumber(string ssNumber) {
       (ssNumber.length()))) == 0) {
       acct.sHolderName = sAccountLine.substr(6, 20);
       // cout << acct.sHolderName << endl;
-      acct.nLevel = 0;
+      acct.nLevel = STANDARD_ACCOUNT;
       // cout << acct.nLevel << endl;
       acct.sNumber = sAccountLine.substr(0, 5);
       // cout << acct.sNumber << endl;
