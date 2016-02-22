@@ -56,7 +56,7 @@ void withdrawal(account acct) {
     cin >> s_firstname;
     cin >> s_lastname;
     s_fullname = s_firstname + " " + s_lastname;
-    acct = getStandardAccountInfo(s_fullname);
+    acct = getAccountByName(s_fullname);
     if (!acct.s_number.empty()) {
       cout << "Name accepted, please enter the account number you wish to withdraw from :\n>";
     }
@@ -71,7 +71,7 @@ void withdrawal(account acct) {
   cin >> s_acctnum;
   if (s_acctnum.compare(acct.s_number) == 0) {
     cout << "Account number accepted, please enter the amount to withdraw:\n>";
-  anotherSValue:
+  gt_another_svalue:
     if (cin >> d_wdamount && d_wdamount <= 500 && d_wdamount >= 0.01) {
       acct.d_balance -= d_wdamount;
       cout << "Done!\nNew Balance: ";
@@ -79,19 +79,19 @@ void withdrawal(account acct) {
     }
     else if (cin >> d_wdamount && d_wdamount > 500) {
       cout << "Error, withdraw amount exceeds $500.00, please enter another value:\n>";
-      goto anotherSValue;
+      goto gt_another_svalue;
     }
     else if (cin >> d_wdamount && d_wdamount < 0.01) {
       cout << "Error, withdraw amount must be greater than $0.00, please enter another value:\n>";
-      goto anotherSValue;
+      goto gt_another_svalue;
     }
     else if (cin >> d_wdamount && d_wdamount > acct.d_balance) {
       cout << "Error, not enough funds in account to complete transaction, please enter another value:\n>";
-      goto anotherSValue;
+      goto gt_another_svalue;
     }
     else {
       cout << "Error, value entered is not a recognized number, please enter another value:\n>";
-      goto anotherSValue;
+      goto gt_another_svalue;
     }
   }
   else {
@@ -108,7 +108,7 @@ void transfer(account acct) {
     cin >> s_firstname;
     cin >> s_lastname;
     s_fullname = s_firstname + " " + s_lastname;
-    acct = getStandardAccountInfo(s_fullname);
+    acct = getAccountByName(s_fullname);
     if (!acct.s_number.empty()) {
       cout << "Name accepted, welcome " + s_fullname + ". Please enter the number of the account you wish to to transfer from : \n>";
     }
@@ -169,7 +169,7 @@ void paybill(account acct) {
     cin >> s_firstname;
     cin >> s_lastname;
     s_fullname = s_firstname + " " + s_lastname;
-    acct = getStandardAccountInfo(s_fullname);
+    acct = getAccountByName(s_fullname);
     if (acct.s_holdername.empty()) {
       cout << "The account name is not a recognized account name.\n";
       return;
@@ -230,7 +230,7 @@ void deposit(account acct) {
     cin >> s_firstname;
     cin >> s_lastname;
     s_fullname = s_firstname + " " + s_lastname;
-    acct = getStandardAccountInfo(s_fullname);
+    acct = getAccountByName(s_fullname);
     if (acct.s_holdername.empty()) {
       cout << "The account name is not a recognized account name.\n";
       return;
@@ -272,10 +272,25 @@ void deposit(account acct) {
   }
 
   account ac_newaccount;
-  cout << "Enter the name for the new account holder: ";
-  cin >> ac_newaccount.s_holdername;
-  while (ac_newaccount.s_holdername.length() > 20) {
-    cout << "The account name is too long. It must be at most 20 characters in length";
+  string s_first, s_last;
+  while (s_first.empty() == true || s_last.empty() == true) {
+    cout << "Enter the full name for the new account holder: ";
+    cin >> s_first;
+    cin >> s_last;
+  }
+  ac_newaccount.s_holdername = s_first + " " + s_last;
+  while (ac_newaccount.s_holdername.length() > 20 || getAccountByName(ac_newaccount.s_holdername).s_holdername.empty() == false) {
+    if (ac_newaccount.s_holdername.length() > 20) {
+      cout << "The account name is too long. It must be at most 20 characters in length";
+    }
+    if (ac_newaccount.s_holdername.length() == 0) {
+      cout << "The account name is empty. Please enter an account name";
+    }
+    cout << getAccountByName(ac_newaccount.s_holdername).s_holdername << endl;
+    if (!getAccountByName(ac_newaccount.s_holdername).s_holdername.empty()) {
+      cout << "This account name already exists. The account name must be unique in the system.";
+      return;
+    }
     cin >> ac_newaccount.s_holdername;
   }
   cout << "Enter the initial balance for the new account holder: ";
@@ -285,9 +300,10 @@ void deposit(account acct) {
     cin >> ac_newaccount.d_balance;
   }
 
+  ac_newaccount.c_status = 'A';
+  ac_newaccount.n_level = 0;
 
-  createAccount(ac_newaccount);
-
+  writeStandardAccount(ac_newaccount);
 
 }
 //.......................................................................................................................................................................
@@ -305,14 +321,19 @@ void deposit(account acct) {
   cin >> s_number;
 
   account acc_account = getAccountByNumber(s_number);
-  if (acc_account.s_number == "")
+  if (acc_account.s_number.empty())
   {
     cout << "Account not found";
     return;
   }
   if (s_holdername.compare(acc_account.s_holdername) == 0) {
     // Match
-    deleteAccount(acc_account);
+    cout << "Account deleted (stub)";
+    return;
+  }
+  else {
+    cout << "Name and number provided do not match for this account. Aborting.";
+    return;
   }
   
 
@@ -333,14 +354,19 @@ void deposit(account acct) {
   cin >> s_number;
 
   account acc_account = getAccountByNumber(s_number);
-  if (acc_account.s_number == "") {
+  if (acc_account.s_number.empty()) {
     cout << "Account not found";
     return;
   }
 
   if (s_holdername.compare(acc_account.s_holdername) == 0) {
     // Match
-    disableAccount(acc_account, "toggle");
+    cout << "Account disabled/enabled (stub)";
+    return;
+  }
+  else {
+    cout << "Name and number do not match for this account. Aborting.";
+    return;
   }
 
 }
@@ -359,14 +385,19 @@ void deposit(account acct) {
   cin >> s_number;
 
   account acc_account = getAccountByNumber(s_number);
-  if (acc_account.s_number == "") {
+  if (acc_account.s_number.empty()) {
     cout << "Account not found";
     return;
   }
 
   if (s_holdername.compare(acc_account.s_holdername) == 0) {
     // Match
-    disableAccount(acc_account, "toggle");
+    cout << "Plan Changed (stub)";
+    return;
+  }
+  else {
+    cout << "Name and number do not match for this account. Aborting.";
+    return;
   }
 
 }

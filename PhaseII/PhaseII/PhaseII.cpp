@@ -36,7 +36,7 @@ int main(void) {
         cin >> s_firstname;
         cin >> s_lastname;
         s_acctname = s_firstname + " " + s_lastname;
-        act_stdaccount = getStandardAccountInfo(s_acctname);
+        act_stdaccount = getAccountByName(s_acctname);
 
         if (act_stdaccount.s_number.empty()) {
           cout << "Name not found, terminating...\n";

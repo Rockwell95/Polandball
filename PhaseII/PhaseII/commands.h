@@ -8,6 +8,7 @@ typedef struct {
   std::string s_holdername;
   char c_status;
   double d_balance;
+  bool b_freezetransactions;
 }account;
 
 void menu(account acct); 
