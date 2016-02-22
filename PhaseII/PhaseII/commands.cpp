@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 /*!*/ // Indicates an admin level command
-void menu(account acct) 
+void menu(account acct)
 {
   string s_command;
   bool b_logged_in = true;
@@ -51,12 +51,12 @@ void menu(account acct)
 void withdrawal(account acct) {
   string s_firstname, s_lastname, s_fullname, s_acctnum;
   double d_wdamount;
-  if (acct.nLevel == ADMIN_ACCOUNT) {
+  if (acct.n_level == ADMIN_ACCOUNT) {
     cout << "Withdraw command selected. Please enter the administrator name:\n>";
     cin >> s_firstname;
     cin >> s_lastname;
     s_fullname = s_firstname + " " + s_lastname;
-    acct = getAccountInfo(s_fullname);
+    acct = getStandardAccountInfo(s_fullname);
     if (!acct.s_number.empty()) {
       cout << "Name accepted, please enter the account number you wish to withdraw from :\n>";
     }
@@ -103,12 +103,12 @@ void transfer(account acct) {
   string s_firstname, s_lastname, s_fullname, sFromAcctNum, sToAcctNum;
   double d_trans_amount;
   account tToAccount;
-  if (acct.nLevel == ADMIN_ACCOUNT) {
+  if (acct.n_level == ADMIN_ACCOUNT) {
     cout << "Transfer mode selected, please enter the administrator name:\n>";
     cin >> s_firstname;
     cin >> s_lastname;
     s_fullname = s_firstname + " " + s_lastname;
-    acct = getAccountInfo(s_fullname);
+    acct = getStandardAccountInfo(s_fullname);
     if (!acct.s_number.empty()) {
       cout << "Name accepted, welcome " + s_fullname + ". Please enter the number of the account you wish to to transfer from : \n>";
     }
@@ -164,12 +164,12 @@ void paybill(account acct) {
   string s_firstname, s_lastname, s_fullname, s_acctnum, sCompany;
   string sa_valid_companies[] = { "Bright Light Electric Company", "EC", "Credit Card Company Q", "CQ", "Low Definition TV, Inc", "TV" };
   double d_pay_amount;
-  if (acct.nLevel == ADMIN_ACCOUNT) {
+  if (acct.n_level == ADMIN_ACCOUNT) {
     cout << "Pay bill command selected. Please enter the administrator name:\n>";
     cin >> s_firstname;
     cin >> s_lastname;
     s_fullname = s_firstname + " " + s_lastname;
-    acct = getAccountInfo(s_fullname);
+    acct = getStandardAccountInfo(s_fullname);
     if (acct.s_holdername.empty()) {
       cout << "The account name is not a recognized account name.\n";
       return;
@@ -225,12 +225,12 @@ void paybill(account acct) {
 void deposit(account acct) {
   string s_firstname, s_lastname, s_fullname, s_acctnum, sCompany;
   double d_deposit_amount;
-  if (acct.nLevel == ADMIN_ACCOUNT) {
+  if (acct.n_level == ADMIN_ACCOUNT) {
     cout << "Deposit command selected. Please enter the administrator name:\n>";
     cin >> s_firstname;
     cin >> s_lastname;
     s_fullname = s_firstname + " " + s_lastname;
-    acct = getAccountInfo(s_fullname);
+    acct = getStandardAccountInfo(s_fullname);
     if (acct.s_holdername.empty()) {
       cout << "The account name is not a recognized account name.\n";
       return;
@@ -266,36 +266,107 @@ void deposit(account acct) {
 //.......................................................................................................................................................................
 /*!*/void create(account acct)
 {
-  if (acct.nLevel != ADMIN_ACCOUNT) {
+  if (acct.n_level != ADMIN_ACCOUNT) {
     cout << "TOKEN";
     return;
   }
+
+  account ac_newaccount;
+  cout << "Enter the name for the new account holder: ";
+  cin >> ac_newaccount.s_holdername;
+  while (ac_newaccount.s_holdername.length() > 20) {
+    cout << "The account name is too long. It must be at most 20 characters in length";
+    cin >> ac_newaccount.s_holdername;
+  }
+  cout << "Enter the initial balance for the new account holder: ";
+  cin >> ac_newaccount.d_balance;
+  while (ac_newaccount.d_balance < 0 || ac_newaccount.d_balance > 99999.99) {
+    cout << "The balance must be greater than $0.00 and less than or equal to $99999.99";
+    cin >> ac_newaccount.d_balance;
+  }
+
+
+  createAccount(ac_newaccount);
+
 
 }
 //.......................................................................................................................................................................
 /*!*/void ac_delete(account acct)
 {
-  if (acct.nLevel != ADMIN_ACCOUNT) {
+  if (acct.n_level != ADMIN_ACCOUNT) {
     cout << "TOKEN";
     return;
   }
+  
+  string s_holdername, s_number;
+  cout << "Enter the name of the account holder: ";
+  cin >> s_holdername;
+  cout << "Enter the account number of the account holder: ";
+  cin >> s_number;
+
+  account acc_account = getAccountByNumber(s_number);
+  if (acc_account.s_number == "")
+  {
+    cout << "Account not found";
+    return;
+  }
+  if (s_holdername.compare(acc_account.s_holdername) == 0) {
+    // Match
+    deleteAccount(acc_account);
+  }
+  
+
 
 }
 //.......................................................................................................................................................................
 /*!*/void disable(account acct)
 {
-  if (acct.nLevel != ADMIN_ACCOUNT) {
+  if (acct.n_level != ADMIN_ACCOUNT) {
     cout << "TOKEN";
     return;
+  }
+
+  string s_holdername, s_number;
+  cout << "Enter the name of the account holder: ";
+  cin >> s_holdername;
+  cout << "Enter the account number of the account holder: ";
+  cin >> s_number;
+
+  account acc_account = getAccountByNumber(s_number);
+  if (acc_account.s_number == "") {
+    cout << "Account not found";
+    return;
+  }
+
+  if (s_holdername.compare(acc_account.s_holdername) == 0) {
+    // Match
+    disableAccount(acc_account, "toggle");
   }
 
 }
 //.......................................................................................................................................................................
 /*!*/void changeplan(account acct)
 {
-  if (acct.nLevel != ADMIN_ACCOUNT) {
+  if (acct.n_level != ADMIN_ACCOUNT) {
     cout << "TOKEN";
     return;
+  }
+
+  string s_holdername, s_number;
+  cout << "Enter the name of the account holder: ";
+  cin >> s_holdername;
+  cout << "Enter the account number of the account holder: ";
+  cin >> s_number;
+
+  account acc_account = getAccountByNumber(s_number);
+  if (acc_account.s_number == "") {
+    cout << "Account not found";
+    return;
+  }
+
+  if (s_holdername.compare(acc_account.s_holdername) == 0) {
+    // Match
+    disableAccount(acc_account, "toggle");
   }
 
 }

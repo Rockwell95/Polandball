@@ -36,7 +36,7 @@ int main(void) {
         cin >> s_firstname;
         cin >> s_lastname;
         s_acctname = s_firstname + " " + s_lastname;
-        act_stdaccount = getAccountInfo(s_acctname);
+        act_stdaccount = getStandardAccountInfo(s_acctname);
 
         if (act_stdaccount.s_number.empty()) {
           cout << "Name not found, terminating...\n";
@@ -50,7 +50,7 @@ int main(void) {
       else if (s_elevation.compare("admin") == 0) {
         cout << "Welcome, administrator\n>";
         account act_adminacct;
-        act_adminacct.nLevel = ADMIN_ACCOUNT;
+        act_adminacct.n_level = ADMIN_ACCOUNT;
         menu(act_adminacct);
 	  }
 	  else {

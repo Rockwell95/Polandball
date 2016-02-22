@@ -5,21 +5,22 @@
 #include "utilities.h"
 
 using namespace std;
-account getAccountInfo(string ss_holdername) {
+
+account getStandardAccountInfo(string s_holdername, string s_filename) {
   string s_account_line;
   ifstream ifs_accounts_file;
-  ifs_accounts_file.open("current_accounts.txt");
+  ifs_accounts_file.open(s_filename);
   account acct;
   while (getline(ifs_accounts_file, s_account_line)) {
     // cout << (s_account_line.substr(6, (acct.s_holdername.length()))) + "==" << endl;
     // cout << acct.s_holdername + "==" << endl;
 
-    if ((ss_holdername).compare(s_account_line.substr(6,
-      (ss_holdername.length()))) == 0) {
-      acct.s_holdername = ss_holdername;
+    if ((s_holdername).compare(s_account_line.substr(6,
+      (s_holdername.length()))) == 0) {
+      acct.s_holdername = s_holdername;
       // cout << acct.s_holdername << endl;
-      acct.nLevel = STANDARD_ACCOUNT;
-      // cout << acct.nLevel << endl;
+      acct.n_level = STANDARD_ACCOUNT;
+      // cout << acct.n_level << endl;
       acct.s_number = s_account_line.substr(0, 5);
       // cout << acct.s_number << endl;
       acct.c_status = s_account_line.at(27);
@@ -30,21 +31,20 @@ account getAccountInfo(string ss_holdername) {
   }
   return acct;
 }
-account getAccountByNumber(string ss_number) {
+account getAccountByNumber(string s_number, string s_filename) {
   string s_account_line;
   ifstream ifs_accounts_file;
-  ifs_accounts_file.open("current_accounts.txt");
+  ifs_accounts_file.open(s_filename);
   account acct;
   while (getline(ifs_accounts_file, s_account_line)) {
     // cout << (s_account_line.substr(6, (acct.s_holdername.length()))) + "==" << endl;
     // cout << acct.s_holdername + "==" << endl;
 
-    if ((ss_number).compare(s_account_line.substr(0,
-      (ss_number.length()))) == 0) {
+    if (s_number.compare(s_account_line.substr(0, s_number.length())) == 0) {
       acct.s_holdername = s_account_line.substr(6, 20);
       // cout << acct.s_holdername << endl;
-      acct.nLevel = STANDARD_ACCOUNT;
-      // cout << acct.nLevel << endl;
+      acct.n_level = STANDARD_ACCOUNT;
+      // cout << acct.n_level << endl;
       acct.s_number = s_account_line.substr(0, 5);
       // cout << acct.s_number << endl;
       acct.c_status = s_account_line.at(27);
@@ -64,6 +64,31 @@ bool contains(string sa_values[], string value) {
       found = true;
       break;
     }
-    return found;
   }
+  return found;
+}
+
+int writeStandardAccount(account acct, string s_filename) {
+  ofstream ofs_outstream;
+  ofs_outstream.open(s_filename);
+
+
+  return EXIT_SUCCESS;
+}
+
+int updateStandardAccount(account acct, string s_filename) {
+  return EXIT_SUCCESS;
+}
+
+int createAccount(account acct, string s_filename) {
+  return EXIT_SUCCESS;
+}
+int disableAccount(account acct, string s_toggle) {
+  return EXIT_SUCCESS;
+}
+int deleteAccount(account acct, string s_filename) {
+  return EXIT_SUCCESS;
+}
+int changeplanAccount(account acct, string s_filname) {
+  return EXIT_SUCCESS;
 }

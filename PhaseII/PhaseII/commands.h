@@ -3,7 +3,7 @@
 #include <string>
 //...
 typedef struct {
-  int nLevel;	// 0 for standard, 1 for admin
+  int n_level;	// 0 for standard, 1 for admin
   std::string s_number;
   std::string s_holdername;
   char c_status;
