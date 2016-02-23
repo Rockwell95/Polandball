@@ -1,16 +1,22 @@
-﻿Build started 2/22/2016 2:23:06 PM.
-     1>Project "C:\Users\100379538\Desktop\Phase 2\PhaseII\PhaseII\PhaseII.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2/22/16 6:22:08 PM.
+     1>Project "C:\Users\100517944\Documents\GitHub\Polandball\PhaseII\PhaseII\PhaseII.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"x64\Debug\PhaseII.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt utilities.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"x64\Debug\PhaseII.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"x64\Debug\PhaseII.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt PhaseII.cpp commands.cpp utilities.cpp
          utilities.cpp
+         commands.cpp
+         PhaseII.cpp
+         Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\100379538\Desktop\Phase 2\PhaseII\x64\Debug\PhaseII.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\100379538\Desktop\Phase 2\PhaseII\x64\Debug\PhaseII.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\100379538\Desktop\Phase 2\PhaseII\x64\Debug\PhaseII.lib" /MACHINE:X64 x64\Debug\commands.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\100517944\Documents\GitHub\Polandball\PhaseII\x64\Debug\PhaseII.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\100517944\Documents\GitHub\Polandball\PhaseII\x64\Debug\PhaseII.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\100517944\Documents\GitHub\Polandball\PhaseII\x64\Debug\PhaseII.lib" /MACHINE:X64 x64\Debug\commands.obj
          x64\Debug\PhaseII.obj
          x64\Debug\stdafx.obj
          x64\Debug\utilities.obj
-         PhaseII.vcxproj -> C:\Users\100379538\Desktop\Phase 2\PhaseII\x64\Debug\PhaseII.exe
-     1>Done Building Project "C:\Users\100379538\Desktop\Phase 2\PhaseII\PhaseII\PhaseII.vcxproj" (Build target(s)).
+         LINK : C:\Users\100517944\Documents\GitHub\Polandball\PhaseII\x64\Debug\PhaseII.exe not found or not built by the last incremental link; performing full link
+         PhaseII.vcxproj -> C:\Users\100517944\Documents\GitHub\Polandball\PhaseII\x64\Debug\PhaseII.exe
+     1>Done Building Project "C:\Users\100517944\Documents\GitHub\Polandball\PhaseII\PhaseII\PhaseII.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.76
+Time Elapsed 00:00:11.79
