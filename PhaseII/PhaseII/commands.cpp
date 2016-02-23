@@ -3,8 +3,7 @@
 #include <iostream>
 using namespace std;
 /*!*/ // Indicates an admin level command
-void menu(account acct)
-{
+int menu(account acct) {
   string s_command;
   bool b_logged_in = true;
   while (cin >> s_command) {
@@ -36,19 +35,20 @@ void menu(account acct)
       logout(b_logged_in);
       if (b_logged_in)
       {
-        return;
+        return EXIT_SUCCESS;
       }
     }
     else {
       cout << "Invalid entry, terminating session.\n";
-      return;
+      return EXIT_SUCCESS;
     }
     cout << "\n>";
   }
+  return EXIT_SUCCESS;
 }
 
 //.......................................................................................................................................................................
-void withdrawal(account acct) {
+int withdrawal(account acct) {
   string s_firstname, s_lastname, s_fullname, s_acctnum;
   double d_wdamount;
   if (acct.n_level == ADMIN_ACCOUNT) {
@@ -62,7 +62,7 @@ void withdrawal(account acct) {
     }
     else {
       cout << "Error, invalid administrator name, killing withdraw request." << endl;
-      return;
+      return EXIT_SUCCESS;
     }
   }
   else {
@@ -97,9 +97,10 @@ void withdrawal(account acct) {
   else {
     cout << "Error, invalid account number, killing withdraw request.";
   }
+  return EXIT_SUCCESS;
 }
 //.......................................................................................................................................................................
-void transfer(account acct) {
+int transfer(account acct) {
   string s_firstname, s_lastname, s_fullname, sFromAcctNum, sToAcctNum;
   double d_trans_amount;
   account tToAccount;
@@ -114,7 +115,7 @@ void transfer(account acct) {
     }
     else {
       cout << "Error, the administrator name you entered is not recognized, terminating transaction...\n";
-      return;
+      return EXIT_SUCCESS;
     }
   }
   else {
@@ -158,9 +159,10 @@ void transfer(account acct) {
   else {
     cout << "Error, the account number you wish to transfer from is not recognized, ending transaction.\n";
   }
+  return EXIT_SUCCESS;
 }
 //.......................................................................................................................................................................
-void paybill(account acct) {
+int paybill(account acct) {
   string s_firstname, s_lastname, s_fullname, s_acctnum, sCompany;
   string sa_valid_companies[] = { "Bright Light Electric Company", "EC", "Credit Card Company Q", "CQ", "Low Definition TV, Inc", "TV" };
   double d_pay_amount;
@@ -172,7 +174,7 @@ void paybill(account acct) {
     acct = getAccountByName(s_fullname);
     if (acct.s_holdername.empty()) {
       cout << "The account name is not a recognized account name.\n";
-      return;
+      return EXIT_SUCCESS;
     }
   }
   else {
@@ -220,9 +222,10 @@ void paybill(account acct) {
   else {
     cout << "Unrecognized command." << endl;
   }
+  return EXIT_SUCCESS;
 }
 //.......................................................................................................................................................................
-void deposit(account acct) {
+int deposit(account acct) {
   string s_firstname, s_lastname, s_fullname, s_acctnum, sCompany;
   double d_deposit_amount;
   if (acct.n_level == ADMIN_ACCOUNT) {
@@ -233,7 +236,7 @@ void deposit(account acct) {
     acct = getAccountByName(s_fullname);
     if (acct.s_holdername.empty()) {
       cout << "The account name is not a recognized account name.\n";
-      return;
+      return EXIT_SUCCESS;
     }
   }
   else {
@@ -262,13 +265,14 @@ void deposit(account acct) {
   else {
     cout << "The account name is not a recognized account name.\n";
   }
+  return EXIT_SUCCESS;
 }
 //.......................................................................................................................................................................
-/*!*/void create(account acct)
+/*!*/int create(account acct)
 {
   if (acct.n_level != ADMIN_ACCOUNT) {
     cout << "TOKEN";
-    return;
+    return EXIT_SUCCESS;
   }
 
   account ac_newaccount;
@@ -289,7 +293,7 @@ void deposit(account acct) {
     cout << getAccountByName(ac_newaccount.s_holdername).s_holdername << endl;
     if (!getAccountByName(ac_newaccount.s_holdername).s_holdername.empty()) {
       cout << "This account name already exists. The account name must be unique in the system.";
-      return;
+      return EXIT_SUCCESS;
     }
     cin >> ac_newaccount.s_holdername;
   }
@@ -304,14 +308,15 @@ void deposit(account acct) {
   ac_newaccount.n_level = 0;
 
   writeStandardAccount(ac_newaccount);
+  return EXIT_SUCCESS;
 
 }
 //.......................................................................................................................................................................
-/*!*/void ac_delete(account acct)
+/*!*/int ac_delete(account acct)
 {
   if (acct.n_level != ADMIN_ACCOUNT) {
     cout << "TOKEN";
-    return;
+    return EXIT_SUCCESS;
   }
   
   string s_holdername, s_number;
@@ -324,27 +329,27 @@ void deposit(account acct) {
   if (acc_account.s_number.empty())
   {
     cout << "Account not found";
-    return;
+    return EXIT_SUCCESS;
   }
   if (s_holdername.compare(acc_account.s_holdername) == 0) {
     // Match
     cout << "Account deleted (stub)";
-    return;
+    return EXIT_SUCCESS;
   }
   else {
     cout << "Name and number provided do not match for this account. Aborting.";
-    return;
+    return EXIT_SUCCESS;
   }
   
 
 
 }
 //.......................................................................................................................................................................
-/*!*/void disable(account acct)
+/*!*/int disable(account acct)
 {
   if (acct.n_level != ADMIN_ACCOUNT) {
     cout << "TOKEN";
-    return;
+    return EXIT_SUCCESS;
   }
 
   string s_holdername, s_number;
@@ -356,26 +361,26 @@ void deposit(account acct) {
   account acc_account = getAccountByNumber(s_number);
   if (acc_account.s_number.empty()) {
     cout << "Account not found";
-    return;
+    return EXIT_SUCCESS;
   }
 
   if (s_holdername.compare(acc_account.s_holdername) == 0) {
     // Match
     cout << "Account disabled/enabled (stub)";
-    return;
+    return EXIT_SUCCESS;
   }
   else {
     cout << "Name and number do not match for this account. Aborting.";
-    return;
+    return EXIT_SUCCESS;
   }
 
 }
 //.......................................................................................................................................................................
-/*!*/void changeplan(account acct)
+/*!*/int changeplan(account acct)
 {
   if (acct.n_level != ADMIN_ACCOUNT) {
     cout << "TOKEN";
-    return;
+    return EXIT_SUCCESS;
   }
 
   string s_holdername, s_number;
@@ -387,27 +392,27 @@ void deposit(account acct) {
   account acc_account = getAccountByNumber(s_number);
   if (acc_account.s_number.empty()) {
     cout << "Account not found";
-    return;
+    return EXIT_SUCCESS;
   }
 
   if (s_holdername.compare(acc_account.s_holdername) == 0) {
     // Match
     cout << "Plan Changed (stub)";
-    return;
+    return EXIT_SUCCESS;
   }
   else {
     cout << "Name and number do not match for this account. Aborting.";
-    return;
+    return EXIT_SUCCESS;
   }
 
 }
 //.......................................................................................................................................................................
-void logout(bool b_logged_in)
-{
+int logout(bool b_logged_in) {
   if (b_logged_in) {
     cout << "Thank you for using the banking system, session ended, you have been successfully logged out.\n";
   }
   else {
     cout << "You must be logged in to log out.\n";
   }
+  return EXIT_SUCCESS;
 }

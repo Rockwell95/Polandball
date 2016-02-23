@@ -11,15 +11,15 @@ typedef struct {
   bool b_freezetransactions;
 }account;
 
-void menu(account acct); 
-void withdrawal(account acct);
-void transfer(account acct);
-void paybill(account acct);
-void deposit(account acct);
-void create(account acct);
-void ac_delete(account acct);	//delete is a key word in C++
-void disable(account acct);
-void changeplan(account acct);
-void logout(bool b_loggedin);
+int menu(account acct); 
+int withdrawal(account acct);
+int transfer(account acct);
+int paybill(account acct);
+int deposit(account acct);
+int create(account acct);
+int ac_delete(account acct);	//delete is a key word in C++
+int disable(account acct);
+int changeplan(account acct);
+int logout(bool b_loggedin);
 
 #endif // COMMANDS_H_

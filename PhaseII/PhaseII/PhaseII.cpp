@@ -78,6 +78,6 @@ int main(void) {
   
   terminate:
   system("pause");
-  return 0;
+  return EXIT_SUCCESS;
 
 }
