@@ -1,7 +1,7 @@
 login
 admin
 transfer
-scott
+scott mclean
 12345
 12344
 1100.00
