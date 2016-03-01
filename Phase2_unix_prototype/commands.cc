@@ -50,24 +50,24 @@ int menu(account acct) {
 int withdrawal(account acct) {
   string s_firstname, s_lastname, s_fullname, s_acctnum;
   double d_wdamount;
+  bool want_name;
+  prompt_struct pr;
   if (acct.n_level == ADMIN_ACCOUNT) {
-    cout << "Withdraw command selected. Please enter the administrator name:\n>";
-    cin >> s_firstname;
-    cin >> s_lastname;
-    s_fullname = s_firstname + " " + s_lastname;
-    acct = getAccountByName(s_fullname);
-    if (!acct.s_number.empty()) {
-      cout << "Name accepted, please enter the account number you wish to withdraw from :\n>";
-    }
-    else {
-      cout << "Error, invalid administrator name, killing withdraw request." << endl;
-      return 0;
-    }
+    cout << "Withdraw command selected. ";
+    want_name = true;
   }
   else {
-    cout << "Withdraw command selected. Please enter the account number you wish to withdraw funds from:\n>";
+    cout << "Withdraw command selected. ";
+    want_name = false;
   }
-  cin >> s_acctnum;
+  pr = prompt(want_name, true, &acct, "withdraw");
+  s_acctnum = pr.prompt_number;
+  cout << s_acctnum <<endl;
+  cout << pr.prompt_number << endl;
+  cout << acct.s_holdername << endl;
+  if(!pr.is_valid) {
+    return 1;
+  }
   if (s_acctnum.compare(acct.s_number) == 0) {
     cout << "Account number accepted, please enter the amount to withdraw:\n>";
   gt_another_svalue:
@@ -103,24 +103,22 @@ int transfer(account acct) {
   string s_firstname, s_lastname, s_fullname, sFromAcctNum, sToAcctNum;
   double d_trans_amount;
   account tToAccount;
+  prompt_struct pr;
+  bool want_name;
   if (acct.n_level == ADMIN_ACCOUNT) {
-    cout << "Transfer mode selected, please enter the administrator name:\n>";
-    cin >> s_firstname;
-    cin >> s_lastname;
-    s_fullname = s_firstname + " " + s_lastname;
-    acct = getAccountByName(s_fullname);
-    if (!acct.s_number.empty()) {
-      cout << "Name accepted, welcome " + s_fullname + ". Please enter the number of the account you wish to to transfer from : \n>";
+    cout << "Transfer mode selected, ";
+    want_name = true;
     }
-    else {
-      cout << "Error, the administrator name you entered is not recognized, terminating transaction...\n";
-      return 0;
-    }
-  }
   else {
-    cout << "Transfer mode selected, please enter the number of the account you wish to transfer from:\n>";
+    cout << "Transfer mode selected, ";
+    want_name = false;
   }
-  cin >> sFromAcctNum;
+  pr = prompt(want_name, true, &acct, "transfer");
+  sFromAcctNum = pr.prompt_number;
+  if(!pr.is_valid)
+  {
+    return 1;
+  }
   if (sFromAcctNum.compare(acct.s_number) == 0) {
     cout << "From account number accepted, please enter the number of the account you wish to transfer to:\n>";
     cin >> sToAcctNum;

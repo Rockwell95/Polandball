@@ -64,6 +64,36 @@ bool contains(string sa_values[], string value) {
   return found;
 }
 
+prompt_struct prompt(bool name, bool acct_num, account *acct, string command) {
+  string s_firstname, s_lastname, s_fullname, s_acctnum;
+  prompt_struct ps;
+  if(name) {
+    cout << "Please enter the administrator name:\n>";
+    cin >> s_firstname;
+    cin >> s_lastname;
+    s_fullname = s_firstname + " " + s_lastname;
+    ps.prompt_name = s_fullname;
+    *acct = getAccountByName(s_fullname);
+  }
+  else{
+    s_fullname = acct->s_holdername;
+  }
+  if(acct_num) {
+    if (!acct->s_number.empty()) {
+      cout << "Name accepted. Please enter the account number you wish to " + command + " from :\n>";
+      cin >> s_acctnum;
+      ps.prompt_number = s_acctnum;
+      cout << ps.prompt_number << endl;
+      ps.is_valid = true;
+    }
+    else {
+      cout << "Error, invalid administrator name, killing " + command + "." << endl;
+      ps.is_valid = false;
+    }
+  }
+  return ps;
+}
+
 int writeStandardAccount(account acct, string s_filename) {
   // ofstream ofs_outstream;
   // ofs_outstream.open(s_filename);

@@ -3,9 +3,16 @@
 #include "commands.h"
 #include <string>
 
+typedef struct {
+  std::string prompt_name;
+  std::string prompt_number;
+  bool is_valid;
+}prompt_struct;
+
 account getAccountByName(std::string s_holdername, std::string s_filename = "current_accounts.txt");
 account getAccountByNumber(std::string s_number, std::string s_filename = "current_accounts.txt");
 bool contains(std::string sa_values[], std::string value);
+prompt_struct prompt(bool name, bool acct_num, account *acct, std::string command = "ERROR");
 
 // Insert a new account into s_filename.
 int writeStandardAccount(account acct, std::string s_filename = "current_accounts.txt");
