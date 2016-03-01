@@ -163,61 +163,54 @@ int paybill(account acct) {
   string s_firstname, s_lastname, s_fullname, s_acctnum, sCompany;
   string sa_valid_companies[] = { "Bright Light Electric Company", "EC", "Credit Card Company Q", "CQ", "Low Definition TV, Inc", "TV" };
   double d_pay_amount;
+  bool want_name;
+  prompt_struct pr;
   if (acct.n_level == ADMIN_ACCOUNT) {
-    cout << "Pay bill command selected. Please enter the administrator name:\n>";
-    cin >> s_firstname;
-    cin >> s_lastname;
-    s_fullname = s_firstname + " " + s_lastname;
-    acct = getAccountByName(s_fullname);
-    if (acct.s_holdername.empty()) {
-      cout << "The account name is not a recognized account name.\n";
-      return 0;
-    }
+    want_name = true;
   }
   else {
-    cout << "Pay bill command selected. ";
+    want_name = false;
   }
-  if (!acct.s_number.empty()) {
-    cout << "Please enter the account number you wish to pay from :\n>";
-    cin >> s_acctnum;
-    if (s_acctnum.compare(acct.s_number) == 0) {
-      cout << "Please enter the company name to pay:\n>";
-      cin >> sCompany;
-      if (contains(sa_valid_companies, sCompany)) {
-        cout << "Please enter an amount to pay:\n>";
-        gt_another_spayment_value:
-        if (cin >> d_pay_amount && d_pay_amount <= 2000 && d_pay_amount >= 0.01) {
-          acct.d_balance -= d_pay_amount;
-          cout << "Payment Successful.\nNew Balance: ";
-          cout << acct.d_balance;
-        }
-        else if (cin >> d_pay_amount && d_pay_amount > 2000) {
-          cout << "The maximum amount that can be paid to a bill holder is $2000.00 in the current session. The amount entered exceeds $2000.00\n>";
-          goto  gt_another_spayment_value;
-        }
-        else if (cin >> d_pay_amount && d_pay_amount < 0.01) {
-          cout << "The minimum amount that can be paid to a bill holder is greater than $0.00 in the current session.\n>";
-          goto  gt_another_spayment_value;
-        }
-        else if (cin >> d_pay_amount && d_pay_amount > acct.d_balance) {
-          cout << "The payment exceeds the current account balance. Payment has not been processed.\n>";
-          goto  gt_another_spayment_value;
-        }
-        else {
-          cout << "Please enter a valid dollar amount for this bill payment. Example: 500.00.\n>";
-          goto  gt_another_spayment_value;
-        }
+  cout << "Pay bill command selected. ";
+  pr = prompt(want_name, true, &acct, "pay bill");
+  if(!pr.is_valid) {
+    return 1;
+  }
+  s_acctnum = pr.prompt_number;
+  if (s_acctnum.compare(acct.s_number) == 0) {
+    cout << "Please enter the company name to pay:\n>";
+    cin >> sCompany;
+    if (contains(sa_valid_companies, sCompany)) {
+      cout << "Please enter an amount to pay:\n>";
+      gt_another_spayment_value:
+      if (cin >> d_pay_amount && d_pay_amount <= 2000 && d_pay_amount >= 0.01) {
+        acct.d_balance -= d_pay_amount;
+        cout << "Payment Successful.\nNew Balance: ";
+        cout << acct.d_balance;
+      }
+      else if (cin >> d_pay_amount && d_pay_amount > 2000) {
+        cout << "The maximum amount that can be paid to a bill holder is $2000.00 in the current session. The amount entered exceeds $2000.00\n>";
+        goto  gt_another_spayment_value;
+      }
+      else if (cin >> d_pay_amount && d_pay_amount < 0.01) {
+        cout << "The minimum amount that can be paid to a bill holder is greater than $0.00 in the current session.\n>";
+        goto  gt_another_spayment_value;
+      }
+      else if (cin >> d_pay_amount && d_pay_amount > acct.d_balance) {
+        cout << "The payment exceeds the current account balance. Payment has not been processed.\n>";
+        goto  gt_another_spayment_value;
       }
       else {
-        cout << "The company name is not a recognized company name.\n";
+        cout << "Please enter a valid dollar amount for this bill payment. Example: 500.00.\n>";
+        goto  gt_another_spayment_value;
       }
     }
     else {
-      cout << "The account number entered is not a recognized account number in the system.\n";
+      cout << "The company name is not a recognized company name.\n";
     }
   }
   else {
-    cout << "Unrecognized command." << endl;
+    cout << "The account number entered is not a recognized account number in the system.\n";
   }
   return 0;
 }
@@ -225,42 +218,35 @@ int paybill(account acct) {
 int deposit(account acct) {
   string s_firstname, s_lastname, s_fullname, s_acctnum, sCompany;
   double d_deposit_amount;
+  bool want_name;
+  prompt_struct pr;
   if (acct.n_level == ADMIN_ACCOUNT) {
-    cout << "Deposit command selected. Please enter the administrator name:\n>";
-    cin >> s_firstname;
-    cin >> s_lastname;
-    s_fullname = s_firstname + " " + s_lastname;
-    acct = getAccountByName(s_fullname);
-    if (acct.s_holdername.empty()) {
-      cout << "The account name is not a recognized account name.\n";
-      return 0;
-    }
+    want_name = true;
   }
   else {
-    cout << "Deposit command selected. ";
+    want_name = false;
   }
-  if (!acct.s_number.empty()) {
-    cout << "Please enter the account number:\n>";
-    cin >> s_acctnum;
-    if (s_acctnum.compare(acct.s_number) == 0) {
-      cout << "Please enter an amount to deposit: \n";
-      gt_another_deposit_value:
-      if (cin >> d_deposit_amount && d_deposit_amount >= 0.01) {
-        acct.d_balance += d_deposit_amount;
-        cout << "Deposit successful.\nNew Balance: ";
-        cout << acct.d_balance;
-      }
-      else {
-        cout << "Please enter a valid amount to deposit.Example: 200.00";
-        goto  gt_another_deposit_value;
-      }
+  cout << "Deposit command selected. ";
+  pr = prompt(want_name, true, &acct, "deposit");
+  if(!pr.is_valid) {
+    return 1;
+  }
+  s_acctnum = pr.prompt_number;
+  if (s_acctnum.compare(acct.s_number) == 0) {
+    cout << "Please enter an amount to deposit: \n";
+    gt_another_deposit_value:
+    if (cin >> d_deposit_amount && d_deposit_amount >= 0.01) {
+      acct.d_balance += d_deposit_amount;
+      cout << "Deposit successful.\nNew Balance: ";
+      cout << acct.d_balance;
     }
     else {
-      cout << "The account number entered is not a recognized account number." << endl;
+      cout << "Please enter a valid amount to deposit.Example: 200.00";
+      goto  gt_another_deposit_value;
     }
   }
   else {
-    cout << "The account name is not a recognized account name.\n";
+    cout << "The account number entered is not a recognized account number." << endl;
   }
   return 0;
 }
