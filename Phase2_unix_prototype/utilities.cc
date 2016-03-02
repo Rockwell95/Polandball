@@ -82,6 +82,15 @@ bool contains(string sa_values[], string value) {
   return found;
 }
 
+/*
+  prompt() is a functions that takes a boolean for whether a name is wanted, another boolean that
+  determines whether the account number is required, a pointer to an accout, and a strong containing
+  the specified command name. The function will get user input for a name and number (if either are
+  requested by the function caller) and will store them in a struct that it returns to the caller.
+  This struct can then be used in whatever way necessary. In the even a name is requested, but not found,
+  or a number is requested but not found, a flag is set, marking the struct as "invalid", thus telling the
+  caller that the values in the structs are incomplete, and should be rejected.
+*/
 prompt_struct prompt(bool name, bool acct_num, account *acct, string command) {
   string s_firstname, s_lastname, s_fullname, s_acctnum;
   prompt_struct ps;
