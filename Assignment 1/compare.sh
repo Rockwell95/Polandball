@@ -1,3 +1,9 @@
+#!/bin/bash
+
+if [ -f failedtests.txt ] ; then
+  rm failedtests.txt
+fi
+
 for d in */;
 do
   #.................... FOR ADMIN TESTS .......................................
@@ -6,11 +12,7 @@ do
     echo "====================="
     # echo "$a_file"
     a_file_base="${a_file##*/}"
-    # echo "$a_file_base"
-    size=$((${#a_file}-4));
-    # echo "$size"
-    output_t=$(echo $a_file_base | cut -c 1-$size)
-    # echo "$output_t"
+    output_t=${a_file_base%.*}
     out_file="$output_t"_o.txt
     # echo "$out_file"
 
@@ -29,11 +31,7 @@ do
     echo "====================="
     # echo "$s_file"
     s_file_base="${s_file##*/}"
-    # echo "$s_file_base"
-    size=$((${#s_file}-4));
-    # echo "$size"
-    output_t=$(echo $s_file_base | cut -c 1-$size)
-    # echo "$output_t"
+    output_t=${s_file_base%.*}
     out_file="$output_t"_o.txt
     # echo "$out_file"
 
