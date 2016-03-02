@@ -5,6 +5,13 @@
 
 using namespace std;
 
+/*
+  getAccountByName is a function that takes an account holder name, and a filename as an argument.
+  This function is used to retrieve information from an account by the name of the account holder.
+  The account holder name is searched for in the accounts textfile, once found it will grab the
+  line that the account holder name was found and store all the information on that line into
+  an account object.
+*/
 account getAccountByName(string s_holdername, string s_filename) {
   string s_account_line;
   ifstream ifs_accounts_file;
@@ -27,6 +34,14 @@ account getAccountByName(string s_holdername, string s_filename) {
   }
   return acct;
 }
+
+/*
+  getAccountByNumber is a function that takes an account number, and a filename as an argument.
+  This function is used to retrieve information from an account by the account number of the account holder.
+  The account number is searched for in the accounts textfile, once found it will grab the
+  line that the account number was found and store all the information on that line into
+  an account object.
+*/
 account getAccountByNumber(string s_number, string s_filename) {
   string s_account_line;
   ifstream ifs_accounts_file;
@@ -52,6 +67,9 @@ account getAccountByNumber(string s_number, string s_filename) {
   return acct;
 }
 
+/*
+  This function is used to compare 2 strings and will return true if the strings match.
+*/
 bool contains(string sa_values[], string value) {
   bool found = false;
   for (int i = 0; i < sizeof(sa_values); i++) {
