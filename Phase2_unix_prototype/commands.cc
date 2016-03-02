@@ -2,6 +2,20 @@
 #include <iostream>
 using namespace std;
 /*!*/ // Indicates an admin level command
+
+/*
+  The menu function acts as the main menu for users at the bank.
+  From the main menu a user can access the various transactions that take place at the bank.
+
+  When selecting an option the menu will open up the corressponding function that is needed
+  so that the proper transaction can take place.
+
+  Our Transactions include for all users
+  Withdrawal, Transfer, Paybill, Deposit, Logout
+
+  For The Admin User
+  Enable, Disable, Changeplan, Delete
+*/
 int menu(account acct) {
   string s_command;
   bool b_logged_in = true;
@@ -37,8 +51,8 @@ int menu(account acct) {
         return 0;
       }
     }
-    else {
       cout << "Invalid entry, terminating session.\n";
+      else {
       return 0;
     }
     cout << "\n>";
@@ -46,7 +60,29 @@ int menu(account acct) {
   return 0;
 }
 
-//.......................................................................................................................................................................
+/*
+  The withdrawal function takes an Account Object as an argument
+  The function will be used to withdraw funds from an account that is given.
+  This function has 2 modes, an Admin Functionality and a Regular Account Holder Functionality
+
+  The Admin Functionality will first prompt the admin for their full name to verify that the account
+  is of type admin. If the admin account is not found the function will redirect the logged in user
+  to the main menu. Once admin is verified, the admin will be able to withdraw from an Account
+  that they specify by the account number that they request funds from.
+
+  The Regular Account Holder Functionality will verify that they have an account at the bank.
+  This is done by prompting the account holder for their account number, the account number will
+  then be compared to the account number in the account object. If the account number does not match
+  the transaction will be terminated and the user will be sent back to the main menu.
+
+  After proper data validation for both Admin and Regular Account Holder, the program will continue with
+  the withdrawal, it will then make sure that the ammount requested for is valid by bank guidelines.
+    - Paper Transations Only ($5, $10, $20, $50, $100)
+    - No Transactions Greater Than $500 Allowed
+    - Daily Limit Not Reached (For Regular Account Holder, $500)
+    - Sufficient Funds Exist in Account
+
+*/
 int withdrawal(account acct) {
   string s_firstname, s_lastname, s_fullname, s_acctnum;
   double d_wdamount;
@@ -98,7 +134,35 @@ int withdrawal(account acct) {
   }
   return 0;
 }
-//.......................................................................................................................................................................
+
+
+/*
+  The Transfer function takes an Account Object as an argument
+  The function will be used to transfer funds from an account that is given to another account.
+  This function has 2 modes, an Admin Functionality and a Regular Account Holder Functionality
+
+  The Admin Functionality will first prompt the admin for their full name to verify that the account
+  is of type admin. If the admin account is not found the function will redirect the logged in user
+  to the main menu. Once admin is verified, the admin will be able to transfer from an Account
+  that they specify by the account number that they transfer funds from.
+
+  The Regular Account Holder Functionality will verify that they have an account at the bank.
+  This is done by prompting the account holder for their account number, the account number will
+  then be compared to the account number in the account object. If the account number does not match
+  the transaction will be terminated and the user will be sent back to the main menu.
+
+  After proper data validation for both Admin and Regular Account Holder, the program will continue with
+  the transaction, it will retrieve input for the account that they wish to transfer funds to. The entered
+  account number will then be compared to the accounts file to make sure that the account exists with the
+  bank. If the account entered does not exist the user will be notified and the transaction will be terminated.
+
+  If the account number is valid, the amount will then be validated to ensure that the transaction will be completed.
+  This is done by following the guidelines that the bank has in place for the transfer of funds.
+      - Amount to be transffered will have to be greater than $0, and less than or equal to $1000
+      - Amount to be transffered if decimal must be of 2 floating point values ($12.50 is allowed, not $12.509, etc)
+      - Sufficient amount of funds exist in the account transferring funds from
+
+*/
 int transfer(account acct) {
   string s_firstname, s_lastname, s_fullname, sFromAcctNum, sToAcctNum;
   double d_trans_amount;
@@ -158,7 +222,34 @@ int transfer(account acct) {
   }
   return 0;
 }
-//.......................................................................................................................................................................
+
+/*
+  The paybill function takes an account object as an argument.
+  This function is used to pay bills that have been charged to a customer.
+  The function has 2 modes for Admin Functionality and Regular Account Holder Functionality
+
+  The Admin Functionality will first prompt the admin for their full name to verify that the account
+  is of type admin. If the admin account is not found the function will redirect the logged in user
+  to the main menu. Once admin is verified, the admin will be able to pay bills from an Account
+  that they specify by account number.
+
+  The Regular Account Holder Functionality will verify that they have an account at the bank.
+  This is done by prompting the account holder for their account number, the account number will
+  then be compared to the account number in the account object. If the account number does not match
+  the transaction will be terminated and the user will be sent back to the main menu.
+
+  After validation the account function will then prompt the user for the company that they wish to pay a bill
+  to. The company must then be of a valid company that exists according to the requirements for the paybill function
+  If the company does not exist, the transaction will be terminated and user will be returned to the main menu.
+
+  If the company is valid, the user is requested for the amount that is to be paid to the company.
+  The amount entered will then go through the validation functionality to ensure the transaction will be completed.
+  Guidelines for Paybill Are as follows below.
+      - Amount to be paid must be greater than $0 and less than or equal to $2000
+      - Amount to be paid must be a value that has 2 precision of decimal places ($20.40, not $20.409)
+      - Sufficient Amount of funds must exist in the account
+
+*/
 int paybill(account acct) {
   string s_firstname, s_lastname, s_fullname, s_acctnum, sCompany;
   string sa_valid_companies[] = { "Bright Light Electric Company", "EC", "Credit Card Company Q", "CQ", "Low Definition TV, Inc", "TV" };
@@ -214,7 +305,28 @@ int paybill(account acct) {
   }
   return 0;
 }
-//.......................................................................................................................................................................
+
+/*
+  The Deposit function takes an Account Object as an argument
+  The function will be used to deposit funds into an account that is given.
+  This function has 2 modes, an Admin Functionality and a Regular Account Holder Functionality
+
+  The Admin Functionality will first prompt the admin for their full name to verify that the account
+  is of type admin. If the admin account is not found the function will redirect the logged in user
+  to the main menu. Once admin is verified, the admin will be able to deposit funds into an Account
+  that they specify by account number.
+
+  The Regular Account Holder Functionality will verify that they have an account at the bank.
+  This is done by prompting the account holder for their account number, the account number will
+  then be compared to the account number in the account object. If the account number does not match
+  the transaction will be terminated and the user will be sent back to the main menu.
+
+  After proper data validation for both Admin and Regular Account Holder, the program will continue with
+  the deposit, it will then make sure that the amount to be deposited is valid by bank guidelines.
+    - Paper Transations Only ($5, $10, $20, $50, $100)
+
+
+*/
 int deposit(account acct) {
   string s_firstname, s_lastname, s_fullname, s_acctnum, sCompany;
   double d_deposit_amount;
@@ -250,7 +362,27 @@ int deposit(account acct) {
   }
   return 0;
 }
-//.......................................................................................................................................................................
+
+/*
+  The Create Account function will be taking an account object as an argument.
+  This function is only accessible by an administrator account at the bank.
+
+  If the account logged in does not have admin priviledges the transaction will be instantly
+  terminated, and the user will be returned to the main menu.
+
+  The account to be created will be stored into an account object.
+  The new account holder's name will be requested first.
+  An account holder name must be filled and be less than 20 characters.
+  The account holder name must be unique to the bank, no duplicate names allowed.
+
+  After Account Holder name is accepted an initial balance to the account can be added
+  The balance must be greater than $0 and less than or equal to $99999.99
+
+  An account number will then be randomly generated, the account will be set to active
+  and the level of the account will be set.
+
+*/
+
 /*!*/int create(account acct)
 {
   if (acct.n_level != ADMIN_ACCOUNT) {
@@ -294,7 +426,17 @@ int deposit(account acct) {
   return 0;
 
 }
-//.......................................................................................................................................................................
+
+/*
+  The ac_delete function takes an account object as an argument
+  This function is only accessible by an administrator account, if account currently logged in
+  is not an admin, the transaction will be instantly terminated, and user will be returned to the
+  main menu.
+
+  The program will then delete the account that is requested by the admin as long as they exist
+  at the bank.
+
+*/
 /*!*/int ac_delete(account acct)
 {
   if (acct.n_level != ADMIN_ACCOUNT) {
@@ -332,7 +474,19 @@ int deposit(account acct) {
 
 
 }
-//.......................................................................................................................................................................
+
+/*
+  The disable function takes an account object as an argument.
+  This function is accessible only by an admin account, if the account that is currently logged in
+  is not an admin, the transaction will be terminated and the user will be returned to the main menu.
+
+  The function will then prompt for the account that is to be disabled, this is done by prompting for
+  the name and account number that correspond to each other. If the account is not found in the system
+  the transaction is killed and the admin is returned back to the main menu.
+
+  If the account is valid the account will be disabled.
+
+*/
 /*!*/int disable(account acct)
 {
   if (acct.n_level != ADMIN_ACCOUNT) {
@@ -368,7 +522,22 @@ int deposit(account acct) {
   }
 
 }
-//.......................................................................................................................................................................
+
+/*
+  The changeplan function will take an account object as an argument.
+  This function is accessible only by an admin account, if the account that is currently logged in
+  is not an admin, the transaction will be terminated and the user will be returned to the main menu.
+
+  The changeplan function is used to change an account of a student type to a regular account type.
+
+  This is done by prompting for an account number and account name that correspond to each other.
+  If account name and number do not match the admin is returned to the main menu.
+
+  Once the account is found the function will make sure that the type of account is of student.
+  If it is not a student account the admin will be returned to the main menu.
+  if the account is a student account it will be changed into a regular account.
+
+*/
 /*!*/int changeplan(account acct)
 {
   if (acct.n_level != ADMIN_ACCOUNT) {
@@ -404,7 +573,13 @@ int deposit(account acct) {
   }
 
 }
-//.......................................................................................................................................................................
+
+/*
+  The logout function is used to terminate the session that is currently logged in.
+  It will check if a user is logged in, in order to logout of the system.
+  If logout is successful the user will recieve a message on the screen telling them that
+  their session has been ended.
+*/
 int logout(bool b_logged_in) {
   if (b_logged_in) {
     cout << "Thank you for using the banking system, session ended, you have been successfully logged out.\n";
