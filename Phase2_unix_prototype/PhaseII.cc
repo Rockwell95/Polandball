@@ -1,4 +1,26 @@
-// PhaseII.cpp : Defines the entry point for the console application.
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+|  File: phaseii.cc                                                                                                 |
+|  Authors: Dominick Mancini, Scott Mclean, Janahan Nirmalan                                                        |
+|                                                                                                                   |
+|  Description: This program emulates a the front-end of a banking system.                                          |
+|               A User will be asked to login upon execution of this program                                        |
+|               Login information consists of                                                                       |
+|                  - Type of login (Standard or Admin)                                                              |
+|                  - Account Holder Name                                                                            |
+|                                                                                                                   |
+|               The account holder name will be verified to make sure the account exists                            |
+|               in the system. If the account holder name is not found in the system the user                       |
+|               will be notified that the account does not exist in the system, and will have                       |
+|               to try logging in again.                                                                            |
+|                                                                                                                   |
+|               If Admin Type is selected the Account Name will be verified to ensure the account                   |
+|               is of type admin, if the account entered is not of type admin the user will be notified             |
+|               and will be redirected to the login screen.                                                         |
+|                                                                                                                   |
+|               Upon successful login for standard and admin, the user will be greeted with their name and          |
+|               will then be presented with the main menu to complete transactions that take place at the bank      |
+|                                                                                                                   |
+*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 #include <iostream>
 #include <fstream>
@@ -53,7 +75,7 @@ int main(void) {
         menu(act_adminacct);
 	  }
 	  else {
-		goto invalid;
+		    goto invalid;
 	  }
     }
     else if (s_input.compare("logout") == 0) {
