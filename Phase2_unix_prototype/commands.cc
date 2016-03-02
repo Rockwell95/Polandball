@@ -302,15 +302,18 @@ int deposit(account acct) {
     return 0;
   }
 
-//  string s_holdername, s_number;
+  string s_holdername, s_number;
 //  cout << "Enter the name of the account holder: ";
 //  cin >> s_holdername;
 //  cout << "Enter the account number of the account holder: ";
 //  cin >> s_number;
-  prompt pr;
+  prompt_struct pr;
   pr = prompt(true, true, &acct, "delete");
 
-  account acc_account = getAccountByNumber(s_number);
+  account acc_account = acct;
+  s_holdername = pr.prompt_name;
+  s_number = pr.prompt_number;
+
   if (acc_account.s_number.empty())
   {
     cout << "Account not found";
@@ -338,7 +341,7 @@ int deposit(account acct) {
   }
   prompt_struct pr;
 
-//  string s_holdername, s_number;
+  string s_holdername, s_number;
 //  cout << "Enter the name of the account holder: ";
 //  cin >> s_holdername;
 //  cout << "Enter the account number of the account holder: ";
@@ -346,6 +349,9 @@ int deposit(account acct) {
 
   pr = prompt(true,true,&acct, "disable");
   account acc_account = acct;
+  s_holdername = pr.prompt_name;
+  s_holdername = pr.prompt_number;
+
   if (acc_account.s_number.empty()) {
     cout << "Account not found";
     return 0;
@@ -370,15 +376,18 @@ int deposit(account acct) {
     return 0;
   }
 
-//  string s_holdername, s_number;
+  string s_holdername, s_number;
 //  cout << "Enter the name of the account holder: ";
 //  cin >> s_holdername;
 //  cout << "Enter the account number of the account holder: ";
 //  cin >> s_number;
 
-  prompt pr;
+  prompt_struct pr;
   pr = prompt(true, true, &acct, "changeplan");
   account acc_account = getAccountByNumber(s_number);
+  s_holdername = pr.prompt_name;
+  s_holdername = pr.prompt_number;
+
   if (acc_account.s_number.empty()) {
     cout << "Account not found";
     return 0;
