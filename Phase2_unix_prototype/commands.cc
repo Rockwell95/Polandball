@@ -406,6 +406,9 @@ int deposit(account acct) {
   while (s_first.empty() == true || s_last.empty() == true) {
     cout << "Enter the full name for the new account holder: ";
     cin >> s_first;
+    if (s_first.compare("quit") == 0) {
+      exit(0);
+    }
     cin >> s_last;
   }
   ac_newaccount.s_holdername = s_first + " " + s_last;
@@ -460,8 +463,7 @@ int deposit(account acct) {
 //  cin >> s_holdername;
 //  cout << "Enter the account number of the account holder: ";
 //  cin >> s_number;
-  prompt_struct pr;
-  pr = prompt(true, true, &acct, "delete");
+  prompt_struct pr = prompt(true, true, &acct, "delete");
 
   account acc_account = acct;
   s_holdername = pr.prompt_name;
