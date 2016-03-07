@@ -91,9 +91,7 @@ int main(void) {
 	  cout << "Invalid command. \"" + s_elevation + "\" is not known, please try again." << endl;
     }
 
-    cout << "System resetting in 3 seconds\n";
-    usleep(3000000);
-    system("clear");
+    cout << "\n\n\n\n\n\n\n" << endl;
     cout << "Welcome to the automated banking system! Please login\n>";
   }
 

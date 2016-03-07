@@ -51,8 +51,8 @@ int menu(account acct) {
         return 0;
       }
     }
+    else {
       cout << "Invalid entry, terminating session.\n";
-      else {
       return 0;
     }
     cout << "\n>";
