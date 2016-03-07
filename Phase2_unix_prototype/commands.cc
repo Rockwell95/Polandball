@@ -1,5 +1,7 @@
 #include "utilities.h"
+#include <stdlib.h>
 #include <iostream>
+#include <iomanip>
 using namespace std;
 /*!*/ // Indicates an admin level command
 
@@ -50,6 +52,10 @@ int menu(account acct) {
       {
         return 0;
       }
+    }
+    else if(s_command.compare("quit") == 0) {
+      cout << "Quitting..." <<endl;
+      exit(0);
     }
     else {
       cout << "Invalid entry, terminating session.\n";
@@ -193,7 +199,12 @@ int transfer(account acct) {
       if (cin >> d_trans_amount && d_trans_amount <= 1000 && d_trans_amount >= 0.01) {
         acct.d_balance -= d_trans_amount;
         tToAccount.d_balance += d_trans_amount;
-        cout << "Done!\nNew Balance: ";
+        cout << fixed;
+        cout << setprecision(2);
+        cout << "Transferring $";
+        cout << d_trans_amount;
+        cout << " from " + sFromAcctNum + " to " + sToAcctNum + ".";
+        cout << "\n\nTransfer complete, ending transaction...";
         cout << acct.d_balance;
       }
       else if (cin >> d_trans_amount && d_trans_amount > 1000) {
