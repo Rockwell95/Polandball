@@ -1,5 +1,5 @@
 login
 standard
-Scott mclean
+scott mclean
 deposit
 *(&(*989f8a

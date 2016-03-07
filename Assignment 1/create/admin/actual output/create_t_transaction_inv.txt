@@ -1,0 +1,12 @@
+Welcome to the automated banking system! Please login
+>Invalid command. "200.00" is not known, please try again.
+
+
+
+
+
+
+
+
+Welcome to the automated banking system! Please login
+>

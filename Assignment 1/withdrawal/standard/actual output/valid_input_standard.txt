@@ -1,0 +1,22 @@
+Welcome to the automated banking system! Please login
+>Invalid command. "dominick" is not known, please try again.
+
+
+
+
+
+
+
+
+Welcome to the automated banking system! Please login
+>Invalid command. "mancini" is not known, please try again.
+
+
+
+
+
+
+
+
+Welcome to the automated banking system! Please login
+>

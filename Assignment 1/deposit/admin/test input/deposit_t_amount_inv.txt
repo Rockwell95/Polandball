@@ -1,6 +1,6 @@
 login
 admin
 deposit
-Scott mclean
+scott mclean
 100379538
 654686dasfsaf

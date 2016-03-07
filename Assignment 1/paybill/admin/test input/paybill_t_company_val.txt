@@ -1,6 +1,6 @@
 login
 admin
 paybill
-Scott mclean
+scott mclean
 100379538
 EC

@@ -1,6 +1,6 @@
 login
 standard
-Scott mclean
+scott mclean
 paybill
 100379538
 EZ

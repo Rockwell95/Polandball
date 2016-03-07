@@ -1,5 +1,5 @@
 login
 admin
 deposit
-Scott mclean
+scott mclean
 *(&(*989f8a
