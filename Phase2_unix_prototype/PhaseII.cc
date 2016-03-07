@@ -91,7 +91,7 @@ int main(void) {
 	  cout << "Invalid command. \"" + s_elevation + "\" is not known, please try again." << endl;
     }
 
-    cout << "\n\n\n\n\n\n\n" << endl;
+    cout << "\n";
     cout << "Welcome to the automated banking system! Please login\n>";
   }
 
