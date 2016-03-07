@@ -5,3 +5,5 @@ paybill
 100379538
 EC
 sd9vfh98(*)
+quit
+quit

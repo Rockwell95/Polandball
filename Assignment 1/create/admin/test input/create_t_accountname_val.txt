@@ -2,3 +2,5 @@ login
 admin
 create
 scott mclean
+quit
+quit

@@ -2,3 +2,5 @@ login
 standard
 scott mclean
 changeplan
+quit
+quit

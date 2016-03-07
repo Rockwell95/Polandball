@@ -1,1 +1,3 @@
 logout
+quit
+quit

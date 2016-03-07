@@ -3,3 +3,5 @@ standard
 dominick mancini
 logout
 withdrawal
+quit
+quit

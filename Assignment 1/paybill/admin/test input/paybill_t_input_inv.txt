@@ -2,3 +2,5 @@ login
 admin
 paybill
 *)(!&%(*!%&!*()%08
+quit
+quit

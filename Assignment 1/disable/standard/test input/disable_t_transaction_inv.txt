@@ -2,3 +2,5 @@ login
 standard
 scott mclean
 withdraw
+quit
+quit

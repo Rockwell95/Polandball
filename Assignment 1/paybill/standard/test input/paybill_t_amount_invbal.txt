@@ -5,3 +5,5 @@ paybill
 100379538
 EC
 2000.00
+quit
+quit

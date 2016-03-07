@@ -2,3 +2,5 @@ login
 admin
 deposit
 scott mclean
+quit
+quit

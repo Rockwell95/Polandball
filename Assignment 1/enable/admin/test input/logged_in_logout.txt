@@ -1,3 +1,5 @@
 login
 admin
 logout
+quit
+quit

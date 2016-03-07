@@ -2,3 +2,5 @@ login
 admin
 withdrawal
 scott mclean
+quit
+quit

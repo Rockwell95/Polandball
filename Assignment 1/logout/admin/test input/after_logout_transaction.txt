@@ -2,3 +2,5 @@ login
 admin
 logout
 withdrawal
+quit
+quit

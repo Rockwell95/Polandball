@@ -2,3 +2,5 @@ login
 admin
 delete
 5%198124k
+quit
+quit

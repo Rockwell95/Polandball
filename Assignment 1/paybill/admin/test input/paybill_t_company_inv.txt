@@ -4,3 +4,6 @@ paybill
 scott mclean
 100379538
 EZ
+
+quit
+quit

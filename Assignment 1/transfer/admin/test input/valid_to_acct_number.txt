@@ -4,3 +4,5 @@ transfer
 scott mclean
 12345
 12344
+quit
+quit

@@ -2,3 +2,5 @@ login
 admin
 paybill
 scott mclean
+quit
+quit

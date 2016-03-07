@@ -2,3 +2,5 @@ login
 standard
 dominick mancini
 transfil
+quit
+quit

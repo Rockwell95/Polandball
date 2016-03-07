@@ -2,3 +2,5 @@ login
 admin
 disable
 27458NHJSHF
+quit
+quit

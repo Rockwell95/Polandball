@@ -1,3 +1,5 @@
 login
 admin
 changeplan
+quit
+quit
