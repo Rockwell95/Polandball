@@ -13,7 +13,7 @@ IFS=$(echo -en "\n\b")
     mkdir -p $PRE"/actual output/"
   while read fileContents
     do
-      echo "$fileContents"
+      #echo "$fileContents"
       COMMANDS+=($fileContents)
     done < $fileLine
       (for each in "${COMMANDS[@]}"; do echo "$each"; done) | ./Phase2_unix_prototype/Phase2.exe > "$FILEOUT"
