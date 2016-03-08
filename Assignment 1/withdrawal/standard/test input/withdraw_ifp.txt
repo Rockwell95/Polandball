@@ -1,9 +1,0 @@
-login
-standard
-dominick mancini
-withdrawal
-dominick mancini
-12344
-200.0001
-quit
-quit

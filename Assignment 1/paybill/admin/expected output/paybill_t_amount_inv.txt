@@ -3,11 +3,10 @@ Logging in, are you logging in as standard or admin?
 Welcome, administrator
 Pay bill command selected. 
 Please enter the administrator name:
-Error, invalid administrator name, killing pay bill.
-Invalid entry, terminating session.
-Welcome to the automated banking system! Please login
-Invalid command. "EC" is not known, please try again.
-Welcome to the automated banking system! Please login
-Invalid command. "sd9vfh98(*)" is not known, please try again.
+Please enter the account number you wish to pay from :
+Please enter the company name to pay:
+Please enter an amount to pay:
+Please enter a valid dollar amount for this bill payment. Example: 500.00.
+Unrecognized command.
 Welcome to the automated banking system! Please login
 Quitting...

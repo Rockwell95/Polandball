@@ -3,9 +3,7 @@ Logging in, are you logging in as standard or admin?
 Welcome, administrator
 Pay bill command selected. 
 Please enter the administrator name:
-Error, invalid administrator name, killing pay bill.
-Invalid entry, terminating session.
-Welcome to the automated banking system! Please login
-Invalid command. "EZ" is not known, please try again.
-Welcome to the automated banking system! Please login
+Please enter the account number you wish to pay from :
+Please enter the company name to pay:
+The company name is not a recognized company name.
 Quitting...
