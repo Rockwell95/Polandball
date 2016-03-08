@@ -4,10 +4,6 @@ Welcome, administrator
 Please enter the administrator name:
 Error, invalid administrator name, killing delete.
 Account not found
-<<<<<<< HEAD
 Invalid entry, terminating session.
 Welcome to the automated banking system! Please login
 Quitting...
-=======
-Welcome to the automated banking system! Please login
->>>>>>> cd2303da6348e1222be8cc1d97a8b2fff9ed27e0

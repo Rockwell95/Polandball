@@ -19,7 +19,7 @@ account getAccountByName(string s_holdername, string s_filename) {
   account acct;
   while (getline(ifs_accounts_file, s_account_line)) {
     if ((s_holdername).compare(s_account_line.substr(6,
-      (s_holdername.length()))) == 0) {
+      (s_holdername.length()))) <= 0) {
       acct.s_holdername = s_holdername;
       // cout << acct.s_holdername << endl;
       acct.n_level = STANDARD_ACCOUNT;
@@ -51,7 +51,7 @@ account getAccountByNumber(string s_number, string s_filename) {
     // cout << (s_account_line.substr(6, (acct.s_holdername.length()))) + "==" << endl;
     // cout << acct.s_holdername + "==" << endl;
 
-    if (s_number.compare(s_account_line.substr(0, s_number.length())) == 0) {
+    if (s_number.compare(s_account_line.substr(0, s_number.length())) <= 0) {
       acct.s_holdername = s_account_line.substr(6, 20);
       // cout << acct.s_holdername << endl;
       acct.n_level = STANDARD_ACCOUNT;
@@ -114,7 +114,7 @@ prompt_struct prompt(bool name, bool acct_num, account *acct, string command) {
       ps.is_valid = true;
     }
     else {
-      cout << "Error, invalid administrator name, killing " + command + "." << endl;
+      cout << "Error, invalid administrator name("+s_fullname+"), killing " + command + "." << endl;
       ps.is_valid = false;
     }
   }

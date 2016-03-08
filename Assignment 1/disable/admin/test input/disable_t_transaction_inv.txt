@@ -1,8 +1,8 @@
 login
 admin
 disable
-scott mclean
-100379538
+janahan something
+12347
 withdraw
 quit
 quit

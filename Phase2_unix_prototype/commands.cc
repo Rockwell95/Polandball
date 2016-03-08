@@ -511,6 +511,20 @@ int deposit(account acct) {
     return 0;
   }
 
+<<<<<<< HEAD
+  string s_first, s_last, s_number, s_holdername;
+  cout << "Enter the name of the account holder: " << endl;
+  cin >> s_first;
+  cin >> s_last;
+  if (s_first.compare("quit") == 0 || s_last.compare("quit") == 0) {
+    exit(0);
+  }
+  s_holdername = s_first + " " + s_last;
+  cout << "Enter the account number of the account holder: " << endl;
+  cin >> s_number;
+
+  account acc_account = getAccountByName(s_holdername);
+=======
   string s_holdername, s_number;
   cout << "Enter the name of the account holder: ";
   cin >> s_holdername;
@@ -521,15 +535,16 @@ int deposit(account acct) {
   account acc_account = acct;
   // s_holdername = pr.prompt_name;
   // s_number = pr.prompt_number;
+>>>>>>> cd2303da6348e1222be8cc1d97a8b2fff9ed27e0
 
   if (acc_account.s_number.empty())
   {
     cout << "Account not found" << endl;
     return 0;
   }
-  if (s_holdername.compare(acc_account.s_holdername) == 0) {
+  if (s_holdername.compare(acc_account.s_holdername) <= 0) {
     // Match
-    cout << "Account deleted (stub)" << endl;
+    cout << "Account deleted with account name "+acc_account.s_holdername+"(stub)" << endl;
     return 0;
   }
   else {
@@ -559,8 +574,18 @@ int deposit(account acct) {
     cout << "You must be logged in as an admin to use this command." << endl;
     return 0;
   }
-  prompt_struct pr;
 
+<<<<<<< HEAD
+  string s_first, s_last, s_number, s_holdername;
+  cout << "Enter the name of the account holder: " << endl;
+  cin >> s_first;
+  cin >> s_last;
+  s_holdername = s_first + " " + s_last;
+  cout << "Enter the account number of the account holder: " << endl;
+  cin >> s_number;
+
+  account acc_account = getAccountByName(s_holdername);
+=======
   string s_holdername, s_number;
   cout << "Enter the name of the account holder: ";
   cin >> s_holdername;
@@ -571,13 +596,14 @@ int deposit(account acct) {
   account acc_account = acct;
   // s_holdername = pr.prompt_name;
   // s_holdername = pr.prompt_number;
+>>>>>>> cd2303da6348e1222be8cc1d97a8b2fff9ed27e0
 
   if (acc_account.s_number.empty()) {
     cout << "Account not found" << endl;
     return 0;
   }
 
-  if (s_holdername.compare(acc_account.s_holdername) == 0) {
+  if (s_holdername.compare(acc_account.s_holdername) <= 0) {
     // Match
     cout << "Account disabled/enabled (stub)" << endl;
     return 0;
@@ -611,6 +637,17 @@ int deposit(account acct) {
     return 0;
   }
 
+<<<<<<< HEAD
+  string s_first, s_last, s_number, s_holdername;
+  cout << "Enter the name of the account holder: " << endl;
+  cin >> s_first;
+  cin >> s_last;
+  s_holdername = s_first + " " + s_last;
+  cout << "Enter the account number of the account holder: " << endl;
+  cin >> s_number;
+
+  account acc_account = getAccountByName(s_holdername);
+=======
   string s_holdername, s_number;
   cout << "Enter the name of the account holder: ";
   cin >> s_holdername;
@@ -622,13 +659,14 @@ int deposit(account acct) {
   account acc_account = getAccountByNumber(s_number);
   // s_holdername = pr.prompt_name;
   // s_holdername = pr.prompt_number;
+>>>>>>> cd2303da6348e1222be8cc1d97a8b2fff9ed27e0
 
   if (acc_account.s_number.empty()) {
     cout << "Account not found" << endl;
     return 0;
   }
 
-  if (s_holdername.compare(acc_account.s_holdername) == 0) {
+  if (s_holdername.compare(acc_account.s_holdername) <= 0) {
     // Match
     cout << "Plan Changed (stub)" << endl;
     return 0;

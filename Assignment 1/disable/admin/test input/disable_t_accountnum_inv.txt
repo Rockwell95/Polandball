@@ -1,7 +1,7 @@
 login
 admin
 disable
-scott mclean
+janahan something
 79848488
 quit
 quit

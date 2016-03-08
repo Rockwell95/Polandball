@@ -1,7 +1,7 @@
 login
 admin
 delete
-scott mclean
-100379538
+janahan something
+12347
 quit
 quit
