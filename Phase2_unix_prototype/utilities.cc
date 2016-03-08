@@ -95,7 +95,7 @@ prompt_struct prompt(bool name, bool acct_num, account *acct, string command) {
   string s_firstname, s_lastname, s_fullname, s_acctnum;
   prompt_struct ps;
   if(name) {
-    cout << "Please enter the administrator name:\n>";
+    cout << "Please enter the administrator name:" << endl;
     cin >> s_firstname;
     cin >> s_lastname;
     s_fullname = s_firstname + " " + s_lastname;
@@ -107,7 +107,7 @@ prompt_struct prompt(bool name, bool acct_num, account *acct, string command) {
   }
   if(acct_num) {
     if (!acct->s_number.empty()) {
-      cout << "Name accepted. Please enter the account number you wish to " + command + " from :\n>";
+      cout << "Name accepted. Please enter the account number you wish to " + command + " from :" << endl;
       cin >> s_acctnum;
       ps.prompt_number = s_acctnum;
       cout << ps.prompt_number << endl;
@@ -125,16 +125,16 @@ int writeStandardAccount(account acct, string s_filename) {
   // ofstream ofs_outstream;
   // ofs_outstream.open(s_filename);
 
-  cout << "New account created (stub)";
+  cout << "New account created (stub)" << endl;
   return 0;
 }
 
 int updateStandardAccount(account acct, string s_filename) {
-  cout << "Account Updated (stub)";
+  cout << "Account Updated (stub)" << endl;
   return 0;
 }
 
 int writeTransactionFile(account acct, std::string s_filename) {
-  cout << "Transaction File written (stub)";
+  cout << "Transaction File written (stub)" << endl;
   return 0;
 }
