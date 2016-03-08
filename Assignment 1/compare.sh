@@ -17,7 +17,7 @@ do
       # Finds the expected output file and its corresponding actual output file
       a_file_base="${a_file##*/}"
       output_t=${a_file_base%.*}
-      out_file="$output_t"_o.txt
+      out_file="$output_t".txt
 
       # Compares the two files
       DIFF=$(diff $a/expected\ output/$a_file_base $a/actual\ output/$out_file)

@@ -1,11 +1,7 @@
 Welcome to the automated banking system! Please login
 Logging in, are you logging in as standard or admin?
 Please enter your name:
-Name not found, terminating...
-Invalid command. "scott mclean" is not known, please try again.
+Welcome, dominick mancini
+Pay bill command selected. Please enter the account number you wish to pay from :
+>The account number is not a recognized account number.
 Welcome to the automated banking system! Please login
-Invalid command. "paybill" is not known, please try again.
-Welcome to the automated banking system! Please login
-Invalid command. "98645896849846498494" is not known, please try again.
-Welcome to the automated banking system! Please login
-Quitting...
