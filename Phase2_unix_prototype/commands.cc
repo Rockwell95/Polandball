@@ -511,7 +511,6 @@ int deposit(account acct) {
     return 0;
   }
 
-<<<<<<< HEAD
   string s_first, s_last, s_number, s_holdername;
   cout << "Enter the name of the account holder: " << endl;
   cin >> s_first;
@@ -524,18 +523,9 @@ int deposit(account acct) {
   cin >> s_number;
 
   account acc_account = getAccountByName(s_holdername);
-=======
-  string s_holdername, s_number;
-  cout << "Enter the name of the account holder: ";
-  cin >> s_holdername;
-  cout << "Enter the account number of the account holder: ";
-  cin >> s_number;
   // prompt_struct pr = prompt(true, true, &acct, "delete");
-
-  account acc_account = acct;
   // s_holdername = pr.prompt_name;
   // s_number = pr.prompt_number;
->>>>>>> cd2303da6348e1222be8cc1d97a8b2fff9ed27e0
 
   if (acc_account.s_number.empty())
   {
@@ -575,7 +565,6 @@ int deposit(account acct) {
     return 0;
   }
 
-<<<<<<< HEAD
   string s_first, s_last, s_number, s_holdername;
   cout << "Enter the name of the account holder: " << endl;
   cin >> s_first;
@@ -585,18 +574,9 @@ int deposit(account acct) {
   cin >> s_number;
 
   account acc_account = getAccountByName(s_holdername);
-=======
-  string s_holdername, s_number;
-  cout << "Enter the name of the account holder: ";
-  cin >> s_holdername;
-  cout << "Enter the account number of the account holder: ";
-  cin >> s_number;
-
   // pr = prompt(true,true,&acct, "disable");
-  account acc_account = acct;
   // s_holdername = pr.prompt_name;
   // s_holdername = pr.prompt_number;
->>>>>>> cd2303da6348e1222be8cc1d97a8b2fff9ed27e0
 
   if (acc_account.s_number.empty()) {
     cout << "Account not found" << endl;
@@ -637,7 +617,6 @@ int deposit(account acct) {
     return 0;
   }
 
-<<<<<<< HEAD
   string s_first, s_last, s_number, s_holdername;
   cout << "Enter the name of the account holder: " << endl;
   cin >> s_first;
@@ -647,19 +626,10 @@ int deposit(account acct) {
   cin >> s_number;
 
   account acc_account = getAccountByName(s_holdername);
-=======
-  string s_holdername, s_number;
-  cout << "Enter the name of the account holder: ";
-  cin >> s_holdername;
-  cout << "Enter the account number of the account holder: ";
-  cin >> s_number;
-
   // prompt_struct pr;
   // pr = prompt(true, true, &acct, "changeplan");
-  account acc_account = getAccountByNumber(s_number);
   // s_holdername = pr.prompt_name;
   // s_holdername = pr.prompt_number;
->>>>>>> cd2303da6348e1222be8cc1d97a8b2fff9ed27e0
 
   if (acc_account.s_number.empty()) {
     cout << "Account not found" << endl;
