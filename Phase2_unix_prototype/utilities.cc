@@ -125,7 +125,7 @@ int writeStandardAccount(account acct, string s_filename) {
   // ofstream ofs_outstream;
   // ofs_outstream.open(s_filename);
 
-  cout << "New account created (stub)" << endl;
+  cout << "New account created with accountname " + acct.s_holdername + "(stub)" << endl;
   return 0;
 }
 

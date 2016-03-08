@@ -428,7 +428,7 @@ int deposit(account acct) {
     cout << "The balance must be greater than $0.00 and less than or equal to $99999.99" << endl;
     cin >> ac_newaccount.d_balance;
   }
-  if (ac_newaccount.dbalance > 0 && ac_newaccount.dbalance <= 99999.99) {
+  if (ac_newaccount.d_balance > 0 && ac_newaccount.d_balance <= 99999.99) {
     ac_newaccount.c_status = 'A';
     ac_newaccount.n_level = 0;
 
