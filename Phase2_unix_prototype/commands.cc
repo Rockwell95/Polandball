@@ -402,10 +402,10 @@ int deposit(account acct) {
   while (s_first.empty() == true || s_last.empty() == true) {
     cout << "Enter the full name for the new account holder:" << endl;
     cin >> s_first;
-    if (s_first.compare("quit") == 0) {
+    cin >> s_last;
+    if (s_first.compare("quit") == 0 || s_last.compare("quit") == 0) {
       exit(0);
     }
-    cin >> s_last;
   }
   ac_newaccount.s_holdername = s_first + " " + s_last;
   while (ac_newaccount.s_holdername.length() > 20 || getAccountByName(ac_newaccount.s_holdername).s_holdername.empty() == false) {
@@ -421,6 +421,9 @@ int deposit(account acct) {
       return 0;
     }
     cin >> ac_newaccount.s_holdername;
+    if (ac_newaccount.s_holdername.compare("quit") == 0) {
+      exit(0);
+    }
   }
   cout << "Enter the initial balance for the new account holder:" << endl;
   cin >> ac_newaccount.d_balance;

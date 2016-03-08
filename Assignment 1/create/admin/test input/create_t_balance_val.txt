@@ -2,7 +2,6 @@ login
 admin
 create
 scott mclean
-100379538
 200.00
 quit
 quit
