@@ -1,11 +1,2 @@
-Welcome to the automated banking system! Please login
-Logging in, are you logging in as standard or admin?
-Please enter your name:
-Name not found, terminating...
-Invalid command. "scott mclean" is not known, please try again.
-Welcome to the automated banking system! Please login
-Invalid command. "deposit" is not known, please try again.
-Welcome to the automated banking system! Please login
-Invalid command. "*(&(*989f8a" is not known, please try again.
-Welcome to the automated banking system! Please login
+Unrecognized Command.
 Quitting...
