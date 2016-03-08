@@ -1,6 +1,2 @@
-Welcome to the automated banking system! Please login
-Logging in, are you logging in as standard or admin?
-Welcome, administrator
 Thank you for using the banking system, session ended, you have been successfully logged out.
-Welcome to the automated banking system! Please login
 Quitting...
