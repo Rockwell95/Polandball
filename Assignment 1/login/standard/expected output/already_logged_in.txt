@@ -1,6 +1,5 @@
 Welcome to the automated banking system! Please login
 Logging in, are you logging in as standard or admin?
 Welcome, administrator
-Invalid entry, terminating session.
-Welcome to the automated banking system! Please login
+You are already logged in as administrator.
 Quitting...

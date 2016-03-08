@@ -1,4 +1,5 @@
 Welcome to the automated banking system! Please login
 Logging in, are you logging in as standard or admin?
+Welcome, adminstrator
 Invalid command. "quit" is not known, please try again.
 Welcome to the automated banking system! Please login

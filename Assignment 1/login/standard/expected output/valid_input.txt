@@ -1,4 +1,6 @@
 Welcome to the automated banking system! Please login
 Logging in, are you logging in as standard or admin?
+Please enter your name:
+Welcome, dominick mancini
 Invalid command. "quit" is not known, please try again.
 Welcome to the automated banking system! Please login

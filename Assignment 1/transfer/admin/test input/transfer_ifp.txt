@@ -1,9 +1,0 @@
-login
-admin
-transfer
-scott mclean
-12345
-12344
-200.0004
-quit
-quit

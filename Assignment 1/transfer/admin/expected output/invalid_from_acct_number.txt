@@ -3,7 +3,8 @@ Logging in, are you logging in as standard or admin?
 Welcome, administrator
 Transfer mode selected, 
 Please enter the administrator name:
-Error, invalid administrator name, killing transfer.
+Please enter the number of the account you wish to transfer from:
+Error, the account number you wish to transfer from is not reocignized, ending transaction.
 Invalid entry, terminating session.
 Welcome to the automated banking system! Please login
 Quitting...
