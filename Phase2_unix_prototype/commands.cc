@@ -54,11 +54,11 @@ int menu(account acct) {
       }
     }
     else if(s_command.compare("quit") == 0) {
-      cout << "Quitting..." <<endl;
+      cout << "Quitting..." << endl;
       exit(0);
     }
     else {
-      cout << "Invalid entry, terminating session.\n";
+      cout << "Invalid entry, terminating session." << endl;
       return 0;
     }
     cout << "\n>";
@@ -95,11 +95,11 @@ int withdrawal(account acct) {
   bool want_name;
   prompt_struct pr;
   if (acct.n_level == ADMIN_ACCOUNT) {
-    cout << "Withdraw command selected. ";
+    cout << "Withdraw command selected." << endl;
     want_name = true;
   }
   else {
-    cout << "Withdraw command selected. ";
+    cout << "Withdraw command selected." << endl;
     want_name = false;
   }
   pr = prompt(want_name, true, &acct, "withdraw");
@@ -111,32 +111,31 @@ int withdrawal(account acct) {
     return 1;
   }
   if (s_acctnum.compare(acct.s_number) == 0) {
-    cout << "Account number accepted, please enter the amount to withdraw:\n>";
+    cout << "Account number accepted, please enter the amount to withdraw:" << endl;
   gt_another_svalue:
     if (cin >> d_wdamount && d_wdamount <= 500 && d_wdamount >= 0.01) {
       acct.d_balance -= d_wdamount;
-      cout << "Done!\nNew Balance: ";
-      cout << acct.d_balance;
+      cout << "Done!\nNew Balance: " << acct.d_balance << endl;
     }
     else if (cin >> d_wdamount && d_wdamount > 500) {
-      cout << "Error, withdraw amount exceeds $500.00, please enter another value:\n>";
+      cout << "Error, withdraw amount exceeds $500.00, please enter another value:" << endl;
       goto gt_another_svalue;
     }
     else if (cin >> d_wdamount && d_wdamount < 0.01) {
-      cout << "Error, withdraw amount must be greater than $0.00, please enter another value:\n>";
+      cout << "Error, withdraw amount must be greater than $0.00, please enter another value:" << endl;
       goto gt_another_svalue;
     }
     else if (cin >> d_wdamount && d_wdamount > acct.d_balance) {
-      cout << "Error, not enough funds in account to complete transaction, please enter another value:\n>";
+      cout << "Error, not enough funds in account to complete transaction, please enter another value:" << endl;
       goto gt_another_svalue;
     }
     else {
-      cout << "Error, value entered is not a recognized number, please enter another value:\n>";
+      cout << "Error, value entered is not a recognized number, please enter another value:" << endl;
       goto gt_another_svalue;
     }
   }
   else {
-    cout << "Error, invalid account number, killing withdraw request.";
+    cout << "Error, invalid account number, killing withdraw request." << endl;
   }
   return 0;
 }
@@ -176,11 +175,11 @@ int transfer(account acct) {
   prompt_struct pr;
   bool want_name;
   if (acct.n_level == ADMIN_ACCOUNT) {
-    cout << "Transfer mode selected, ";
+    cout << "Transfer mode selected, " << endl;
     want_name = true;
     }
   else {
-    cout << "Transfer mode selected, ";
+    cout << "Transfer mode selected, " << endl;
     want_name = false;
   }
   pr = prompt(want_name, true, &acct, "transfer");
@@ -190,10 +189,10 @@ int transfer(account acct) {
     return 1;
   }
   if (sFromAcctNum.compare(acct.s_number) == 0) {
-    cout << "From account number accepted, please enter the number of the account you wish to transfer to:\n>";
+    cout << "From account number accepted, please enter the number of the account you wish to transfer to:" << endl;
     cin >> sToAcctNum;
     tToAccount = getAccountByNumber(sToAcctNum);
-    cout << "To account number accepted, please enter the amount you wish to transfer from " + acct.s_number + " to " + tToAccount.s_number + ":\n>";
+    cout << "To account number accepted, please enter the amount you wish to transfer from " + acct.s_number + " to " + tToAccount.s_number + ":" << endl;
     if (!tToAccount.s_holdername.empty()) {
     anotherSTransferValue:
       if (cin >> d_trans_amount && d_trans_amount <= 1000 && d_trans_amount >= 0.01) {
@@ -201,35 +200,33 @@ int transfer(account acct) {
         tToAccount.d_balance += d_trans_amount;
         cout << fixed;
         cout << setprecision(2);
-        cout << "Transferring $";
-        cout << d_trans_amount;
-        cout << " from " + sFromAcctNum + " to " + sToAcctNum + ".";
-        cout << "\n\nTransfer complete, ending transaction...";
-        cout << acct.d_balance;
+        cout << "Transferring $" << d_trans_amount << " from " + sFromAcctNum + " to " + sToAcctNum + "." << endl;
+        cout << "\n\nTransfer complete, ending transaction..." << endl;
+        cout << "Remaining Balance: $" << acct.d_balance << endl;
       }
       else if (cin >> d_trans_amount && d_trans_amount > 1000) {
-        cout << "Error, transfer amount exceeds $1000.00, please enter another value:\n>";
+        cout << "Error, transfer amount exceeds $1000.00, please enter another value:" << endl;
         goto anotherSTransferValue;
       }
       else if (cin >> d_trans_amount && d_trans_amount < 0.01) {
-        cout << "Error, transfer amount must be greater than $0.00, please enter another value:\n>";
+        cout << "Error, transfer amount must be greater than $0.00, please enter another value:" << endl;
         goto anotherSTransferValue;
       }
       else if (cin >> d_trans_amount && d_trans_amount > acct.d_balance) {
-        cout << "Error, not enough funds in account to complete transaction, please enter another value:\n>";
+        cout << "Error, not enough funds in account to complete transaction, please enter another value:" << endl;
         goto anotherSTransferValue;
       }
       else {
-        cout << "Error, value entered is not a recognized number, please enter another value:\n>";
+        cout << "Error, value entered is not a recognized number, please enter another value:" << endl;
         goto anotherSTransferValue;
       }
     }
     else {
-      cout << "Error, the account number you wish to transfer to is not reocignized, ending transaction.\n";
+      cout << "Error, the account number you wish to transfer to is not reocignized, ending transaction." << endl;
     }
   }
   else {
-    cout << "Error, the account number you wish to transfer from is not recognized, ending transaction.\n";
+    cout << "Error, the account number you wish to transfer from is not recognized, ending transaction." << endl;
   }
   return 0;
 }
@@ -273,46 +270,46 @@ int paybill(account acct) {
   else {
     want_name = false;
   }
-  cout << "Pay bill command selected. ";
+  cout << "Pay bill command selected. " << endl;
   pr = prompt(want_name, true, &acct, "pay bill");
   if(!pr.is_valid) {
     return 1;
   }
   s_acctnum = pr.prompt_number;
   if (s_acctnum.compare(acct.s_number) == 0) {
-    cout << "Please enter the company name to pay:\n>";
+    cout << "Please enter the company name to pay:" << endl;
     cin >> sCompany;
     if (contains(sa_valid_companies, sCompany)) {
-      cout << "Please enter an amount to pay:\n>";
+      cout << "Please enter an amount to pay:" << endl;
       gt_another_spayment_value:
       if (cin >> d_pay_amount && d_pay_amount <= 2000 && d_pay_amount >= 0.01) {
         acct.d_balance -= d_pay_amount;
-        cout << "Payment Successful.\nNew Balance: ";
+        cout << "Payment Successful.\nNew Balance: " << endl;
         cout << acct.d_balance;
       }
       else if (cin >> d_pay_amount && d_pay_amount > 2000) {
-        cout << "The maximum amount that can be paid to a bill holder is $2000.00 in the current session. The amount entered exceeds $2000.00\n>";
+        cout << "The maximum amount that can be paid to a bill holder is $2000.00 in the current session. The amount entered exceeds $2000.00 " << endl;
         goto  gt_another_spayment_value;
       }
       else if (cin >> d_pay_amount && d_pay_amount < 0.01) {
-        cout << "The minimum amount that can be paid to a bill holder is greater than $0.00 in the current session.\n>";
+        cout << "The minimum amount that can be paid to a bill holder is greater than $0.00 in the current session." << endl;
         goto  gt_another_spayment_value;
       }
       else if (cin >> d_pay_amount && d_pay_amount > acct.d_balance) {
-        cout << "The payment exceeds the current account balance. Payment has not been processed.\n>";
+        cout << "The payment exceeds the current account balance. Payment has not been processed." << endl;
         goto  gt_another_spayment_value;
       }
       else {
-        cout << "Please enter a valid dollar amount for this bill payment. Example: 500.00.\n>";
+        cout << "Please enter a valid dollar amount for this bill payment. Example: 500.00." << endl;
         goto  gt_another_spayment_value;
       }
     }
     else {
-      cout << "The company name is not a recognized company name.\n";
+      cout << "The company name is not a recognized company name." << endl;
     }
   }
   else {
-    cout << "The account number entered is not a recognized account number in the system.\n";
+    cout << "The account number entered is not a recognized account number in the system."  << endl;
   }
   return 0;
 }
@@ -349,22 +346,22 @@ int deposit(account acct) {
   else {
     want_name = false;
   }
-  cout << "Deposit command selected. ";
+  cout << "Deposit command selected."  << endl;
   pr = prompt(want_name, true, &acct, "deposit");
   if(!pr.is_valid) {
     return 1;
   }
   s_acctnum = pr.prompt_number;
   if (s_acctnum.compare(acct.s_number) == 0) {
-    cout << "Please enter an amount to deposit: \n";
+    cout << "Please enter an amount to deposit"  << endl;
     gt_another_deposit_value:
     if (cin >> d_deposit_amount && d_deposit_amount >= 0.01) {
       acct.d_balance += d_deposit_amount;
-      cout << "Deposit successful.\nNew Balance: ";
+      cout << "Deposit successful.\nNew Balance: " << endl;
       cout << acct.d_balance;
     }
     else {
-      cout << "Please enter a valid amount to deposit.Example: 200.00";
+      cout << "Please enter a valid amount to deposit.Example: 200.00" << endl;
       goto  gt_another_deposit_value;
     }
   }
@@ -397,14 +394,14 @@ int deposit(account acct) {
 /*!*/int create(account acct)
 {
   if (acct.n_level != ADMIN_ACCOUNT) {
-    cout << "TOKEN";
+    cout << "You must be logged in as an admin to use this command" << endl;
     return 0;
   }
 
   account ac_newaccount;
   string s_first, s_last;
   while (s_first.empty() == true || s_last.empty() == true) {
-    cout << "Enter the full name for the new account holder: ";
+    cout << "Enter the full name for the new account holder" << endl;
     cin >> s_first;
     if (s_first.compare("quit") == 0) {
       exit(0);
@@ -414,22 +411,22 @@ int deposit(account acct) {
   ac_newaccount.s_holdername = s_first + " " + s_last;
   while (ac_newaccount.s_holdername.length() > 20 || getAccountByName(ac_newaccount.s_holdername).s_holdername.empty() == false) {
     if (ac_newaccount.s_holdername.length() > 20) {
-      cout << "The account name is too long. It must be at most 20 characters in length";
+      cout << "The account name is too long. It must be at most 20 characters in length" << endl;
     }
     if (ac_newaccount.s_holdername.length() == 0) {
-      cout << "The account name is empty. Please enter an account name";
+      cout << "The account name is empty. Please enter an account name" << endl;
     }
     cout << getAccountByName(ac_newaccount.s_holdername).s_holdername << endl;
     if (!getAccountByName(ac_newaccount.s_holdername).s_holdername.empty()) {
-      cout << "This account name already exists. The account name must be unique in the system.";
+      cout << "This account name already exists. The account name must be unique in the system." << endl;
       return 0;
     }
     cin >> ac_newaccount.s_holdername;
   }
-  cout << "Enter the initial balance for the new account holder: ";
+  cout << "Enter the initial balance for the new account holder:" << endl;
   cin >> ac_newaccount.d_balance;
   while (ac_newaccount.d_balance < 0 || ac_newaccount.d_balance > 99999.99) {
-    cout << "The balance must be greater than $0.00 and less than or equal to $99999.99";
+    cout << "The balance must be greater than $0.00 and less than or equal to $99999.99" << endl;
     cin >> ac_newaccount.d_balance;
   }
 
@@ -454,7 +451,7 @@ int deposit(account acct) {
 /*!*/int ac_delete(account acct)
 {
   if (acct.n_level != ADMIN_ACCOUNT) {
-    cout << "TOKEN";
+    cout << "You must be logged in as an admin to use this command" << endl;
     return 0;
   }
 
@@ -471,16 +468,16 @@ int deposit(account acct) {
 
   if (acc_account.s_number.empty())
   {
-    cout << "Account not found";
+    cout << "Account not found" << endl;
     return 0;
   }
   if (s_holdername.compare(acc_account.s_holdername) == 0) {
     // Match
-    cout << "Account deleted (stub)";
+    cout << "Account deleted (stub)" << endl;
     return 0;
   }
   else {
-    cout << "Name and number provided do not match for this account. Aborting.";
+    cout << "Name and number provided do not match for this account. Aborting." << endl;
     return 0;
   }
 
@@ -503,7 +500,7 @@ int deposit(account acct) {
 /*!*/int disable(account acct)
 {
   if (acct.n_level != ADMIN_ACCOUNT) {
-    cout << "TOKEN";
+    cout << "You must be logged in as an admin to use this command." << endl;
     return 0;
   }
   prompt_struct pr;
@@ -520,17 +517,17 @@ int deposit(account acct) {
   s_holdername = pr.prompt_number;
 
   if (acc_account.s_number.empty()) {
-    cout << "Account not found";
+    cout << "Account not found" << endl;
     return 0;
   }
 
   if (s_holdername.compare(acc_account.s_holdername) == 0) {
     // Match
-    cout << "Account disabled/enabled (stub)";
+    cout << "Account disabled/enabled (stub)" << endl;
     return 0;
   }
   else {
-    cout << "Name and number do not match for this account. Aborting.";
+    cout << "Name and number do not match for this account. Aborting." << endl;
     return 0;
   }
 
@@ -571,17 +568,17 @@ int deposit(account acct) {
   s_holdername = pr.prompt_number;
 
   if (acc_account.s_number.empty()) {
-    cout << "Account not found";
+    cout << "Account not found" << endl;
     return 0;
   }
 
   if (s_holdername.compare(acc_account.s_holdername) == 0) {
     // Match
-    cout << "Plan Changed (stub)";
+    cout << "Plan Changed (stub)" << endl;
     return 0;
   }
   else {
-    cout << "Name and number do not match for this account. Aborting.";
+    cout << "Name and number do not match for this account. Aborting." << endl;
     return 0;
   }
 
@@ -595,10 +592,10 @@ int deposit(account acct) {
 */
 int logout(bool b_logged_in) {
   if (b_logged_in) {
-    cout << "Thank you for using the banking system, session ended, you have been successfully logged out.\n";
+    cout << "Thank you for using the banking system, session ended, you have been successfully logged out." << endl;
   }
   else {
-    cout << "You must be logged in to log out.\n";
+    cout << "You must be logged in to log out." << endl;
   }
   return 0;
 }
