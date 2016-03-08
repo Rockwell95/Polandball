@@ -33,7 +33,7 @@
 using namespace std;
 
 int main(void) {
-  cout << "Welcome to the automated banking system! Please login\n>";
+  cout << "Welcome to the automated banking system! Please login" << endl;
 
   string s_input;
   string s_elevation;
@@ -47,12 +47,12 @@ int main(void) {
 
 	if (s_input.compare("login") == 0) {
 
-	  cout << "Logging in, are you logging in as standard or admin?\n>";
+	  cout << "Logging in, are you logging in as standard or admin?" << endl;
 	  cin >> s_elevation;
 
 
       if (s_elevation.compare("standard") == 0) {
-		cout << "Please enter your name:\n>";
+		cout << "Please enter your name:" << endl;
         string s_firstname, s_lastname;
         cin >> s_firstname;
         cin >> s_lastname;
@@ -60,16 +60,16 @@ int main(void) {
         act_stdaccount = getAccountByName(s_acctname);
 
         if (act_stdaccount.s_number.empty()) {
-          cout << "Name not found, terminating...\n";
+          cout << "Name not found, terminating..." << endl;
           s_elevation = s_acctname;
           goto invalid;
         }
-        cout << "Welcome, " + act_stdaccount.s_holdername + ".\n>";
+        cout << "Welcome, " + act_stdaccount.s_holdername + "." << endl;
         menu(act_stdaccount);
 	  }
 //.........................................................................................................................................................
       else if (s_elevation.compare("admin") == 0) {
-        cout << "Welcome, administrator\n>";
+        cout << "Welcome, administrator" << endl;
         account act_adminacct;
         act_adminacct.n_level = ADMIN_ACCOUNT;
         menu(act_adminacct);
@@ -79,10 +79,10 @@ int main(void) {
 	  }
     }
     else if (s_input.compare("logout") == 0) {
-      cout << "You must be logged in to log out.\n";
+      cout << "You must be logged in to log out." << endl;
     }
     else if (s_input.compare("quit") == 0) {
-      cout << "Quitting...\n";
+      cout << "Quitting..." << endl;
       goto terminate;
     }
     else {
@@ -90,9 +90,7 @@ int main(void) {
       invalid:
 	  cout << "Invalid command. \"" + s_elevation + "\" is not known, please try again." << endl;
     }
-
-    cout << "\n";
-    cout << "Welcome to the automated banking system! Please login\n>";
+    cout << "Welcome to the automated banking system! Please login" << endl;
   }
 
   terminate:
