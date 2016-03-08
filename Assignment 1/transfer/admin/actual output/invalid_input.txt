@@ -1,12 +1,6 @@
 Welcome to the automated banking system! Please login
->Invalid command. "admin" is not known, please try again.
-
-
-
-
-
-
-
-
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Invalid entry, terminating session.
 Welcome to the automated banking system! Please login
->
+Quitting...

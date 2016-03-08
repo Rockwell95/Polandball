@@ -1,12 +1,13 @@
 Welcome to the automated banking system! Please login
->Invalid command. "EC" is not known, please try again.
-
-
-
-
-
-
-
-
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Pay bill command selected. 
+Please enter the administrator name:
+Error, invalid administrator name, killing pay bill.
+Invalid entry, terminating session.
 Welcome to the automated banking system! Please login
->
+Invalid command. "EC" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "sd9vfh98(*)" is not known, please try again.
+Welcome to the automated banking system! Please login
+Quitting...

@@ -1,22 +1,9 @@
 Welcome to the automated banking system! Please login
->Invalid command. "scott" is not known, please try again.
-
-
-
-
-
-
-
-
+Logging in, are you logging in as standard or admin?
+Please enter your name:
+Name not found, terminating...
+Invalid command. "scott mclean" is not known, please try again.
 Welcome to the automated banking system! Please login
->Invalid command. "mclean" is not known, please try again.
-
-
-
-
-
-
-
-
+Invalid command. "changeplan" is not known, please try again.
 Welcome to the automated banking system! Please login
->
+Quitting...

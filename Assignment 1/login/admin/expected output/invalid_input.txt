@@ -1,1 +1,4 @@
-Invalid command. "asdfa" is not a known command, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "asdasdf" is not known, please try again.
+Welcome to the automated banking system! Please login
+Quitting...

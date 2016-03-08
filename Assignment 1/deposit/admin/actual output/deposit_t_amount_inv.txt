@@ -1,12 +1,11 @@
 Welcome to the automated banking system! Please login
->Invalid command. "100379538" is not known, please try again.
-
-
-
-
-
-
-
-
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Deposit command selected.
+Please enter the administrator name:
+Error, invalid administrator name, killing deposit.
+Invalid entry, terminating session.
 Welcome to the automated banking system! Please login
->
+Invalid command. "654686dasfsaf" is not known, please try again.
+Welcome to the automated banking system! Please login
+Quitting...

@@ -1,12 +1,13 @@
 Welcome to the automated banking system! Please login
->Invalid command. "12344" is not known, please try again.
-
-
-
-
-
-
-
-
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Transfer mode selected, 
+Please enter the administrator name:
+Error, invalid administrator name, killing transfer.
+Invalid entry, terminating session.
 Welcome to the automated banking system! Please login
->
+Invalid command. "12344" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "1100.00" is not known, please try again.
+Welcome to the automated banking system! Please login
+Quitting...

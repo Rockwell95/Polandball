@@ -1,1 +1,7 @@
-The input account number is not a valid account number.
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Enter the full name for the new account holder:
+Enter the initial balance for the new account holder:
+The balance must be greater than $0.00 and less than or equal to $99999.99
+Welcome to the automated banking system! Please login

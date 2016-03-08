@@ -1,1 +1,14 @@
-Error, withdraw amount must be greater than $0.00, please enter another value:
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Withdraw command selected.
+Please enter the administrator name:
+Error, invalid administrator name, killing withdraw.
+
+
+
+Invalid entry, terminating session.
+Welcome to the automated banking system! Please login
+Invalid command. "-12.00" is not known, please try again.
+Welcome to the automated banking system! Please login
+Quitting...

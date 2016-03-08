@@ -1,1 +1,11 @@
-Deposited funds are currently not available in this session.
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Deposit command selected.
+Please enter the administrator name:
+Error, invalid administrator name, killing deposit.
+Invalid entry, terminating session.
+Welcome to the automated banking system! Please login
+Invalid command. "$99999.99" is not known, please try again.
+Welcome to the automated banking system! Please login
+Quitting...

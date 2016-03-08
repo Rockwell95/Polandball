@@ -1,1 +1,4 @@
-Invalid command. You must be logged in to enter this command.
+Welcome to the automated banking system! Please login
+Invalid command. "changeplan" is not known, please try again.
+Welcome to the automated banking system! Please login
+Quitting...

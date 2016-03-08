@@ -1,1 +1,10 @@
-Name accepted, please enter the account number you wish to withdraw from:
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Withdraw command selected.
+Please enter the administrator name:
+Error, invalid administrator name, killing withdraw.
+
+
+
+Quitting...

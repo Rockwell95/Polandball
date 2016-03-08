@@ -1,1 +1,15 @@
-Error, the account number you wish to transfer from is not reocignized, ending transaction.
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Please enter your name:
+Name not found, terminating...
+Invalid command. "dominick mancini" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "transfer" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "dominick" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "mancini" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "4544" is not known, please try again.
+Welcome to the automated banking system! Please login
+Quitting...

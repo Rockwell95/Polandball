@@ -1,5 +1,4 @@
 Welcome to the automated banking system! Please login
->You must be logged in to log out.
-
+You must be logged in to log out.
 Welcome to the automated banking system! Please login
->
+Quitting...

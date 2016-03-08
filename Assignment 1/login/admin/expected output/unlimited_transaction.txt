@@ -1,1 +1,7 @@
-Please enter the number of the account you would like to delete:
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Please enter the administrator name:
+Error, invalid administrator name, killing changeplan.
+Account not found
+Welcome to the automated banking system! Please login

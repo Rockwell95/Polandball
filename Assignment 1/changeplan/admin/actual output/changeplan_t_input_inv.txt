@@ -1,12 +1,7 @@
 Welcome to the automated banking system! Please login
->Invalid command. "changeplan" is not known, please try again.
-
-
-
-
-
-
-
-
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Please enter the administrator name:
+Error, invalid administrator name, killing changeplan.
+Account not found
 Welcome to the automated banking system! Please login
->

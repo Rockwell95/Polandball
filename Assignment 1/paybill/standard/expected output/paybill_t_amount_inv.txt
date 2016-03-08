@@ -1,1 +1,15 @@
-Please enter a valid dollar amount for this bill payment. Example: $500.00.
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Please enter your name:
+Name not found, terminating...
+Invalid command. "scott mclean" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "paybill" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "100379538" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "EC" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "sd9vfh98(*)" is not known, please try again.
+Welcome to the automated banking system! Please login
+Quitting...

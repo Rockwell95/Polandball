@@ -1,1 +1,9 @@
-Thank you for using the banking system, session ended, you have been successfully logged out.
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Please enter your name:
+Name not found, terminating...
+Invalid command. "dominick mancini" is not known, please try again.
+Welcome to the automated banking system! Please login
+You must be logged in to log out.
+Welcome to the automated banking system! Please login
+Quitting...

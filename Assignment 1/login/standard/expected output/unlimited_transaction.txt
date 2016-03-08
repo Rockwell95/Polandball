@@ -1,1 +1,9 @@
-Denied, you are unable to conduct privileged transactions when logged in as a standard user.
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Please enter your name:
+Name not found, terminating...
+Invalid command. "dominick mancini" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "changeplan" is not known, please try again.
+Welcome to the automated banking system! Please login
+Quitting...

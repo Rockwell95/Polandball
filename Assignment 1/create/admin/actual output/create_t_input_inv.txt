@@ -1,12 +1,7 @@
 Welcome to the automated banking system! Please login
->Invalid command. "create" is not known, please try again.
-
-
-
-
-
-
-
-
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Enter the full name for the new account holder:
+Enter the initial balance for the new account holder:
+New account created with accountname &*((*& quit(stub)
 Welcome to the automated banking system! Please login
->

@@ -1,1 +1,7 @@
-The account number entered is not a recognized account number in the system.
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Pay bill command selected. 
+Please enter the administrator name:
+Error, invalid administrator name, killing pay bill.
+Welcome to the automated banking system! Please login

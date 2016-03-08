@@ -1,22 +1,8 @@
 Welcome to the automated banking system! Please login
->Invalid command. "scott" is not known, please try again.
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Enter the full name for the new account holder:
+The account name is too long. It must be at most 20 characters in length.
 
-
-
-
-
-
-
-
+Enter the initial balance for the new account holder:
 Welcome to the automated banking system! Please login
->Invalid command. "mclean" is not known, please try again.
-
-
-
-
-
-
-
-
-Welcome to the automated banking system! Please login
->

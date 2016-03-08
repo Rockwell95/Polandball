@@ -1,1 +1,4 @@
-Unrecognized Command.
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Enter the full name for the new account holder:

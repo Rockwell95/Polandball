@@ -1,1 +1,9 @@
-Transfer mode selected, please enter the number of the account you wish to transfer from:
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Please enter your name:
+Name not found, terminating...
+Invalid command. "dominick mancini" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "transfer" is not known, please try again.
+Welcome to the automated banking system! Please login
+Quitting...

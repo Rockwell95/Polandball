@@ -1,12 +1,7 @@
 Welcome to the automated banking system! Please login
->Invalid command. "100379538" is not known, please try again.
-
-
-
-
-
-
-
-
-Welcome to the automated banking system! Please login
->
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Enter the full name for the new account holder:
+Enter the initial balance for the new account holder:
+New account created with accountname scott mclean(stub)
+Quitting...

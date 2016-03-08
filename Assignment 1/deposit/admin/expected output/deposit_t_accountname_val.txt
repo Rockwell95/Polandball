@@ -1,1 +1,7 @@
-Please enter the account number:
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Deposit command selected.
+Please enter the administrator name:
+Error, invalid administrator name, killing deposit.
+Quitting...

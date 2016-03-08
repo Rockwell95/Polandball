@@ -1,12 +1,6 @@
 Welcome to the automated banking system! Please login
->Invalid command. "standard" is not known, please try again.
-
-
-
-
-
-
-
-
+Logging in, are you logging in as standard or admin?
+Please enter your name:
+Name not found, terminating...
+Invalid command. "//~()`* quit" is not known, please try again.
 Welcome to the automated banking system! Please login
->

@@ -1,1 +1,6 @@
-Error, 'potato' is not a recognized name.
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Please enter your name:
+Name not found, terminating...
+Invalid command. "potato quit" is not known, please try again.
+Welcome to the automated banking system! Please login

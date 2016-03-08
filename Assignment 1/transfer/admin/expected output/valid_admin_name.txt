@@ -1,3 +1,7 @@
-Name accepted, welcome scott mclean.
-
-Please enter the number of the account you wish to to transfer from:
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Transfer mode selected, 
+Please enter the administrator name:
+Error, invalid administrator name, killing transfer.
+Quitting...

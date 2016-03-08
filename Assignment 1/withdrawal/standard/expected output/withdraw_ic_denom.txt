@@ -1,1 +1,17 @@
-Error, this machine can only distribute bills with values of $100, $50, $20, $10, and $5. The value you entered cannot be distributed, please enter another value:
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Please enter your name:
+Name not found, terminating...
+Invalid command. "dominick mancini" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "withdrawal" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "dominick" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "mancini" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "12344" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "32.00" is not known, please try again.
+Welcome to the automated banking system! Please login
+Quitting...

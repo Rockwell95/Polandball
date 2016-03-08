@@ -1,12 +1,10 @@
 Welcome to the automated banking system! Please login
->Invalid command. "200.00" is not known, please try again.
-
-
-
-
-
-
-
-
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Enter the full name for the new account holder:
+Enter the initial balance for the new account holder:
+The balance must be greater than $0.00 and less than or equal to $99999.99
+New account created with accountname scott mclean(stub)
+Invalid entry, terminating session.
 Welcome to the automated banking system! Please login
->
+Quitting...

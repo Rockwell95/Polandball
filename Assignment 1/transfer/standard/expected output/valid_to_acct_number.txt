@@ -1,1 +1,17 @@
-To account number accepted, please enter the amount you wish to transfer from 12344 to 12345:
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Please enter your name:
+Name not found, terminating...
+Invalid command. "dominick mancini" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "transfer" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "dominick" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "mancini" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "12344" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "12345" is not known, please try again.
+Welcome to the automated banking system! Please login
+Quitting...

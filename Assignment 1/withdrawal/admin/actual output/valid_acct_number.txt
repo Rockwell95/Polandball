@@ -1,22 +1,12 @@
 Welcome to the automated banking system! Please login
->Invalid command. "scott" is not known, please try again.
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Withdraw command selected.
+Please enter the administrator name:
+Error, invalid administrator name, killing withdraw.
 
 
 
-
-
-
-
-
+Invalid entry, terminating session.
 Welcome to the automated banking system! Please login
->Invalid command. "mclean" is not known, please try again.
-
-
-
-
-
-
-
-
-Welcome to the automated banking system! Please login
->
+Quitting...

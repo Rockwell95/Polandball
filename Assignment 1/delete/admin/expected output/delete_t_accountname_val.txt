@@ -1,1 +1,9 @@
-Please enter the account number: 
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Please enter the administrator name:
+Error, invalid administrator name, killing delete.
+Account not found
+Invalid entry, terminating session.
+Welcome to the automated banking system! Please login
+Quitting...

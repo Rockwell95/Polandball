@@ -1,1 +1,6 @@
-New account name cannot exceed 20 characters in length.
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Welcome, administrator
+Enter the full name for the new account holder:
+The account name is too long. It must be at most 20 characters in length.
+

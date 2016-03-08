@@ -1,4 +1,4 @@
-Welcome, dominick mancini.
-
-Acct# Name                S Balance
-12344 dominick mancini            A 350.00  
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Invalid command. "quit" is not known, please try again.
+Welcome to the automated banking system! Please login

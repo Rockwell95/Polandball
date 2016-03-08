@@ -1,12 +1,13 @@
 Welcome to the automated banking system! Please login
->Invalid command. "100379538" is not known, please try again.
-
-
-
-
-
-
-
-
+Logging in, are you logging in as standard or admin?
+Please enter your name:
+Name not found, terminating...
+Invalid command. "scott mclean" is not known, please try again.
 Welcome to the automated banking system! Please login
->
+Invalid command. "deposit" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "100379538" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "$99999.99" is not known, please try again.
+Welcome to the automated banking system! Please login
+Quitting...

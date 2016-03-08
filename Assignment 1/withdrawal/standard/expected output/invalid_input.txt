@@ -1,1 +1,9 @@
-Invalid command. "asdfa" is not a known command, terminating session...
+Welcome to the automated banking system! Please login
+Logging in, are you logging in as standard or admin?
+Please enter your name:
+Name not found, terminating...
+Invalid command. "dominick mancini" is not known, please try again.
+Welcome to the automated banking system! Please login
+Invalid command. "asdfa" is not known, please try again.
+Welcome to the automated banking system! Please login
+Quitting...
