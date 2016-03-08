@@ -1,14 +1,2 @@
-Welcome to the automated banking system! Please login
-Logging in, are you logging in as standard or admin?
-Welcome, administrator
-Invalid entry, terminating session.
-Welcome to the automated banking system! Please login
-Invalid command. "mclean" is not known, please try again.
-Welcome to the automated banking system! Please login
-Invalid command. "changeplan" is not known, please try again.
-Welcome to the automated banking system! Please login
-Invalid command. "scott" is not known, please try again.
-Welcome to the automated banking system! Please login
-Invalid command. "mclean" is not known, please try again.
-Welcome to the automated banking system! Please login
+Please enter the account holder's account number: 
 Quitting...
