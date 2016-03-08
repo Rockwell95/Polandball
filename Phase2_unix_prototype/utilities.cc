@@ -19,7 +19,7 @@ account getAccountByName(string s_holdername, string s_filename) {
   account acct;
   while (getline(ifs_accounts_file, s_account_line)) {
     if ((s_holdername).compare(s_account_line.substr(6,
-      (s_holdername.length()))) <= 0) {
+      (s_holdername.length()))) == 0) {
       acct.s_holdername = s_holdername;
       // cout << acct.s_holdername << endl;
       acct.n_level = STANDARD_ACCOUNT;
@@ -51,7 +51,7 @@ account getAccountByNumber(string s_number, string s_filename) {
     // cout << (s_account_line.substr(6, (acct.s_holdername.length()))) + "==" << endl;
     // cout << acct.s_holdername + "==" << endl;
 
-    if (s_number.compare(s_account_line.substr(0, s_number.length())) <= 0) {
+    if (s_number.compare(s_account_line.substr(0, s_number.length())) == 0) {
       acct.s_holdername = s_account_line.substr(6, 20);
       // cout << acct.s_holdername << endl;
       acct.n_level = STANDARD_ACCOUNT;
@@ -97,7 +97,13 @@ prompt_struct prompt(bool name, bool acct_num, account *acct, string command) {
   if(name) {
     cout << "Please enter the administrator name:" << endl;
     cin >> s_firstname;
+    if (s_firstname.compare("quit") == 0) {
+      exit(0);
+    }
     cin >> s_lastname;
+    if (s_lastname.compare("quit") == 0) {
+      exit(0);
+    }
     s_fullname = s_firstname + " " + s_lastname;
     ps.prompt_name = s_fullname;
     *acct = getAccountByName(s_fullname);

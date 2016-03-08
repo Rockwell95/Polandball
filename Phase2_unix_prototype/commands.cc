@@ -96,13 +96,13 @@ int withdrawal(account acct) {
   if (acct.n_level == ADMIN_ACCOUNT) {
     // cout << "Withdraw command selected." << endl;
     // want_name = true;
-    cout << "Withdraw command selected. Please enter the administrator name:\n>";
+    cout << "Withdraw command selected. Please enter the administrator name:" << endl;
     cin >> s_firstname;
     cin >> s_lastname;
     s_fullname = s_firstname + " " + s_lastname;
     acct = getAccountByName(s_fullname);
     if (!acct.s_number.empty()) {
-      cout << "Name accepted, please enter the account number you wish to withdraw from :\n>";
+      cout << "Name accepted, please enter the account number you wish to withdraw from :" << endl;
     }
     else {
       cout << "Error, invalid administrator name, killing withdraw request." << endl;
@@ -110,7 +110,7 @@ int withdrawal(account acct) {
     }
   }
   else {
-    cout << "Withdraw command selected. Please enter the account number you wish to withdraw funds from:\n>";
+    cout << "Withdraw command selected. Please enter the account number you wish to withdraw funds from:" << endl;
     //want_name = false;
   }
   // pr = prompt(want_name, true, &acct, "withdraw");
@@ -127,7 +127,8 @@ int withdrawal(account acct) {
   gt_another_svalue:
     if (cin >> d_wdamount && d_wdamount <= 500 && d_wdamount >= 0.01) {
       acct.d_balance -= d_wdamount;
-      cout << "Done!\nNew Balance: " << acct.d_balance << endl;
+      cout << "Done!"  << endl;
+      cout << "New Balance: " << acct.d_balance << endl;
     }
     else if (cin >> d_wdamount && d_wdamount > 500) {
       cout << "Error, withdraw amount exceeds $500.00, please enter another value:" << endl;
@@ -187,21 +188,21 @@ int transfer(account acct) {
   // prompt_struct pr;
   // bool want_name;
   if (acct.n_level == ADMIN_ACCOUNT) {
-    cout << "Transfer mode selected, please enter the administrator name:\n>";
+    cout << "Transfer mode selected, please enter the administrator name:" << endl;
     cin >> s_firstname;
     cin >> s_lastname;
     s_fullname = s_firstname + " " + s_lastname;
     acct = getAccountByName(s_fullname);
     if (!acct.s_number.empty()) {
-      cout << "Name accepted, welcome " + s_fullname + ". Please enter the number of the account you wish to to transfer from : \n>";
+      cout << "Name accepted, welcome " + s_fullname + ". Please enter the number of the account you wish to to transfer from :" << endl;
     }
     else {
-      cout << "Error, the administrator name you entered is not recognized, terminating transaction...\n";
+      cout << "Error, the administrator name you entered is not recognized, terminating transaction..."  << endl;
       return 1;
     }
   }
   else {
-    cout << "Transfer mode selected, please enter the number of the account you wish to transfer from:\n>";
+    cout << "Transfer mode selected, please enter the number of the account you wish to transfer from:"  << endl;
   }
   // pr = prompt(want_name, true, &acct, "transfer");
   // sFromAcctNum = pr.prompt_number;
@@ -223,7 +224,7 @@ int transfer(account acct) {
         cout << fixed;
         cout << setprecision(2);
         cout << "Transferring $" << d_trans_amount << " from " + sFromAcctNum + " to " + sToAcctNum + "." << endl;
-        cout << "\n\nTransfer complete, ending transaction..." << endl;
+        cout << "Transfer complete, ending transaction..." << endl;
         cout << "Remaining Balance: $" << acct.d_balance << endl;
       }
       else if (cin >> d_trans_amount && d_trans_amount > 1000) {
@@ -287,13 +288,13 @@ int paybill(account acct) {
   //bool want_name;
   // prompt_struct pr;
   if (acct.n_level == ADMIN_ACCOUNT) {
-    cout << "Pay bill command selected. Please enter the administrator name:\n>";
+    cout << "Pay bill command selected. Please enter the administrator name:" << endl;
     cin >> s_firstname;
     cin >> s_lastname;
     s_fullname = s_firstname + " " + s_lastname;
     acct = getAccountByName(s_fullname);
     if (acct.s_holdername.empty()) {
-      cout << "The account name is not a recognized account name.\n";
+      cout << "The account name is not a recognized account name." << endl;
       return 1;
     }
   }
@@ -306,7 +307,7 @@ int paybill(account acct) {
   // }
   // s_acctnum = pr.prompt_number;
   if (!acct.s_number.empty()) {
-      cout << "Please enter the account number you wish to pay from :\n>";
+      cout << "Please enter the account number you wish to pay from :" << endl;
       cin >> s_acctnum;
       if (s_acctnum.compare(acct.s_number) == 0) {
         cout << "Please enter the company name to pay:" << endl;
@@ -316,7 +317,8 @@ int paybill(account acct) {
           gt_another_spayment_value:
           if (cin >> d_pay_amount && d_pay_amount <= 2000 && d_pay_amount >= 0.01) {
             acct.d_balance -= d_pay_amount;
-            cout << "Payment Successful.\nNew Balance: " << endl;
+            cout << "Payment Successful."  << endl;
+            cout << "New Balance:" << endl;
             cout << acct.d_balance;
           }
           else if (cin >> d_pay_amount && d_pay_amount > 2000) {
@@ -377,13 +379,13 @@ int deposit(account acct) {
   // bool want_name;
   // prompt_struct pr;
   if (acct.n_level == ADMIN_ACCOUNT) {
-    cout << "Deposit command selected. Please enter the administrator name:\n>";
+    cout << "Deposit command selected. Please enter the administrator name:" << endl;
     cin >> s_firstname;
     cin >> s_lastname;
     s_fullname = s_firstname + " " + s_lastname;
     acct = getAccountByName(s_fullname);
     if (acct.s_holdername.empty()) {
-      cout << "The account name is not a recognized account name.\n";
+      cout << "The account name is not a recognized account name." << endl;
       return EXIT_SUCCESS;
     }
   }
@@ -397,14 +399,15 @@ int deposit(account acct) {
   // }
   // s_acctnum = pr.prompt_number;
   if (!acct.s_number.empty()) {
-    cout << "Please enter the account number:\n>";
+    cout << "Please enter the account number:" << endl;
     cin >> s_acctnum;
     if (s_acctnum.compare(acct.s_number) == 0) {
       cout << "Please enter an amount to deposit"  << endl;
       gt_another_deposit_value:
       if (cin >> d_deposit_amount && d_deposit_amount >= 0.01) {
         acct.d_balance += d_deposit_amount;
-        cout << "Deposit successful.\nNew Balance: " << endl;
+        cout << "Deposit successful." << endl;
+        cout << "New Balance: " << endl;
         cout << acct.d_balance;
       }
       else {
@@ -417,7 +420,7 @@ int deposit(account acct) {
     }
   }
   else {
-    cout << "The account name is not a recognized account name.\n";
+    cout << "The account name is not a recognized account name." << endl;
   }
   return 0;
 }
@@ -527,7 +530,7 @@ int deposit(account acct) {
     cout << "Account not found" << endl;
     return 0;
   }
-  if (s_holdername.compare(acc_account.s_holdername) <= 0) {
+  if (s_holdername.compare(acc_account.s_holdername) == 0) {
     // Match
     cout << "Account deleted with account name "+acc_account.s_holdername+"(stub)" << endl;
     return 0;
@@ -578,7 +581,7 @@ int deposit(account acct) {
     return 0;
   }
 
-  if (s_holdername.compare(acc_account.s_holdername) <= 0) {
+  if (s_holdername.compare(acc_account.s_holdername) == 0) {
     // Match
     cout << "Account disabled/enabled (stub)" << endl;
     return 0;
@@ -628,7 +631,7 @@ int deposit(account acct) {
     return 0;
   }
 
-  if (s_holdername.compare(acc_account.s_holdername) <= 0) {
+  if (s_holdername.compare(acc_account.s_holdername) == 0) {
     // Match
     cout << "Plan Changed (stub)" << endl;
     return 0;
