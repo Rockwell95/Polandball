@@ -527,7 +527,7 @@ int deposit(account acct) {
     cout << "Account not found" << endl;
     return 0;
   }
-  if (s_holdername.compare(acc_account.s_holdername) <= 0) {
+  if (s_holdername.compare(acc_account.s_holdername) == 0) {
     // Match
     cout << "Account deleted with account name "+acc_account.s_holdername+"(stub)" << endl;
     return 0;
@@ -578,7 +578,7 @@ int deposit(account acct) {
     return 0;
   }
 
-  if (s_holdername.compare(acc_account.s_holdername) <= 0) {
+  if (s_holdername.compare(acc_account.s_holdername) == 0) {
     // Match
     cout << "Account disabled/enabled (stub)" << endl;
     return 0;
@@ -628,7 +628,7 @@ int deposit(account acct) {
     return 0;
   }
 
-  if (s_holdername.compare(acc_account.s_holdername) <= 0) {
+  if (s_holdername.compare(acc_account.s_holdername) == 0) {
     // Match
     cout << "Plan Changed (stub)" << endl;
     return 0;
