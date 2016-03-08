@@ -400,7 +400,7 @@ int deposit(account acct) {
   account ac_newaccount;
   string s_first, s_last;
   while (s_first.empty() == true || s_last.empty() == true) {
-    cout << "Enter the full name for the new account holder" << endl;
+    cout << "Enter the full name for the new account holder:" << endl;
     cin >> s_first;
     if (s_first.compare("quit") == 0) {
       exit(0);
@@ -410,10 +410,10 @@ int deposit(account acct) {
   ac_newaccount.s_holdername = s_first + " " + s_last;
   while (ac_newaccount.s_holdername.length() > 20 || getAccountByName(ac_newaccount.s_holdername).s_holdername.empty() == false) {
     if (ac_newaccount.s_holdername.length() > 20) {
-      cout << "The account name is too long. It must be at most 20 characters in length" << endl;
+      cout << "The account name is too long. It must be at most 20 characters in length." << endl;
     }
     if (ac_newaccount.s_holdername.length() == 0) {
-      cout << "The account name is empty. Please enter an account name" << endl;
+      cout << "The account name is empty. Please enter an account name." << endl;
     }
     cout << getAccountByName(ac_newaccount.s_holdername).s_holdername << endl;
     if (!getAccountByName(ac_newaccount.s_holdername).s_holdername.empty()) {
@@ -550,7 +550,7 @@ int deposit(account acct) {
 /*!*/int changeplan(account acct)
 {
   if (acct.n_level != ADMIN_ACCOUNT) {
-    cout << "TOKEN";
+    cout << "You must be logged in as an admin to use this command.";
     return 0;
   }
 
