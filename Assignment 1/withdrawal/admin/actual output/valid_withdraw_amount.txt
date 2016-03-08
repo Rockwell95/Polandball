@@ -1,12 +1,8 @@
 Welcome to the automated banking system! Please login
 Logging in, are you logging in as standard or admin?
 Welcome, administrator
-Withdraw command selected.
-Please enter the administrator name:
-Error, invalid administrator name, killing withdraw.
-
-
-
+Withdraw command selected. Please enter the administrator name:
+>Error, invalid administrator name, killing withdraw request.
 Invalid entry, terminating session.
 Welcome to the automated banking system! Please login
 Invalid command. "200.00" is not known, please try again.

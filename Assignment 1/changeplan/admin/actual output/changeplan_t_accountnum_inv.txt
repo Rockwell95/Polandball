@@ -1,9 +1,7 @@
 Welcome to the automated banking system! Please login
 Logging in, are you logging in as standard or admin?
 Welcome, administrator
-Please enter the administrator name:
-Error, invalid administrator name, killing changeplan.
-Account not found
+Enter the name of the account holder: Enter the account number of the account holder: Account not found
 Invalid entry, terminating session.
 Welcome to the automated banking system! Please login
 Quitting...
