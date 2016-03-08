@@ -1,9 +1,8 @@
 Welcome to the automated banking system! Please login
 Logging in, are you logging in as standard or admin?
 Welcome, administrator
-Pay bill command selected. 
-Please enter the administrator name:
-Error, invalid administrator name, killing pay bill.
+Pay bill command selected. Please enter the administrator name:
+Please enter the account number you wish to pay from :
 Invalid entry, terminating session.
 Welcome to the automated banking system! Please login
 Quitting...
