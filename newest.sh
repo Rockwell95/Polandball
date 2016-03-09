@@ -13,6 +13,7 @@ IFS=$(echo -en "\n\b")
     mkdir -p $PRE"/actual output/"
   while read fileContents
     do
+      # Uncomment the next line if you want to see specific input being passed to Phase2.exe
       #echo "$fileContents"
       COMMANDS+=($fileContents)
     done < $fileLine

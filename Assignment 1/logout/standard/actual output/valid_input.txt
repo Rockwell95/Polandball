@@ -1,9 +1,7 @@
 Welcome to the automated banking system! Please login
-Logging in, are you logging in as standard or admin?
+Would you like to log in as a "standard" or "admin" user?
 Please enter your name:
-Name not found, terminating...
-Invalid command. "dominick mancini" is not known, please try again.
+Welcome, dominick mancini.
+Ready...
+You have been successfully logged out. Thank you for using the system, have a nice day.
 Welcome to the automated banking system! Please login
-You must be logged in to log out.
-Welcome to the automated banking system! Please login
-Quitting...

@@ -32,68 +32,88 @@
 
 using namespace std;
 
-int main(void) {
-  cout << "Welcome to the automated banking system! Please login" << endl;
+int main( void ) {
 
+  // ----------Major Variables------------
   string s_input;
   string s_elevation;
   string s_acctname;
   account act_stdaccount;
+  string s_firstname, s_lastname; 
+  // ----------End Major Variables--------
 
-
-
-  // Loop through user commands indefinitely
-  while (cin >> s_input) {
-
-	if (s_input.compare("login") == 0) {
-
-	  cout << "Logging in, are you logging in as standard or admin?" << endl;
-	  cin >> s_elevation;
-
-
-      if (s_elevation.compare("standard") == 0) {
-		cout << "Please enter your name:" << endl;
-        string s_firstname, s_lastname;
-        cin >> s_firstname;
-        cin >> s_lastname;
-        s_acctname = s_firstname + " " + s_lastname;
-        act_stdaccount = getAccountByName(s_acctname);
-
-        if (act_stdaccount.s_number.empty()) {
-          cout << "Name not found, terminating..." << endl;
-          s_elevation = s_acctname;
-          goto invalid;
-        }
-        cout << "Welcome, " + act_stdaccount.s_holdername + "." << endl;
-        menu(act_stdaccount);
-	  }
-//.........................................................................................................................................................
-      else if (s_elevation.compare("admin") == 0) {
-        cout << "Welcome, administrator" << endl;
-        account act_adminacct;
-        act_adminacct.n_level = ADMIN_ACCOUNT;
-        menu(act_adminacct);
-	  }
-	  else {
-		    goto invalid;
-	  }
+  while ( true ) {
+    s_input = "";
+    s_elevation = "";
+    s_acctname = "";
+    act_stdaccount.s_holdername = "";
+    act_stdaccount.s_number = "";
+    s_firstname = "";
+    s_lastname = "";
+    // ----------LOGIN----------------------
+    while ( true ) {
+      cout << "Welcome to the automated banking system! Please login" << endl;
+      cin >> s_input;
+      if ( s_input.compare( "quit" ) == 0 ) {
+        exit( 0 );
+      }
+      else if ( s_input.compare( "logout" ) == 0 ) {
+        cout << "You must be logged in to log out." << endl;      
+      }
+      else if ( s_input.compare( "login" ) != 0 ) {
+        cout << "Need help? Type \"login\" to login." << endl;
+        cout << "Command not recognized: " + s_input << endl;
+      }
+      else {
+        break;
+      } 
     }
-    else if (s_input.compare("logout") == 0) {
-      cout << "You must be logged in to log out." << endl;
-    }
-    else if (s_input.compare("quit") == 0) {
-      cout << "Quitting..." << endl;
-      goto terminate;
-    }
-    else {
-      s_elevation = s_input;
-      invalid:
-	  cout << "Invalid command. \"" + s_elevation + "\" is not known, please try again." << endl;
-    }
-    cout << "Welcome to the automated banking system! Please login" << endl;
-  }
+    // ----------END OF LOGIN---------------
 
-  terminate:
-  return 0;
+    // ----------ADMIN OR STANDARD PROMPT----------
+    while ( true ) {
+      cout << "Would you like to log in as a \"standard\" or \"admin\" user?" << endl;
+      cin >> s_elevation;
+      if ( s_elevation.compare( "quit" ) == 0 ) {
+        exit( 0 );
+      }
+      else if ( s_elevation.compare( "standard" ) != 0 &&
+          s_elevation.compare( "admin" ) != 0) {
+        cout << "Command not recognized. Please type either \"admin\" or \"standard\"" << endl;
+      }
+      else if ( s_elevation.compare( "quit" ) == 0 ) {
+        exit( 0 );
+      }
+      else {
+        break;
+      }
+    }
+    // ----------END OF ADMIN OR STANDARD PROMPT---
 
+    // ----------ADMIN ACCOUNT---------------------
+    if ( s_elevation.compare( "admin" ) == 0 ) {
+      cout << "Welcome, administrator" << endl;
+      account act_adminacct;
+      act_adminacct.n_level = ADMIN_ACCOUNT;
+      menu(act_adminacct);
+    }
+    // ----------END OF ADMIN ACCOUNT--------------
+
+    // ----------STANDARD ACCOUNT------------------
+    if ( s_elevation.compare( "standard" ) == 0 ) {
+      cout << "Please enter your name:" << endl;   
+      cin >> s_firstname;
+      cin >> s_lastname;
+      s_acctname = s_firstname + " " + s_lastname;
+      act_stdaccount = getAccountByName( s_acctname );
+      if ( act_stdaccount.s_number.empty() ) {
+        cout << "Name not found, terminating." << endl;
+        exit( 0 ); 
+      }
+      cout << "Welcome, " + act_stdaccount.s_holdername + "." << endl;
+      menu( act_stdaccount );
+    }
+    // ----------END OF STANDARD ACCOUNT-----------
+  } 
+  exit( 0 );
 }

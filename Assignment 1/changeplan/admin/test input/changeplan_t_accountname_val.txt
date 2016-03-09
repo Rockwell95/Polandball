@@ -1,6 +1,5 @@
 login
 admin
-scott mclean
 changeplan
 scott mclean
 quit

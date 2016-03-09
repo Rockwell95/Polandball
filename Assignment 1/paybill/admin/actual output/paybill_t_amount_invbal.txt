@@ -1,12 +1,13 @@
 Welcome to the automated banking system! Please login
-Logging in, are you logging in as standard or admin?
+Would you like to log in as a "standard" or "admin" user?
 Welcome, administrator
-Pay bill command selected. Please enter the administrator name:
->The account name is not a recognized account name.
-Invalid entry, terminating session.
+Ready...
+Enter the full name for the account holder:
+Enter the account number of the account holder: 
+Account not found
+Ready...
+Invalid entry, terminating session. You will now be logged out.
 Welcome to the automated banking system! Please login
-Invalid command. "EC" is not known, please try again.
+Need help? Type "login" to login.
+Command not recognized: 2000.00
 Welcome to the automated banking system! Please login
-Invalid command. "2000.00" is not known, please try again.
-Welcome to the automated banking system! Please login
-Quitting...

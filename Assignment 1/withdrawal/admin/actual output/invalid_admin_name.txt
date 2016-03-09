@@ -1,6 +1,5 @@
 Welcome to the automated banking system! Please login
-Logging in, are you logging in as standard or admin?
+Would you like to log in as a "standard" or "admin" user?
 Welcome, administrator
-Withdraw command selected. Please enter the administrator name:
->Error, invalid administrator name, killing withdraw request.
-Welcome to the automated banking system! Please login
+Ready...
+Enter the full name for the account holder:

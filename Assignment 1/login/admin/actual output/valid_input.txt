@@ -1,4 +1,4 @@
 Welcome to the automated banking system! Please login
-Logging in, are you logging in as standard or admin?
-Invalid command. "quit" is not known, please try again.
-Welcome to the automated banking system! Please login
+Would you like to log in as a "standard" or "admin" user?
+Welcome, administrator
+Ready...

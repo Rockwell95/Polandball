@@ -1,15 +1,13 @@
 Welcome to the automated banking system! Please login
-Logging in, are you logging in as standard or admin?
+Would you like to log in as a "standard" or "admin" user?
 Please enter your name:
-Name not found, terminating...
-Invalid command. "scott mclean" is not known, please try again.
+Welcome, scott mclean.
+Ready...
+Pay bill command selected.Please enter your account number:
+The account number entered does not match the number on file. Aborting.
+Ready...
+Invalid entry, terminating session. You will now be logged out.
 Welcome to the automated banking system! Please login
-Invalid command. "paybill" is not known, please try again.
+Need help? Type "login" to login.
+Command not recognized: 200.00
 Welcome to the automated banking system! Please login
-Invalid command. "100379538" is not known, please try again.
-Welcome to the automated banking system! Please login
-Invalid command. "EC" is not known, please try again.
-Welcome to the automated banking system! Please login
-Invalid command. "200.00" is not known, please try again.
-Welcome to the automated banking system! Please login
-Quitting...

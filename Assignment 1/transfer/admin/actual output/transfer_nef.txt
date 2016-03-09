@@ -1,12 +1,11 @@
 Welcome to the automated banking system! Please login
-Logging in, are you logging in as standard or admin?
+Would you like to log in as a "standard" or "admin" user?
 Welcome, administrator
-Transfer mode selected, please enter the administrator name:
->Error, the administrator name you entered is not recognized, terminating transaction...
-Invalid entry, terminating session.
-Welcome to the automated banking system! Please login
-Invalid command. "12344" is not known, please try again.
-Welcome to the automated banking system! Please login
-Invalid command. "800.75" is not known, please try again.
-Welcome to the automated banking system! Please login
-Quitting...
+Ready...
+Enter the full name for the account holder:
+Enter the account number of the account holder: 
+Please enter the number of the account to transfer to.
+Target account does not exist. Please try a new number.
+Please enter the number of the account to transfer to.
+Target account does not exist. Please try a new number.
+Please enter the number of the account to transfer to.

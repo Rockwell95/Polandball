@@ -1,11 +1,5 @@
 Welcome to the automated banking system! Please login
-Logging in, are you logging in as standard or admin?
+Would you like to log in as a "standard" or "admin" user?
 Welcome, administrator
-<<<<<<< HEAD
-Enter the name of the account holder: 
-Enter the account number of the account holder: 
-Account not found
-=======
-Enter the name of the account holder: Enter the account number of the account holder: Account not found
->>>>>>> cd2303da6348e1222be8cc1d97a8b2fff9ed27e0
-Welcome to the automated banking system! Please login
+Ready...
+Enter the full name for the account holder:

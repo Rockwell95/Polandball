@@ -1,11 +1,9 @@
 Welcome to the automated banking system! Please login
-Logging in, are you logging in as standard or admin?
+Would you like to log in as a "standard" or "admin" user?
 Please enter your name:
-Name not found, terminating...
-Invalid command. "scott mclean" is not known, please try again.
+Welcome, scott mclean.
+Ready...
+You must be logged in as an admin to use this command
+Ready...
+Invalid entry, terminating session. You will now be logged out.
 Welcome to the automated banking system! Please login
-Invalid command. "create" is not known, please try again.
-Welcome to the automated banking system! Please login
-Invalid command. "lakhrf980&)(" is not known, please try again.
-Welcome to the automated banking system! Please login
-Quitting...

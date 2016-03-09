@@ -1,7 +1,9 @@
 Welcome to the automated banking system! Please login
-Logging in, are you logging in as standard or admin?
+Would you like to log in as a "standard" or "admin" user?
 Welcome, administrator
+Ready...
 Enter the full name for the new account holder:
-Enter the initial balance for the new account holder:
-New account created with accountname scott mclean(stub)
-Quitting...
+This account name already exists. The account name must be unique in the system.
+Ready...
+Invalid entry, terminating session. You will now be logged out.
+Welcome to the automated banking system! Please login

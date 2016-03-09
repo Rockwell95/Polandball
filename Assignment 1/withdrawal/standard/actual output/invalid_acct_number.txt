@@ -1,15 +1,14 @@
 Welcome to the automated banking system! Please login
-Logging in, are you logging in as standard or admin?
+Would you like to log in as a "standard" or "admin" user?
 Please enter your name:
-Name not found, terminating...
-Invalid command. "dominick mancini" is not known, please try again.
+Welcome, dominick mancini.
+Ready...
+Withdraw command selected.
+Please enter your account number:
+The account number entered does not match the number on file. Aborting.
+Ready...
+Invalid entry, terminating session. You will now be logged out.
 Welcome to the automated banking system! Please login
-Invalid command. "withdrawal" is not known, please try again.
+Need help? Type "login" to login.
+Command not recognized: 1234a
 Welcome to the automated banking system! Please login
-Invalid command. "dominick" is not known, please try again.
-Welcome to the automated banking system! Please login
-Invalid command. "mancini" is not known, please try again.
-Welcome to the automated banking system! Please login
-Invalid command. "1234a" is not known, please try again.
-Welcome to the automated banking system! Please login
-Quitting...
