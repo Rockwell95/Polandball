@@ -2,6 +2,7 @@ package Phase4;
 
 public class Transaction {
 	
+	private String sTransactionString;
 	private String sTransactionNum;
 	private String sAccountHName;
 	private String sAccountNumber;
@@ -12,6 +13,7 @@ public class Transaction {
 	
 	
 	public Transaction(String transactionRecord) {
+		sTransactionString = transactionRecord;
 		sTransactionNum = transactionRecord.substring(0,2).trim();
 		sAccountHName = transactionRecord.substring(3,23).trim();
 		sAccountNumber = transactionRecord.substring(24,29).trim();
@@ -38,6 +40,10 @@ public class Transaction {
 	
 	public double getFundsInvolved(){
 		return dFundsInvolved;
+	}
+	
+	public String transAsString(){
+		return sTransactionString;
 	}
 
 }
