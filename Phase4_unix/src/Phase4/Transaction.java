@@ -2,10 +2,10 @@ package Phase4;
 
 public class Transaction {
 	
-	public String sTransactionNum;
-	public String sAccountHName;
-	public String sAccountNumber;
-	public String sMiscInfo;
+	private String sTransactionNum;
+	private String sAccountHName;
+	private String sAccountNumber;
+	private String sMiscInfo;
 	
 	public double dFundsInvolved;
 	
@@ -18,6 +18,26 @@ public class Transaction {
 		
 		dFundsInvolved = Double.parseDouble(transactionRecord.substring(30,38));
 		sMiscInfo = transactionRecord.substring(39);
+	}
+	
+	public String getTransactionNumber(){
+		return sTransactionNum;
+	}
+	
+	public String getName(){
+		return sAccountHName;
+	}
+	
+	public String getAccountNumber(){
+		return sAccountNumber;
+	}
+	
+	public String getMisc(){
+		return sMiscInfo;
+	}
+	
+	public double getFundsInvolved(){
+		return dFundsInvolved;
 	}
 
 }
