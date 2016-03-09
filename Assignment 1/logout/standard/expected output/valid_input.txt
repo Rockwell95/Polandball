@@ -1,2 +1,7 @@
-Thank you for using the banking system, session ended, you have been successfully logged out.
-Quitting...
+Welcome to the automated banking system! Please login
+Would you like to log in as a "standard" or "admin" user?
+Please enter your name:
+Welcome, dominick mancini.
+Ready...
+You have been successfully logged out. Thank you for using the system, have a nice day.
+Welcome to the automated banking system! Please login

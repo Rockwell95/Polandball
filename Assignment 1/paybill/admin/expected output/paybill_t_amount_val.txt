@@ -1,10 +1,13 @@
 Welcome to the automated banking system! Please login
-Logging in, are you logging in as standard or admin?
+Would you like to log in as a "standard" or "admin" user?
 Welcome, administrator
-Pay bill command selected. 
-Please enter the administrator name:
-Please enter the account number you wish to pay from :
-Please enter the company name to pay:
-Please enter an amount to pay:
-Payment Successful.
-Quitting...
+Ready...
+Enter the full name for the account holder:
+Enter the account number of the account holder: 
+Account not found
+Ready...
+Invalid entry, terminating session. You will now be logged out.
+Welcome to the automated banking system! Please login
+Need help? Type "login" to login.
+Command not recognized: 200.00
+Welcome to the automated banking system! Please login

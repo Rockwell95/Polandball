@@ -1,2 +1,8 @@
-The account number input does not match the account holder's account number.
-Quitting...
+Welcome to the automated banking system! Please login
+Would you like to log in as a "standard" or "admin" user?
+Welcome, administrator
+Ready...
+Enter the full name for the account holder:
+Enter the account number of the account holder: 
+Account not found
+Ready...

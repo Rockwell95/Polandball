@@ -1,2 +1,7 @@
-You cannot perform this operation at your current permission level.
-Quitting...
+Welcome to the automated banking system! Please login
+Would you like to log in as a "standard" or "admin" user?
+Please enter your name:
+Welcome, scott mclean.
+Ready...
+You must be logged in as an admin to use this command
+Ready...

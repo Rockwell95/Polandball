@@ -1,2 +1,3 @@
+Welcome to the automated banking system! Please login
 You must be logged in to log out.
-Quitting...
+Welcome to the automated banking system! Please login

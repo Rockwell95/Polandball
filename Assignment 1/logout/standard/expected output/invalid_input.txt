@@ -1,2 +1,4 @@
-Invalid command. "asdfa" is not a known command, terminating session...
-Quitting...
+Welcome to the automated banking system! Please login
+Need help? Type "login" to login.
+Command not recognized: asdfa
+Welcome to the automated banking system! Please login

@@ -1,2 +1,5 @@
-The account name is unrecognized.
-Quitting...
+Welcome to the automated banking system! Please login
+Would you like to log in as a "standard" or "admin" user?
+Welcome, administrator
+Ready...
+Enter the full name for the account holder:

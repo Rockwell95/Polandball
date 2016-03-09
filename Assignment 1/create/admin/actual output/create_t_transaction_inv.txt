@@ -3,13 +3,10 @@ Would you like to log in as a "standard" or "admin" user?
 Welcome, administrator
 Ready...
 Enter the full name for the new account holder:
-This account name already exists. The account name must be unique in the system.
+Enter the initial balance for the new account holder. Example: 500.00.
+The balance must be greater than or equal to $0.00 and less than or equal to $99999.99
+Enter the initial balance for the new account holder. Example: 500.00.
+New account created with accountname bob smith( stub )
 Ready...
 Invalid entry, terminating session. You will now be logged out.
-Welcome to the automated banking system! Please login
-Need help? Type "login" to login.
-Command not recognized: 200.00
-Welcome to the automated banking system! Please login
-Need help? Type "login" to login.
-Command not recognized: withdraw
 Welcome to the automated banking system! Please login

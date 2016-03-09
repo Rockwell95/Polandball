@@ -1,0 +1,65 @@
+create_t_accountname_spec.txt~
+
+2c2
+< Logging in, are you logging in as standard or admin?
+---
+> Would you like to log in as a "standard" or "admin" user?
+3a4
+> Ready...
+5,6c6,7
+< Enter the initial balance for the new account holder:
+< Welcome to the automated banking system! Please login
+---
+> Enter the initial balance for the new account holder. Example: 500.00.
+> Argument is invalid
+
+=======================
+create_t_balance_inv.txt~
+
+2c2
+< Logging in, are you logging in as standard or admin?
+---
+> Would you like to log in as a "standard" or "admin" user?
+3a4
+> Ready...
+5,7c6,8
+< Enter the initial balance for the new account holder:
+< The balance must be greater than $0.00 and less than or equal to $99999.99
+< The balance must be greater than $0.00 and less than or equal to $99999.99
+---
+> This account name already exists. The account name must be unique in the system.
+> Ready...
+> Invalid entry, terminating session. You will now be logged out.
+
+=======================
+create_t_input_inv.txt~
+
+2c2
+< Logging in, are you logging in as standard or admin?
+---
+> Would you like to log in as a "standard" or "admin" user?
+3a4
+> Ready...
+
+=======================
+delete_t_accountname_inv.txt~
+
+2c2
+< Logging in, are you logging in as standard or admin?
+---
+> Would you like to log in as a "standard" or "admin" user?
+4,9c4,8
+< Please enter the administrator name:
+< Error, invalid administrator name, killing delete.
+< Account not found
+< Invalid entry, terminating session.
+< Welcome to the automated banking system! Please login
+< Quitting...
+---
+> Ready...
+> Enter the full name for the account holder:
+> Enter the account number of the account holder: 
+> Account Deleted ( stub )
+> Ready...
+
+=======================

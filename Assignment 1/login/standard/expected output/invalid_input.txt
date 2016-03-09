@@ -1,4 +1,4 @@
 Welcome to the automated banking system! Please login
-Invalid command. "asdasdf" is not known, please try again.
+Need help? Type "login" to login.
+Command not recognized: asdasdf
 Welcome to the automated banking system! Please login
-Quitting...

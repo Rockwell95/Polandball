@@ -1,5 +1,6 @@
 Welcome to the automated banking system! Please login
-Logging in, are you logging in as standard or admin?
+Would you like to log in as a "standard" or "admin" user?
 Welcome, administrator
-Invalid command, you are already logged in as administrator.
-Quitting...
+Ready...
+Invalid entry, terminating session. You will now be logged out.
+Welcome to the automated banking system! Please login

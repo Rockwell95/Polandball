@@ -1,4 +1,4 @@
 Welcome to the automated banking system! Please login
-Ivalid command. You must be logged in to enter this command.
+Need help? Type "login" to login.
+Command not recognized: changeplan
 Welcome to the automated banking system! Please login
-Quitting...

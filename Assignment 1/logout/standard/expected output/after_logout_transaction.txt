@@ -1,2 +1,10 @@
-Invalid command. You must be logged in to enter this command.
-Quitting...
+Welcome to the automated banking system! Please login
+Would you like to log in as a "standard" or "admin" user?
+Please enter your name:
+Welcome, dominick mancini.
+Ready...
+You have been successfully logged out. Thank you for using the system, have a nice day.
+Welcome to the automated banking system! Please login
+Need help? Type "login" to login.
+Command not recognized: withdrawal
+Welcome to the automated banking system! Please login

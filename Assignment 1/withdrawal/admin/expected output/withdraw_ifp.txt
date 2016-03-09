@@ -1,14 +1,10 @@
 Welcome to the automated banking system! Please login
-Logging in, are you logging in as standard or admin?
+Would you like to log in as a "standard" or "admin" user?
 Welcome, administrator
-Withdraw command selected.
-Please enter the administrator name:
-Error, invalid administrator name, killing withdraw.
-
-
-
-Invalid entry, terminating session.
-Welcome to the automated banking system! Please login
-Invalid command. "200.0015" is not known, please try again.
-Welcome to the automated banking system! Please login
-Quitting...
+Ready...
+Enter the full name for the account holder:
+Enter the account number of the account holder: 
+Enter an amount with withdraw. Example: 500.00.
+Error, not enough funds in account to complete transaction, please enter another value:
+Enter an amount with withdraw. Example: 500.00.
+Argument is invalid

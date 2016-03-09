@@ -1,11 +1,13 @@
 Welcome to the automated banking system! Please login
-Logging in, are you logging in as standard or admin?
+Would you like to log in as a "standard" or "admin" user?
 Please enter your name:
-Welcome, dominick mancini
-Pay bill command selected. Please enter the account number you wish to pay from :
-Please enter the company name to pay:
-Please enter an amount to pay:
-The maximum amount that can be paid to a bill holder is $2000.00 in the current session. The amount entered exceeds $2000.00
-Unrecognized command.
+Welcome, scott mclean.
+Ready...
+Pay bill command selected.Please enter your account number:
+The account number entered does not match the number on file. Aborting.
+Ready...
+Invalid entry, terminating session. You will now be logged out.
 Welcome to the automated banking system! Please login
-Quitting...
+Need help? Type "login" to login.
+Command not recognized: 2100.00
+Welcome to the automated banking system! Please login
