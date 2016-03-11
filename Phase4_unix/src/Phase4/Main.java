@@ -9,8 +9,8 @@ public class Main {
 
 	@SuppressWarnings("resource")
 	public static void main(String[] args) throws FileNotFoundException, NotDirectoryException {
-		File fMasterTransactionFile = new File("master_accounts.txt");
-		File fOldMasterAccountsFile = new File("current_accounts.txt");
+		File fMasterTransactionFile = new File(args[0]);
+		File fOldMasterAccountsFile = new File(args[1]);
 		
 		Scanner scTransaction = new Scanner(fMasterTransactionFile);
 		Scanner scAccounts = new Scanner(fOldMasterAccountsFile);
@@ -22,13 +22,14 @@ public class Main {
 		String acctString;
 		
 		boolean transactionSuccess;
-		Transaction eofTransaction = new Transaction("00 XXXXXXXXXXXXXXXXXXXX 00000 99999.99 MM N");
+		Transaction eofTransaction = new Transaction("00 XXXXXXXXXXXXXXXXXXXX 00000 99999.99 MM");
 		
 		System.out.println("Welcome to the Bank account system Backend.");
 		
+		//Read in accounts file
 		while(scAccounts.hasNextLine()) {
 			acctString = scAccounts.nextLine();
-			if(acctString.length() != 37){
+			if(acctString.length() != 44){
 				System.err.println("ERROR: Invalid account:" + acctString);
 			}
 			else{
@@ -37,9 +38,10 @@ public class Main {
 			
 		}
 		
+		//Read in transactions file
 		while(scTransaction.hasNextLine()) {
 			transactionString = scTransaction.nextLine();
-			if(transactionString.length() != 40){
+			if(transactionString.length() != 41){
 				String culpritFile = Utilities.findFile(transactionString);
 				System.err.println("ERROR: Invalid transaction, located in transaction file " + culpritFile + "."
 						+ " Transaction: " + transactionString);
@@ -49,6 +51,7 @@ public class Main {
 			}	
 		}
 		
+		//Process transactions
 		for(Transaction t : arrayOfTransactions){
 			transactionSuccess = Utilities.processTransaction(t, arrayOfMasterAccounts);
 			if(!transactionSuccess){

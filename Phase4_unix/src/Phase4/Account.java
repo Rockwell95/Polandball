@@ -69,7 +69,7 @@ public class Account {
 		dBalance = newBalance;
 	}
 	
-	public String upAcctAsString(){
+	public String newAcctAsString(){
 		newAcctString = sAcctNum + " " + Utilities.padSpaceRight(sAcctHolderName,20)+ " " + cAcctStatus + " "
 				+ Utilities.padSpaceLeft("" + dBalance, 8) + Utilities.padZeroesLeft("" + numTransactions, 4);
 		return newAcctString;

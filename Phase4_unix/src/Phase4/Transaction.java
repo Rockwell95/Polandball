@@ -22,6 +22,7 @@ public class Transaction {
 		sMiscInfo = transactionRecord.substring(39);
 	}
 	
+	//Transactions are read-only, so these functions return components of the transaction.
 	public String getTransactionNumber(){
 		return sTransactionNum;
 	}

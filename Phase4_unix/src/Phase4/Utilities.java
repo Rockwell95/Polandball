@@ -8,9 +8,10 @@ import java.util.Scanner;
 
 public class Utilities {
 	
-	public Utilities() {}
+	//public Utilities() {}
 	
 	@SuppressWarnings({ "resource" })
+	//Looks for a file given test it contains
 	public static String findFile(String fileText) throws NotDirectoryException, FileNotFoundException{
  		  String fileName = null;
 		  File dir = new File("./");
@@ -73,9 +74,9 @@ public class Utilities {
 		String sTransNum = t.getTransactionNumber();
 		boolean transactionSuccess = false;
 		Account acct = Utilities.getAccountByNumber(t.getAccountNumber(), accounts);
-		if(acct.getStatus() == 'D'){
+		if(acct.getStatus() != 'A'){
 			transactionSuccess = false;
-			System.out.println("ERROR Account with number " + t.getAccountNumber() +" is Disabled");
+			System.err.println("ERROR Account with number " + t.getAccountNumber() +". Account is Disabled");
 		}
 		
 		switch (sTransNum) {
