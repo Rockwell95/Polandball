@@ -1,7 +1,10 @@
 package Phase4;
 
+import java.text.DecimalFormat;
+
 public class Account {
-	private String newAcctString;
+	private String newMAcctString;
+	private String newCAcctString;
 	private String oldAcctString;
 	private String sAcctNum;
 	private String sAcctHolderName;
@@ -11,6 +14,8 @@ public class Account {
 	private int numTransactions;
 	private double surcharge;
 	
+	private DecimalFormat df = new DecimalFormat("#.##");
+	
 	public Account(String accountLine) {
 		oldAcctString = accountLine;
 		sAcctNum = accountLine.substring(0,5).trim();
@@ -19,6 +24,17 @@ public class Account {
 		dBalance = Double.parseDouble(accountLine.substring(29,37));
 		numTransactions = Integer.parseInt(accountLine.substring(38,42));
 		cAcctPlan = accountLine.charAt(43);
+		this.setSurcharge(cAcctPlan);
+	}
+	
+	//Boolean makes parameters different so that a default account can be created.
+	public Account(String acctNum, String acctName){
+		sAcctNum = acctNum;
+		sAcctHolderName = acctName;
+		cAcctStatus = 'A';
+		dBalance = 0;
+		numTransactions = 0;
+		cAcctPlan = 'N';
 		this.setSurcharge(cAcctPlan);
 	}
 	
@@ -68,11 +84,18 @@ public class Account {
 	public void setBalance(double newBalance){
 		dBalance = newBalance;
 	}
-	
-	public String newAcctAsString(){
-		newAcctString = sAcctNum + " " + Utilities.padSpaceRight(sAcctHolderName,20)+ " " + cAcctStatus + " "
-				+ Utilities.padSpaceLeft("" + dBalance, 8) + Utilities.padZeroesLeft("" + numTransactions, 4);
-		return newAcctString;
+	//Creates a master string
+	public String newAcctAsMasterString(){
+		newMAcctString = sAcctNum + " " + Utilities.padSpaceRight(sAcctHolderName,20)+ " " + cAcctStatus + " "
+				+ Utilities.padSpaceLeft(df.format(dBalance), 8) + " " + Utilities.padZeroesLeft("" + numTransactions, 4) 
+				+ " " + cAcctPlan;
+		return newMAcctString;
+	}
+	//Creates a current string
+	public String newAcctAsCurrentString(){
+		newCAcctString = sAcctNum + " " + Utilities.padSpaceRight(sAcctHolderName,20)+ " " + cAcctStatus + " "
+				+ Utilities.padSpaceLeft(df.format(dBalance), 8);
+		return newCAcctString;
 	}
 	
 	public String currentAcctAsString(){
@@ -90,6 +113,27 @@ public class Account {
 	
 	public double getSurcharge(){
 		return surcharge;
+	}
+	
+	public void setPlan(char plan){
+		if(cAcctPlan == plan){
+			System.err.println("ERROR: Account is already this type");
+		}
+		else if(plan != 'S' && plan != 'N'){
+			System.err.println("ERROR: Account plan not recognized");
+		}
+		else if(cAcctPlan != plan){
+			cAcctPlan = plan;
+		}
+	}
+	
+	public void setStatus(char newStatus){
+		if(newStatus != 'A' && newStatus != 'D'){
+			System.err.println("ERROR: status cannot be set to " + newStatus);
+		}
+		else{
+			cAcctStatus = newStatus;
+		}
 	}
 
 }
