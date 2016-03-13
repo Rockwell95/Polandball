@@ -13,9 +13,9 @@ public class Account {
 	private double dBalance;
 	private int numTransactions;
 	private double surcharge;
-	
+
 	private DecimalFormat df = new DecimalFormat("#.##");
-	
+
 	public Account(String accountLine) {
 		oldAcctString = accountLine;
 		sAcctNum = accountLine.substring(0,5).trim();
@@ -26,8 +26,8 @@ public class Account {
 		cAcctPlan = accountLine.charAt(43);
 		this.setSurcharge(cAcctPlan);
 	}
-	
-	//Boolean makes parameters different so that a default account can be created.
+
+	//Constructor for "create" transaction
 	public Account(String acctNum, String acctName){
 		sAcctNum = acctNum;
 		sAcctHolderName = acctName;
@@ -37,39 +37,39 @@ public class Account {
 		cAcctPlan = 'N';
 		this.setSurcharge(cAcctPlan);
 	}
-	
+
 	public String getName(){
 		return sAcctHolderName;
 	}
-	
+
 	public String getNumber(){
 		return sAcctNum;
 	}
-	
+
 	public char getStatus(){
 		return cAcctStatus;
 	}
-	
+
 	public double getBalance(){
 		return dBalance;
 	}
-	
+
 	public int getNumTransactions(){
 		return numTransactions;
 	}
-	
+
 	public char getPlan(){
 		return cAcctPlan;
 	}
-	
+
 	public void increaseBalance(double addAmt){
 		dBalance+=addAmt;
 	}
-	
+
 	public void decreaseBalance(double subAmt){
 		dBalance-=subAmt;
 	}
-	
+
 	public boolean isValid(double subAmt){
 		if(dBalance - subAmt >= 0){
 			return true;
@@ -87,7 +87,7 @@ public class Account {
 	//Creates a master string
 	public String newAcctAsMasterString(){
 		newMAcctString = sAcctNum + " " + Utilities.padSpaceRight(sAcctHolderName,20)+ " " + cAcctStatus + " "
-				+ Utilities.padSpaceLeft(df.format(dBalance), 8) + " " + Utilities.padZeroesLeft("" + numTransactions, 4) 
+				+ Utilities.padSpaceLeft(df.format(dBalance), 8) + " " + Utilities.padZeroesLeft("" + numTransactions, 4)
 				+ " " + cAcctPlan;
 		return newMAcctString;
 	}
@@ -97,11 +97,11 @@ public class Account {
 				+ Utilities.padSpaceLeft(df.format(dBalance), 8);
 		return newCAcctString;
 	}
-	
+
 	public String currentAcctAsString(){
 		return oldAcctString;
 	}
-	
+
 	public void setSurcharge(char plan){
 		if(plan == 'S'){
 			surcharge = 0.05;
@@ -110,11 +110,11 @@ public class Account {
 			surcharge = 0.10;
 		}
 	}
-	
+
 	public double getSurcharge(){
 		return surcharge;
 	}
-	
+
 	public void setPlan(char plan){
 		if(cAcctPlan == plan){
 			System.err.println("ERROR: Account is already this type");
@@ -126,7 +126,7 @@ public class Account {
 			cAcctPlan = plan;
 		}
 	}
-	
+
 	public void setStatus(char newStatus){
 		if(newStatus != 'A' && newStatus != 'D'){
 			System.err.println("ERROR: status cannot be set to " + newStatus);
