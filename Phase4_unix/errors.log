@@ -1,0 +1,9 @@
+ERROR: Transaction will leave negative account balance. Cannot complete.
+Transacton: 01 dominick mancini     12345 00200.00 MM
+ERROR: Transaction "01 dominick mancini     12345 00200.00 MM" has failed.
+ERROR: Paying the bill will leave negative account balance. Cannot complete.
+Transacton: 03 janahan nirmalan     12347 00300.00 TV
+ERROR: Transaction "03 janahan nirmalan     12347 00300.00 TV" has failed.
+ERROR: Account already exists, cannot use the same number twice.
+Transaction: 05 chuck norris         12348 00000.00 MM
+ERROR: Transaction "05 chuck norris         12348 00000.00 MM" has failed.
