@@ -30,7 +30,7 @@ public class Main {
 		File fMasterTransactionFile = Utilities.mergeFiles(arrayOfTransactionFiles, "merged_master_transactions.txt");
 		File fOldMasterAccountsFile = new File(args[0]);
 		File fNewMasterAccountsFile = new File("new_master_accounts.txt");
-		File fNewCurrentAccounstFile = new File("new_current_accounts.txt");
+		File fNewCurrentAccounstFile = new File("current_accounts.txt");
 		
 		PrintWriter mPWriter = new PrintWriter(new FileOutputStream(fNewMasterAccountsFile, false));
 		PrintWriter cPWriter = new PrintWriter(new FileOutputStream(fNewCurrentAccounstFile, false));
