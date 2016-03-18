@@ -1,5 +1,3 @@
-package Phase4;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -12,9 +10,25 @@ import java.nio.file.NotDirectoryException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * File Name: Utilities.java
+ * 
+ * Description: The utilities class is used for the creation and maintenance of the back-end 
+ * 				file system. The utilities class is primarily composed of utility functions 
+ * 				to maintain the back-end of the system.
+ * 
+ * @author Dominick Mancini, Scott McLean, Janahan Nirmalan
+ * @version 1.0.0
+ */
 public class Utilities {
 
 	//Creates an array of Transaction files
+	/**
+	 * This function is used to return individual transaction files from transactions that 
+	 * have occured. If the directory does not exist then an exception is thrown 
+	 * @return transactionFiles
+	 * @throws NotDirectoryException
+	 */
 	public static File[] getIndividualTransactionFiles()throws NotDirectoryException{ 
 	  File dir = new File("./transaction files/");
 	  File[] transactionFiles = dir.listFiles();
@@ -25,7 +39,14 @@ public class Utilities {
 		  
 	}
 	
-	//Borrowed from <http://www.programcreek.com/2012/09/merge-files-in-java/>
+	
+	/**
+	 * This function is used to merge files and was borrowed from
+	 * <http://www.programcreek.com/2012/09/merge-files-in-java/>
+	 * @param files
+	 * @param name
+	 * @return
+	 */
 	public static File mergeFiles(File[] files, String name) {
 		
 		File mergedFile = new File(name);
@@ -69,6 +90,14 @@ public class Utilities {
  
 	}
 	
+	/**
+	 * This function is used to find a file, a string consisting of the file name will be 
+	 * returned
+	 * @param fileText
+	 * @return fileName
+	 * @throws NotDirectoryException
+	 * @throws FileNotFoundException
+	 */
 	@SuppressWarnings("resource")
 	public static String findFile(String fileText) throws NotDirectoryException, FileNotFoundException{
  		  String fileName = null;
@@ -90,18 +119,43 @@ public class Utilities {
 		  return fileName;
 	}
 	
+	/**
+	 * This function is used for padding spaces on the right
+	 * @param s
+	 * @param n
+	 * @return
+	 */
 	public static String padSpaceRight(String s, int n) {
 	     return String.format("%1$-" + n + "s", s);  
 	}
 
+	/**
+	 * This function is used for padding spaces on the left
+	 * @param s
+	 * @param n
+	 * @return
+	 */
 	public static String padSpaceLeft(String s, int n) {
 	    return String.format("%1$" + n + "s", s);  
 	}
 	
+	/**
+	 * This function is used to pad 0's on the left 
+	 * @param num
+	 * @param size
+	 * @return
+	 */
 	public static String padZeroesLeft (String num, int size){
 		return String.format("%0" + size + "d", Integer.parseInt(num));
 	}
 	
+	/**
+	 * This function is used to find the highest account number in the system.
+	 * The highest account number will be returned after searching through a list of 
+	 * accounts in the system
+	 * @param arrayOfAcconts
+	 * @return
+	 */
 	public static int getHighestAcctNum (ArrayList<Account> arrayOfAcconts){
 		int highest = 0;
 		for (int i = 0; i < arrayOfAcconts.size(); i++) {
@@ -112,11 +166,26 @@ public class Utilities {
 		return highest;
 	}
 	
+	/**
+	 * This function will be used to create a new valid account number for a new account
+	 * when it is created. The new number will be made sure that is usable before returning the
+	 * value.
+	 * @param existingAccounts
+	 * @return
+	 */
 	public static String createNewAccountNumber(ArrayList<Account> existingAccounts){
 		int highestNum = getHighestAcctNum(existingAccounts);
 		return padZeroesLeft(Integer.toString(highestNum + 1), 5);
 	}
 	
+	/**
+	 * This function is used to return an account object based on the account number given as
+	 * an argument. Once the account is found, a new account object will be created from the 
+	 * information found by the account number.
+	 * @param acctNum
+	 * @param arrayOfAccounts
+	 * @return acct
+	 */
 	public static Account getAccountByNumber(String acctNum, ArrayList<Account> arrayOfAccounts){
 		Account acct = new Account("00000", "XXXXXXXXXXXXXXXXXXXX");
 		for (Account account : arrayOfAccounts) {
@@ -128,6 +197,13 @@ public class Utilities {
 		return acct;
 	}
 	
+	/**
+	 * This function is used to drive the back-end of the system by grabbing the functions
+	 * that are declared in the TransactionProcessor.java file.
+	 * @param t
+	 * @param accounts
+	 * @return
+	 */
 	public static boolean processTransaction(Transaction t, ArrayList<Account> accounts){
 		String sTransNum = t.getTransactionNumber();
 		System.out.println("Transaction number: " + sTransNum);

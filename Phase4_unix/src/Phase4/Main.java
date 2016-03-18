@@ -1,5 +1,5 @@
-package Phase4;
 import java.io.File;
+
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -12,6 +12,17 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * File Name: Main.java
+ * 
+ * Description: This file is used as the main processing program for all of the back-end. 
+ * 				It implements all the functions and objects created for the purpose of the 
+ * 				back-end. This program will be used to maintain the back-end.
+ * 
+ * @author Dominick Mancini, Scott McLean, Janahan Nirmalan
+ * @version 1.0.0
+ *
+ */
 public class Main {
 	
 	public static void main(String[] args) throws FileNotFoundException, NotDirectoryException {
