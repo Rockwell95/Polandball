@@ -1,3 +1,5 @@
+package Phase4;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -6,7 +8,9 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
 import java.nio.file.NotDirectoryException;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -46,6 +50,9 @@ public class Utilities {
 	 * @param files
 	 * @param name
 	 * @return
+	 */
+	/*
+	 * --START BORROWED CODE--[
 	 */
 	public static File mergeFiles(File[] files, String name) {
 		
@@ -88,6 +95,23 @@ public class Utilities {
 		}
 		return mergedFile;
  
+	}
+	/*
+	 * ]--END BORROWED CODE--
+	 */
+	
+	/**
+	 * This method tries to delete a file at a specified path, if the file
+	 * does not exist, then an IOException is thrown
+	 * @param pathToFile
+	 */
+	public static void tryDelete(Path pathToFile){
+		try {
+			Files.deleteIfExists(pathToFile);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	/**

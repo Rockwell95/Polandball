@@ -7,3 +7,6 @@ ERROR: Transaction "03 janahan nirmalan     12347 00300.00 TV" has failed.
 ERROR: Account already exists, cannot use the same number twice.
 Transaction: 05 chuck norris         12348 00000.00 MM
 ERROR: Transaction "05 chuck norris         12348 00000.00 MM" has failed.
+ERROR: Account already exists, cannot use the same number twice.
+Transaction: 05 optimus prime        12349 00000.00 MM
+ERROR: Transaction "05 optimus prime        12349 00000.00 MM" has failed.

@@ -1,11 +1,10 @@
-import java.io.File;
+package Phase4;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
-import java.nio.file.Files;
 import java.nio.file.NotDirectoryException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -29,12 +28,7 @@ public class Main {
 		
 		//----------------DELETES PREVIOUS MERGED TRANSACTION FILE--------
 		Path mergedPath = Paths.get("./merged_master_transactions.txt");
-		try {
-			Files.deleteIfExists(mergedPath);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Utilities.tryDelete(mergedPath);
 		//----------------------------------------------------------------
 		File[] arrayOfTransactionFiles = Utilities.getIndividualTransactionFiles();
 		
@@ -121,12 +115,7 @@ public class Main {
 		
 		//---------------DELETE OLD ACCOUNTS FILE--------------
 		Path acctMasterPath = fOldMasterAccountsFile.toPath();
-		try {
-			Files.deleteIfExists(acctMasterPath);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Utilities.tryDelete(acctMasterPath);
 		//-----------------------------------------------------
 		
 		//--------------REWRITE MASTER ACCOUNTS FILE-----------
