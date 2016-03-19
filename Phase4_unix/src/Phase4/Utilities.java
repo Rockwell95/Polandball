@@ -233,10 +233,12 @@ public class Utilities {
 		System.out.println("Transaction number: " + sTransNum);
 		boolean transactionSuccess = false;
 		Account acct = Utilities.getAccountByNumber(t.getAccountNumber(), accounts);
+		//----------------------------------------------------------------
 		// Create is a special case, as no account will exist, 
 		// so the program should still allow execution even if
 		// the account is not "Active", so to speak. Furthermore
 		// Enable will only work on a disabled account.
+		//----------------------------------------------------------------
 		if(acct.getStatus() != 'A' && !sTransNum.equals("05") && !sTransNum.equals("09")){
 			transactionSuccess = false;
 			System.err.println("ERROR Account with number " + t.getAccountNumber() +". Account is Disabled");
