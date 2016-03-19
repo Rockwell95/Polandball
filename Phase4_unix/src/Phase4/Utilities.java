@@ -177,14 +177,14 @@ public class Utilities {
 	 * This function is used to find the highest account number in the system.
 	 * The highest account number will be returned after searching through a list of 
 	 * accounts in the system
-	 * @param arrayOfAcconts
+	 * @param arrayOfAccounts
 	 * @return
 	 */
-	public static int getHighestAcctNum (ArrayList<Account> arrayOfAcconts){
+	public static int getHighestAcctNum (ArrayList<Account> arrayOfAccounts){
 		int highest = 0;
-		for (int i = 0; i < arrayOfAcconts.size(); i++) {
-			if(Integer.parseInt(arrayOfAcconts.get(i).getNumber()) > highest){
-				highest = Integer.parseInt(arrayOfAcconts.get(i).getNumber());
+		for (int i = 0; i < arrayOfAccounts.size(); i++) {
+			if(Integer.parseInt(arrayOfAccounts.get(i).getNumber()) > highest){
+				highest = Integer.parseInt(arrayOfAccounts.get(i).getNumber());
 			}
 		}
 		return highest;
