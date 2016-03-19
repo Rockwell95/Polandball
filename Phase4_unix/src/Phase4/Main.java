@@ -16,7 +16,15 @@ import java.util.Scanner;
  * 
  * Description: This file is used as the main processing program for all of the back-end. 
  * 				It implements all the functions and objects created for the purpose of the 
- * 				back-end. This program will be used to maintain the back-end.
+ * 				back-end. This program will be used to maintain the back-end. The program takes
+ * 				in one argument (args[0]) which is the name of the old master accounts file
+ * 				(i.e., the master accounts file before transactions are applied) All other 
+ * 				files, including the merged transaction file, and the current accounts file
+ * 				are predefined in the program code. The output master transaction file will
+ * 				overwrite the old master transaction file. That is to say, args[0] specifies
+ * 				the name of the old master transaction file, and the name of the new one as 
+ * 				well.
+ * 				
  * 
  * @author Dominick Mancini, Scott McLean, Janahan Nirmalan
  * @version 1.0.0
@@ -30,6 +38,8 @@ public class Main {
 		Path mergedPath = Paths.get("./merged_master_transactions.txt");
 		Utilities.tryDelete(mergedPath);
 		//----------------------------------------------------------------
+		
+		//----------------DECLARE ALL FILES AND WRITERS-------------------
 		File[] arrayOfTransactionFiles = Utilities.getIndividualTransactionFiles();
 		
 		File fMasterTransactionFile = Utilities.mergeFiles(arrayOfTransactionFiles, "merged_master_transactions.txt");
@@ -39,13 +49,14 @@ public class Main {
 		
 		PrintWriter mPWriter = new PrintWriter(new FileOutputStream(fNewMasterAccountsFile, false));
 		PrintWriter cPWriter = new PrintWriter(new FileOutputStream(fNewCurrentAccounstFile, false));
+		//----------------------------------------------------------------
 		
-		//-----Redirects errors to a log file-----
+		//-----Redirects errors to a log file-----------------------------
 		File file = new File("errors.log");
 		FileOutputStream fos = new FileOutputStream(file);
 		PrintStream ps = new PrintStream(fos);
 		System.setErr(ps);
-		//----------------------------------------
+		//----------------------------------------------------------------
 		
 		Scanner scTransaction = new Scanner(fMasterTransactionFile);
 		Scanner scAccounts = new Scanner(fOldMasterAccountsFile);
@@ -61,7 +72,7 @@ public class Main {
 		
 		System.out.println("Welcome to the Bank account system Backend.");
 		
-		//Read in accounts file
+		//--------------Read in accounts file-----------------------------
 		System.out.println("Loading accounts...");
 		while(scAccounts.hasNextLine()) {
 			acctString = scAccounts.nextLine();
@@ -73,8 +84,9 @@ public class Main {
 			}
 		}
 		scAccounts.close();
+		//----------------------------------------------------------------
 		
-		//Read in transactions file
+		//-----------Read in transactions file----------------------------
 		System.out.println("Reading transactions...");
 		while(scTransaction.hasNextLine()) {
 			transactionString = scTransaction.nextLine();
@@ -88,8 +100,9 @@ public class Main {
 			}	
 		}
 		scTransaction.close();
+		//----------------------------------------------------------------
 		
-		//-----------Process transactions-------------------
+		//-----------Process transactions---------------------------------
 		System.out.println("Processing transactions...");
 		for(Transaction t : arrayOfTransactions){
 			transactionSuccess = Utilities.processTransaction(t, arrayOfMasterAccounts);
@@ -98,10 +111,10 @@ public class Main {
 			}
 		}
 		Utilities.processTransaction(eofTransaction, arrayOfMasterAccounts);
-		//---------------------------------------------------
+		//----------------------------------------------------------------
 		
 		
-		//-------------Write new Accounts Files--------------
+		//-------------Write new Accounts Files---------------------------
 		System.out.println("Writing new accounts file...");
 		for (Account account : arrayOfMasterAccounts) {
 			mPWriter.println(account.newAcctAsMasterString());
@@ -111,14 +124,14 @@ public class Main {
 		}
 		mPWriter.close();
 		cPWriter.close();
-		//-----------------------------------------------------
+		//----------------------------------------------------------------
 		
-		//---------------DELETE OLD ACCOUNTS FILE--------------
+		//---------------DELETE OLD ACCOUNTS FILE-------------------------
 		Path acctMasterPath = fOldMasterAccountsFile.toPath();
 		Utilities.tryDelete(acctMasterPath);
-		//-----------------------------------------------------
+		//----------------------------------------------------------------
 		
-		//--------------REWRITE MASTER ACCOUNTS FILE-----------
+		//--------------REWRITE MASTER ACCOUNTS FILE----------------------
 		File newMasterName = new File(args[0]);
 		if(fNewMasterAccountsFile.renameTo(newMasterName)){
 			System.out.println("Master accounts file updated");
@@ -127,6 +140,6 @@ public class Main {
 			System.err.println("Could not write changes to master accounts file, changes must be manually applied."
 					+ "\nChanges can be found in " + fNewMasterAccountsFile.getName());
 		}
-		//-----------------------------------------------------
+		//----------------------------------------------------------------
 	}
 }
