@@ -20,7 +20,7 @@ public class Transaction {
 	private String sAccountHName;
 	private String sAccountNumber;
 	private String sMiscInfo;
-	public double dFundsInvolved;
+	private double dFundsInvolved;
 	
 	
 	

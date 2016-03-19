@@ -1,6 +1,8 @@
 ERROR: Transaction will leave negative account balance. Cannot complete.
 Transacton: 01 dominick mancini     12345 00200.00 MM
 ERROR: Transaction "01 dominick mancini     12345 00200.00 MM" has failed.
+ERROR Account with number 12346. Account is Disabled
+ERROR: Transaction "07 scott mclean         12346 00000.00 MM" has failed.
 ERROR: Paying the bill will leave negative account balance. Cannot complete.
 Transacton: 03 janahan nirmalan     12347 00300.00 TV
 ERROR: Transaction "03 janahan nirmalan     12347 00300.00 TV" has failed.
