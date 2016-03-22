@@ -40,8 +40,8 @@ public class Main {
 		//----------------------------------------------------------------
 		
 		//----------------DECLARE ALL FILES AND WRITERS-------------------
-		File[] arrayOfTransactionFiles = Utilities.getIndividualTransactionFiles();
-		
+		File[] arrayOfTransactionFiles = Utilities.getIndividualTransactionFiles("./transaction files/");
+																			  // "./transaction files/" is default
 		File fMasterTransactionFile = Utilities.mergeFiles(arrayOfTransactionFiles, "merged_master_transactions.txt");
 		File fOldMasterAccountsFile = new File(args[0]);
 		File fNewMasterAccountsFile = new File("new_master_accounts.txt");

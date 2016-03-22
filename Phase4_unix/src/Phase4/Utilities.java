@@ -33,8 +33,8 @@ public class Utilities {
 	 * @return transactionFiles
 	 * @throws NotDirectoryException
 	 */
-	public static File[] getIndividualTransactionFiles()throws NotDirectoryException{ 
-	  File dir = new File("./transaction files/");
+	public static File[] getIndividualTransactionFiles(String fileDir)throws NotDirectoryException{ 
+	  File dir = new File(fileDir);
 	  File[] transactionFiles = dir.listFiles();
 	  if (transactionFiles == null) {
 		  System.err.println("ERROR: Could not find individual transaction Files, file list is empty");
