@@ -98,7 +98,7 @@ public class Main {
 			else {
 				arrayOfTransactions.add(new Transaction(transactionString));
 			}	
-		}
+		}	
 		scTransaction.close();
 		//----------------------------------------------------------------
 		

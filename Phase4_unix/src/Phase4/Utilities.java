@@ -230,7 +230,7 @@ public class Utilities {
 	 */
 	public static boolean processTransaction(Transaction t, ArrayList<Account> accounts){
 		String sTransNum = t.getTransactionNumber();
-		System.out.println("Transaction number: " + sTransNum);
+		//System.out.println("Transaction number: " + sTransNum);
 		boolean transactionSuccess = false;
 		Account acct = Utilities.getAccountByNumber(t.getAccountNumber(), accounts);
 		//----------------------------------------------------------------
@@ -247,7 +247,7 @@ public class Utilities {
 			System.out.println("End of session.");	
 		}
 		else if(sTransNum.equals("01")){
-			System.out.println("Transaction: Withdrawal");
+			System.out.println("Transaction: Withdrawal\n");
 			transactionSuccess = TransactionProcessor.withdrawal(t, acct);
 		}
 		else if(sTransNum.equals("02")){
@@ -255,32 +255,32 @@ public class Utilities {
 			transactionSuccess = TransactionProcessor.transfer(t, acct);
 		}
 		else if(sTransNum.equals("03")){
-			System.out.println("Transaction: Pay Bill");
+			System.out.println("Transaction: Pay Bill\n");
 			transactionSuccess = TransactionProcessor.paybill(t, acct);
 		}
 		else if(sTransNum.equals("04")){
-			System.out.println("Transaction: Deposit");
+			System.out.println("Transaction: Deposit\n");
 			transactionSuccess = TransactionProcessor.deposit(t, acct);
 		}
 		/*!-----BEGIN ADMIN TRANSACTIONS-----!*/
 		else if(sTransNum.equals("05")){//Special case
-			System.out.println("Transaction: Create");
+			System.out.println("Transaction: Create\n");
 			transactionSuccess = TransactionProcessor.create(t, accounts);
 		}
 		else if(sTransNum.equals("06")){
-			System.out.println("Transaction: Delete");
+			System.out.println("Transaction: Delete\n");
 			transactionSuccess = TransactionProcessor.delete(t, acct, accounts);
 		}
 		else if(sTransNum.equals("07")){
-			System.out.println("Transaction: Disable");
+			System.out.println("Transaction: Disable\n");
 			transactionSuccess = TransactionProcessor.disable(t, acct);
 		}
 		else if(sTransNum.equals("08")){
-			System.out.println("Transaction: Change Plan");
+			System.out.println("Transaction: Change Plan\n");
 			transactionSuccess = TransactionProcessor.changeplan(t, acct);
 		}
 		else if(sTransNum.equals("09")){
-			System.out.println("Transaction: Enable");
+			System.out.println("Transaction: Enable\n");
 			transactionSuccess = TransactionProcessor.enable(t, acct);
 		}
 		/*!-----END ADMIN TRANSACTIONS-----!*/

@@ -31,10 +31,12 @@ public class TransactionProcessor {
 			a.decreaseBalance(wdAmount + surcharge);
 			a.incrementTransactionCount();
 			completed = true;
+			
+			System.err.println("SUCCESS: Withdrawal Transaction completed successfully.");
 		}
 		else{
 			System.err.println("ERROR: Transaction will leave negative account balance. Cannot complete."
-					+ "\nTransacton: " + t.transAsString());
+					+ "\nTransaction: " + t.transAsString());
 			completed = false;
 		}
 		return completed;
@@ -87,10 +89,11 @@ public class TransactionProcessor {
 			a.decreaseBalance(payAmount + surcharge);
 			a.incrementTransactionCount();
 			completed = true;
+			System.err.println("SUCCESS: Paybill Transaction completed successfully.");
 		}
 		else{
 			System.err.println("ERROR: Paying the bill will leave negative account balance. Cannot complete."
-					+ "\nTransacton: " + t.transAsString());
+					+ "\nTransaction: " + t.transAsString());
 			completed = false;
 		}
 		return completed;
@@ -108,14 +111,16 @@ public class TransactionProcessor {
 		double surcharge = a.getSurcharge();
 		boolean completed;
 		
-		if(a.isValid(depAmount - surcharge)){
+		if(a.isValid(surcharge - depAmount)){
 			a.increaseBalance(depAmount - surcharge);
 			a.incrementTransactionCount();
 			completed = true;
+			
+			System.err.println("SUCCESS: Deposit Transaction completed successfully.");
 		}
 		else{
 			System.err.println("ERROR: Depositing will leave negative account balance. Wow, you're really depositing something small. Cannot complete."
-					+ "\nTransacton: " + t.transAsString());
+					+ "\nTransaction: " + t.transAsString());
 			completed = false;
 		}
 		return completed;
@@ -139,11 +144,12 @@ public class TransactionProcessor {
 			}
 		}	
 		//Only executed if account number does not exist
-		System.out.println("This prototype autogenerates a new account number, and disregards the transaction's provided number."
+		System.err.println("This prototype autogenerates a new account number, and disregards the transaction's provided number."
 				+ "\nIf the frontend is changed in the future, this can be modified easily.");
 		String newAcctNum = Utilities.createNewAccountNumber(a);
 		a.add(new Account(newAcctNum, t.getName()));
 		completed = true;
+		System.err.println("SUCCESS: Account Created Successfully");
 		return completed;
 	}
 
