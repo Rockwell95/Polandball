@@ -65,6 +65,7 @@ public class Main {
 		//---------DECLARE VARIABLES FOR TRANSACTION SUCCESS AND EOF------
 		boolean transactionSuccess;
 		Transaction eofTransaction = new Transaction("00 XXXXXXXXXXXXXXXXXXXX 00000 99999.99 MM");
+		//----------------------------------------------------------------	
 		System.out.println("Welcome to the Bank account system Backend.");
 
 		//-----------Process transactions---------------------------------
