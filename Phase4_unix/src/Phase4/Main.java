@@ -57,12 +57,14 @@ public class Main {
 		System.setErr(ps);
 		//----------------------------------------------------------------
 		
+		//----------CREATE ARRAYS OF ACCOUNTS AND TRANSACTIONS------------
 		ArrayList<Transaction> arrayOfTransactions = Utilities.getArrayOfTransactions(fMasterTransactionFile);
 		ArrayList<Account> arrayOfMasterAccounts = Utilities.getArrayOfAccounts(fOldMasterAccountsFile);
+		//----------------------------------------------------------------
 		
+		//---------DECLARE VARIABLES FOR TRANSACTION SUCCESS AND EOF------
 		boolean transactionSuccess;
 		Transaction eofTransaction = new Transaction("00 XXXXXXXXXXXXXXXXXXXX 00000 99999.99 MM");
-		
 		System.out.println("Welcome to the Bank account system Backend.");
 
 		//-----------Process transactions---------------------------------
