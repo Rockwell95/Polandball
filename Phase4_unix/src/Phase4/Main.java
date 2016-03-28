@@ -9,7 +9,6 @@ import java.nio.file.NotDirectoryException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * File Name: Main.java
@@ -58,50 +57,14 @@ public class Main {
 		System.setErr(ps);
 		//----------------------------------------------------------------
 		
-		Scanner scTransaction = new Scanner(fMasterTransactionFile);
-		Scanner scAccounts = new Scanner(fOldMasterAccountsFile);
-		
-		ArrayList<Transaction> arrayOfTransactions = new ArrayList<Transaction>();
-		ArrayList<Account> arrayOfMasterAccounts = new ArrayList<Account>();
-		
-		String transactionString;
-		String acctString;
+		ArrayList<Transaction> arrayOfTransactions = Utilities.getArrayOfTransactions(fMasterTransactionFile);
+		ArrayList<Account> arrayOfMasterAccounts = Utilities.getArrayOfAccounts(fOldMasterAccountsFile);
 		
 		boolean transactionSuccess;
 		Transaction eofTransaction = new Transaction("00 XXXXXXXXXXXXXXXXXXXX 00000 99999.99 MM");
 		
 		System.out.println("Welcome to the Bank account system Backend.");
-		
-		//--------------Read in accounts file-----------------------------
-		System.out.println("Loading accounts...");
-		while(scAccounts.hasNextLine()) {
-			acctString = scAccounts.nextLine();
-			if(acctString.length() != 44){
-				System.err.println("ERROR: Invalid account:" + acctString);
-			}
-			else{
-				arrayOfMasterAccounts.add(new Account(acctString));
-			}
-		}
-		scAccounts.close();
-		//----------------------------------------------------------------
-		
-		//-----------Read in transactions file----------------------------
-		System.out.println("Reading transactions...");
-		while(scTransaction.hasNextLine()) {
-			transactionString = scTransaction.nextLine();
-			if(transactionString.length() != 41){
-				String culpritFile = Utilities.findFile(transactionString);
-				System.err.println("ERROR: Invalid transaction, located in transaction file " + culpritFile + "."
-						+ " Transaction: " + transactionString);
-			}
-			else {
-				arrayOfTransactions.add(new Transaction(transactionString));
-			}	
-		}	
-		scTransaction.close();
-		//----------------------------------------------------------------
-		
+
 		//-----------Process transactions---------------------------------
 		System.out.println("Processing transactions...");
 		for(Transaction t : arrayOfTransactions){

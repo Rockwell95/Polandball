@@ -29,7 +29,7 @@ public class Utilities {
 	//Creates an array of Transaction files
 	/**
 	 * This function is used to return individual transaction files from transactions that 
-	 * have occured. If the directory does not exist then an exception is thrown 
+	 * have occurred. If the directory does not exist then an exception is thrown 
 	 * @return transactionFiles
 	 * @throws NotDirectoryException
 	 */
@@ -44,6 +44,59 @@ public class Utilities {
 	}
 	
 	
+	
+	/**
+	 * This method reads in a file, and returns an array of accounts to the caller
+	 * @param fOldMasterAccountsFile
+	 * @return an array of the master accounts
+	 * @throws FileNotFoundException 
+	 */
+	public static ArrayList<Account> getArrayOfAccounts(File fOldMasterAccountsFile) throws FileNotFoundException{
+		ArrayList<Account> arrayOfMasterAccounts = new ArrayList<Account>();
+		String acctString;
+		Scanner scAccounts = new Scanner(fOldMasterAccountsFile);
+		System.out.println("Loading accounts...");
+		while(scAccounts.hasNextLine()) {
+			acctString = scAccounts.nextLine();
+			if(acctString.length() != 44){
+				System.err.println("ERROR: Invalid account:" + acctString);
+			}
+			else{
+				arrayOfMasterAccounts.add(new Account(acctString));
+			}
+		}
+		scAccounts.close();
+		return arrayOfMasterAccounts;
+		//----------------------------------------------------------------
+	}
+	/**
+	 * This method generates an array list of transaction objects from the specified transaction file.
+	 * @param fMasterTransactionFile
+	 * @return an array of all the transaction from the file
+	 * @throws FileNotFoundException
+	 * @throws NotDirectoryException
+	 */
+	public static ArrayList<Transaction> getArrayOfTransactions(File fMasterTransactionFile) throws FileNotFoundException, NotDirectoryException{
+		//-----------Read in transactions file----------------------------
+		ArrayList<Transaction> arrayOfTransactions = new ArrayList<Transaction>();
+		String transactionString;
+		Scanner scTransaction = new Scanner(fMasterTransactionFile);
+		System.out.println("Reading transactions...");
+		while(scTransaction.hasNextLine()) {
+			transactionString = scTransaction.nextLine();
+			if(transactionString.length() != 41){
+				String culpritFile = Utilities.findFile(transactionString);
+				System.err.println("ERROR: Invalid transaction, located in transaction file " + culpritFile + "."
+						+ " Transaction: " + transactionString);
+			}
+			else {
+				arrayOfTransactions.add(new Transaction(transactionString));
+			}	
+		}	
+		scTransaction.close();
+		//----------------------------------------------------------------
+		return arrayOfTransactions;
+	}
 	/**
 	 * This function is used to merge files and was borrowed from
 	 * <http://www.programcreek.com/2012/09/merge-files-in-java/>
@@ -109,7 +162,6 @@ public class Utilities {
 		try {
 			Files.deleteIfExists(pathToFile);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
