@@ -264,6 +264,7 @@ public class Utilities {
 	 */
 	public static Account getAccountByNumber(String acctNum, ArrayList<Account> arrayOfAccounts){
 		Account acct = new Account("00000", "XXXXXXXXXXXXXXXXXXXX");
+		acct.setStatus('D');
 		for (Account account : arrayOfAccounts) {
 			if(account.getNumber().equals(acctNum)){
 				acct = account;

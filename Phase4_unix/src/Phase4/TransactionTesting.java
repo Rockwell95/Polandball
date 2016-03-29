@@ -35,7 +35,7 @@ public class TransactionTesting {
 	
 	@Test
 	public void depositFundsFail(){
-		Transaction transaction = new Transaction("04 janahan nirmalan     12350 00000.09 MM");
+		Transaction transaction = new Transaction("04 chuck norris         12348 00000.09 MM");
 		assertEquals(Utilities.processTransaction(transaction, arrayOfAccounts), false);
 	}
 	

@@ -216,8 +216,16 @@ public class TransactionProcessor {
 	 * @return
 	 */
 	public static boolean enable(Transaction t, Account a){
-		a.setStatus('A');
-		return true;
+		boolean success;
+		if(a.getStatus() == 'A'){
+			System.err.println("ERROR: Account is already enables, cannot complete transaction");
+			success = false;
+		}
+		else{
+			a.setStatus('A');
+			success = true;
+		}
+		return success;
 	}
 	
 	
