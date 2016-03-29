@@ -136,7 +136,7 @@ public class TransactionTesting {
 	}
 	
 	@Test
-	public void disableAccountSucess(){
+	public void disableAccountSuccess(){
 		Transaction transaction = new Transaction("07 dominick mancini     12345 00000.00 MM");
 		assertEquals(Utilities.processTransaction(transaction, arrayOfAccounts), true);
 	}
@@ -148,7 +148,7 @@ public class TransactionTesting {
 	}
 	
 	@Test
-	public void enableAccountSucess(){
+	public void enableAccountSuccess(){
 		Transaction transaction = new Transaction("09 scott mclean         12346 00000.00 MM");
 		assertEquals(Utilities.processTransaction(transaction, arrayOfAccounts), true);
 	}
